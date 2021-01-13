@@ -1,0 +1,233 @@
+@mixin floating-title-field {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+@mixin circle-animation {
+  &.circle-0 {
+    animation: circle-0 5s infinite;
+    animation-timing-function: linear;
+  }
+  &.circle-1 {
+    animation: circle-1 5s infinite;
+    animation-timing-function: linear;
+  }
+  &.circle-2 {
+    animation: circle-2 5s infinite alternate;
+    animation-timing-function: linear;
+  }
+
+  @keyframes circle-0 {
+    from {
+      transform: rotate(0deg) translatex(20px) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translatex(20px) rotate(-360deg);
+    }
+  }
+  @keyframes circle-1 {
+    from {
+      transform: rotate(0deg) translatex(20px) rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg) translatex(20px) rotate(360deg);
+    }
+  }
+  @keyframes circle-2 {
+    from {
+      transform: rotate(0deg) translatex(20px) rotate(0deg);
+    }
+    to {
+      transform: rotate(180deg) translatex(20px) rotate(-180deg);
+    }
+  }
+}
+
+.intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 89.3rem;
+
+  &#section-01 {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .section-title-field {
+      @include floating-title-field;
+    }
+
+    #section-01-bg-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      .background-item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 4s;
+      }
+    }
+
+    #animation-circle-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+
+      .circle-item {
+        @include circle-animation;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ffbf00;
+        border-radius: 400px;
+      }
+    }
+
+    #scroll-element-wrapper {
+      position: absolute;
+      left: 50%;
+      bottom: 20rem;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 150px;
+      text-align: center;
+      .scroll-text {
+        font-size: 14px;
+        letter-spacing: 0.5rem;
+        font-family: 'Aldrich';
+        color: #ccc;
+      }
+
+      #scroll-animation-wrapper {
+        display: flex;
+        justify-content: center;
+        transform: rotatex(60deg);
+        margin-top: 1rem;
+
+        .down-scroll {
+          width: 26px;
+          height: 26px;
+          border-right: 3px solid #ffbf00;
+          border-bottom: 3px solid #ffbf00;
+          transform: rotate(45deg);
+          animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+          0% {
+            margin-top: 50px;
+          }
+
+          70% {
+            opacity: 0.6;
+          }
+
+          100% {
+            margin-top: 100px;
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &#section-02 {
+    background: url(/img/images/mainVisual_02.jpg) no-repeat center;
+  }
+  &#section-03 {
+    background-color: #000;
+    .video-background {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    .section-title-field {
+      @include floating-title-field;
+    }
+  }
+  &#section-04 {
+    background: url(/img/images/mainVisual_04.jpg) no-repeat center;
+  }
+
+  &#section-05 {
+    background: url(/img/images/mainVisual_05.jpg) no-repeat center;
+  }
+
+  .section-title-field {
+    width: 350px;
+
+    &.field-section-01 {
+      top: 30% !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50rem;
+      .title {
+        text-align: center;
+      }
+      .subtitle {
+        padding: 0 2rem !important;
+      }
+      .description {
+        text-align: center;
+
+        &::before {
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+        }
+      }
+    }
+
+    .subtitle {
+      width: max-content;
+      line-height: 2.4rem;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: var(--brand);
+    }
+
+    .title {
+      font-size: 5rem;
+      font-family: 'Aldrich';
+      margin-top: 1.2rem;
+      color: #fff;
+    }
+
+    .description {
+      position: relative;
+      padding-top: 4rem;
+      font-size: 1.3rem;
+      color: #fff;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 2.6rem;
+        width: 5rem;
+        height: 0.1rem;
+        background-color: #eee;
+      }
+    }
+  }
+}

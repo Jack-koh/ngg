@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*###################### footer ##########################*/
+#footer {
+  width: 90%;
+  padding: 0 5%;
+  font-size: 12px;
+  border-top: 1px solid #ffbf00;
+  background-color: #fff;
+  position: relative;
+  z-index: 8;
+}
+#footer #copy {
+  width: 73%;
+  padding: 18px;
+  float: left;
+}
+#footer #footerLogo {
+  width: 180px;
+  margin-top: 12px;
+  float: right;
+}
+#footer #footerLogo img {
+  width: 100%;
+}
+
+@media all and (min-width: 320px) and (max-width: 1025px) {
+  #footer {
+    text-align: center;
+  }
+  #footer #copy {
+    width: 90%;
+    padding: 18px;
+    float: none;
+  }
+  #footer #footerLogo {
+    width: 180px;
+    margin: 12px auto 0;
+    padding-bottom: 20px;
+    float: none;
+  }
+}

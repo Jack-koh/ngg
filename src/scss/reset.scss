@@ -1,0 +1,142 @@
+@import './fonts.scss';
+
+:root {
+  --brand: #ffbf00;
+  --light-gray: #eeeeee;
+  --gray: #555555;
+}
+
+/*################## 초기화 ###################*/
+* {
+  margin: 0;
+  padding: 0;
+
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+input {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'hind400', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+li {
+  list-style-type: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #333;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.orange {
+  color: #ffbf00;
+}
+/*################################# BTN ##########################################*/
+.enterBtn {
+  width: 170px;
+  height: 24px;
+  letter-spacing: 5px;
+  font-family: 'hind700';
+  position: relative;
+  overflow: hidden;
+}
+.enterBtn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #333;
+}
+.enterBtn .enter {
+  display: block;
+  margin-left: 40px;
+  text-transform: uppercase;
+  line-height: 26px;
+  transition: transform 0.3s ease-in-out;
+}
+.enterBtn .arrow {
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: gold;
+  position: absolute;
+  left: -50px;
+  top: 11px;
+  transition: left 0.5s ease-out 0.3s;
+}
+
+.enterBtn a:hover .enter,
+.enterBtn a:focus .enter {
+  transform: translatex(30px);
+}
+.enterBtn a:hover .arrow,
+.enterBtn a:focus .arrow {
+  left: 0;
+}
+
+.yellowButton {
+  width: 198px;
+  height: 48px;
+  font-size: 12px;
+  background-color: #ffcc33;
+  border: 1px solid #ffcc33;
+  position: relative;
+  transition: all 0.2s ease-out;
+}
+.yellowButton a {
+  display: block;
+  width: 200px;
+  height: 35px;
+  padding-top: 15px;
+}
+.yellowButton a {
+  text-align: center;
+  transition: all 0.3s ease-out;
+}
+.yellowButton a:link,
+a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+.yellowButton .arrow {
+  position: absolute;
+  left: 130px;
+  top: 14px;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.yellowButton:hover a {
+  text-indent: -20px;
+}
+.yellowButton:hover .arrow {
+  text-indent: 5px;
+  opacity: 1;
+}
+.yellowButton:hover {
+  background-color: #fbd42c;
+  border: 1px solid #fbd42c;
+}

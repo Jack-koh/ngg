@@ -1,0 +1,47 @@
+.section-button-wrapper {
+  position: relative;
+  width: 16rem;
+  height: 2.4rem;
+  margin-top: 60px;
+  letter-spacing: 0.5rem;
+  font-family: 'hind700';
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-indent: 4rem;
+  transition: text-indent 0.3s ease-in-out;
+  overflow: hidden;
+
+  .section-button-sliding-bar {
+    position: absolute;
+    left: -12rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15rem;
+    height: 0.2rem;
+    background-color: gold;
+    transition: left 0.5s ease-in-out;
+  }
+
+  .section-button-arrow {
+    position: absolute;
+    top: 50%;
+    left: -12rem;
+    transform: translateY(-50%);
+    width: 5rem;
+    height: 0.2rem;
+    background-color: gold;
+    transition: left 0.6s ease-in-out;
+  }
+
+  &:hover {
+    text-indent: 7rem;
+    .section-button-sliding-bar {
+      left: 16rem;
+    }
+
+    .section-button-arrow {
+      left: 0;
+    }
+  }
+}
