@@ -1,5 +1,6 @@
 #header-wrapper {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 80px;
   background-color: #fff;
@@ -8,29 +9,49 @@
   z-index: 10;
 
   h1#logo {
-    width: 170px;
-    padding: 0 20px;
+    margin-left: 20px;
+    width: 13rem;
     height: 100%;
-    background: url(/img/logob.png) no-repeat center;
-    background-size: 130px;
+    background: url(/img/logob.png) no-repeat center/contain;
+    background-size: 13rem;
+    cursor: pointer;
+  }
+
+  #info-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 100%;
+    background-color: var(--brand);
     cursor: pointer;
 
-    #logo-image {
-      width: 130px;
-      height: 100%;
-      cursor: pointer;
+    img {
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      img {
+        transform: rotate(90deg);
+      }
     }
   }
 }
 
-#header {
-  opacity: 0;
-  width: 100%;
-  height: 80px;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-  z-index: 10;
+@media all and (min-width: 320px) and (max-width: 1024px) {
+  #header-wrapper {
+    height: 60px;
+    h1#logo {
+      width: 18rem;
+      background: url(/img/logo.png) no-repeat center/contain;
+    }
+    #navigator {
+      display: none;
+    }
+    #info-button {
+      display: none;
+    }
+  }
 }
 
 // #headerIn {

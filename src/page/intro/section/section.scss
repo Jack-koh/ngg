@@ -1,7 +1,7 @@
-@mixin floating-title-field {
+@mixin floating-title-field($top) {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: $top;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -47,6 +47,7 @@
 }
 
 .intro-section {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +60,7 @@
     background-repeat: no-repeat;
 
     .section-title-field {
-      @include floating-title-field;
+      @include floating-title-field(50%);
     }
 
     #section-01-bg-wrapper {
@@ -146,8 +147,23 @@
     }
   }
 
+  &.intro-section:not(#section-01) {
+    .section-title-field {
+      @include floating-title-field(60%);
+    }
+    .section-title-field {
+      opacity: 0;
+      transition: all 1s ease;
+
+      &.show {
+        top: 50%;
+        opacity: 1;
+      }
+    }
+  }
+
   &#section-02 {
-    background: url(/img/images/mainVisual_02.jpg) no-repeat center;
+    background: url(/img/images/mainVisual_02.jpg) no-repeat center/cover;
   }
   &#section-03 {
     background-color: #000;
@@ -158,24 +174,19 @@
       transform: translate(-50%, -50%);
       z-index: 0;
     }
-
-    .section-title-field {
-      @include floating-title-field;
-    }
   }
   &#section-04 {
-    background: url(/img/images/mainVisual_04.jpg) no-repeat center;
+    background: url(/img/images/mainVisual_04.jpg) no-repeat center/cover;
   }
 
   &#section-05 {
-    background: url(/img/images/mainVisual_05.jpg) no-repeat center;
+    background: url(/img/images/mainVisual_05.jpg) no-repeat center/cover;
   }
 
   .section-title-field {
     width: 350px;
 
     &.field-section-01 {
-      top: 30% !important;
       display: flex;
       flex-direction: column;
       align-items: center;

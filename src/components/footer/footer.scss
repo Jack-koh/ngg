@@ -2,42 +2,57 @@
 /* CSS Document */
 
 /*###################### footer ##########################*/
-#footer {
-  width: 90%;
-  padding: 0 5%;
+#footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 5%;
   font-size: 12px;
   border-top: 1px solid #ffbf00;
   background-color: #fff;
   position: relative;
   z-index: 8;
+
+  #footer-copyright {
+    padding: 1.8rem;
+  }
+
+  #footer-logo {
+    width: 18rem;
+    height: 3.2rem;
+    margin-top: 1.2rem;
+    background: url(/img/logo.png) no-repeat;
+    background-size: 100%;
+    cursor: pointer;
+  }
 }
-#footer #copy {
-  width: 73%;
-  padding: 18px;
-  float: left;
-}
-#footer #footerLogo {
-  width: 180px;
-  margin-top: 12px;
-  float: right;
-}
+
 #footer #footerLogo img {
   width: 100%;
 }
 
 @media all and (min-width: 320px) and (max-width: 1025px) {
-  #footer {
+  #footer-wrapper {
     text-align: center;
+    #footer-copyright {
+      width: 90%;
+      padding: 18px;
+    }
+
+    #footer-logo {
+      width: 180px;
+    }
   }
-  #footer #copy {
-    width: 90%;
-    padding: 18px;
-    float: none;
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+  #footer-wrapper {
+    flex-direction: column;
+    align-items: center;
   }
-  #footer #footerLogo {
+
+  #footer-logo {
     width: 180px;
-    margin: 12px auto 0;
-    padding-bottom: 20px;
-    float: none;
+    margin: 0;
   }
 }

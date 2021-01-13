@@ -2,10 +2,10 @@ class Router {
   location: string;
   body: HTMLElement;
   page: HTMLElement | HTMLElement[] | null;
-  constructor(public routes: { [key: string]: () => HTMLElement | HTMLElement[] }) {
+  constructor(public routes: any) {
     this.body = document.querySelector('body')! as HTMLElement;
     this.page = null;
-    this.location = '/';
+    this.location = history.state?.pathname || '/';
     this.insertPageToDom();
 
     window.addEventListener('popstate', () => {
@@ -16,9 +16,9 @@ class Router {
   }
 
   insertPageToDom() {
-    const page = this.routes[this.location];
-    if (page) {
-      this.page = page();
+    const Page = this.routes[this.location];
+    if (Page) {
+      this.page = new Page().instance;
       this.excution('append');
     } else {
       this.page = null;

@@ -1,0 +1,43 @@
+/*태블릿pc:아이패드, 갤럿시탭*/
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .intro-section {
+    &#section-01 {
+      #animation-circle-wrapper {
+        width: 600px;
+        height: 600px;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 0) and (max-width: 767px) {
+  .intro-section {
+    height: 70rem;
+    .section-title-field {
+      width: 30rem !important;
+      .title {
+        font-size: 34px;
+      }
+    }
+
+    &#section-01 {
+      #animation-circle-wrapper {
+        width: 38rem;
+        height: 38rem;
+      }
+
+      #scroll-element-wrapper {
+        bottom: 4rem;
+        .scroll-animation-wrapper {
+          margin-top: -1rem;
+        }
+      }
+    }
+
+    &#section-03 {
+      .video-background {
+        width: 400px;
+      }
+    }
+  }
+}

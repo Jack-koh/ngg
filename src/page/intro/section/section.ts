@@ -2,6 +2,7 @@ import _ from 'utils/lodash';
 import { mainUrls } from 'utils/urlData';
 import EnterButton from '../button/button';
 import './section.scss';
+import './sectionRP.scss';
 
 class Section {
   sectionElement: HTMLElement;
@@ -28,6 +29,14 @@ class Section {
       utils.circleAnimation(this.sectionElement);
       utils.scrollAnimation(this.sectionElement);
     } else {
+      const inspection = new IntersectionObserver((entries, observer) => {
+        const entry = entries[0];
+        if (!entry.isIntersecting) return;
+        const { target } = entry;
+        entry.target.classList.add('show');
+        observer.unobserve(target);
+      });
+      inspection.observe(this.titleElement);
       const button = new EnterButton(mainUrls[data.index]).instance;
       this.titleElement.appendChild(button);
     }
@@ -62,7 +71,7 @@ const utils = {
       const bgboard = document.createElement('div');
       bgboard.classList.add('background-item');
       bgboard.style.opacity = index === 0 ? '1' : '0';
-      bgboard.style.backgroundImage = `url(/img/images/${bg}.jpg)`;
+      bgboard.style.background = `url(/img/images/${bg}.jpg) no-repeat center/cover`;
       bgElementsWrapper.appendChild(bgboard);
     });
     target.prepend(bgElementsWrapper);

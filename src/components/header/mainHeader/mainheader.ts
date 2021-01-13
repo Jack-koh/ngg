@@ -8,6 +8,7 @@ class Header {
   subNavigator: HTMLDivElement;
   mainNavigator: HTMLElement;
   pointer: HTMLDivElement;
+  infoButton: HTMLDivElement;
   constructor(public position?: string) {
     this.headerElement = document.createElement('header');
     this.headerElement.id = 'header-wrapper';
@@ -18,12 +19,17 @@ class Header {
     this.mainNavigator = navigator.instance;
     this.pointer = navigator.pointerInstance;
 
+    this.infoButton = document.createElement('div');
+    this.infoButton.id = 'info-button';
+    this.infoButton.innerHTML = `<img src='/img/ico_plus.png' alt='info-icon'/>`;
+
     this.headerElement.addEventListener('mouseover', this.mouseOverHandler.bind(this));
     this.headerElement.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
 
     this.headerElement.appendChild(new Logo().instance);
     this.headerElement.appendChild(this.mainNavigator);
     this.headerElement.appendChild(this.subNavigator);
+    this.headerElement.appendChild(this.infoButton);
   }
 
   private mouseOverHandler(e: MouseEvent) {
@@ -54,7 +60,6 @@ class Logo {
   constructor() {
     this.logoElement = document.createElement('h1');
     this.logoElement.id = 'logo';
-    this.logoElement.innerHTML = '<div id="logo-image"></div>';
     link(this.logoElement, { title: 'index-page', url: '/' });
   }
 
