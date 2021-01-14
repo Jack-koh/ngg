@@ -40,3 +40,9 @@ nav#navigator {
     }
   }
 }
+
+@media all and (min-width: 320px) and (max-width: 1024px) {
+  nav#navigator {
+    display: none;
+  }
+}

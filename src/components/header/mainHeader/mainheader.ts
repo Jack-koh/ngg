@@ -1,6 +1,9 @@
 import { link } from 'utils/commonFunc';
 import MainNavigator from './mainNavigator/mainNavigator';
 import SubNavigator from './subNavigator/subNavigator';
+import HeaderInfo from './headerInfo/headerInfo';
+
+import MobNavigator from './mobNavigator/mobNavigator';
 import './mainHeader.scss';
 
 class Header {
@@ -8,7 +11,6 @@ class Header {
   subNavigator: HTMLDivElement;
   mainNavigator: HTMLElement;
   pointer: HTMLDivElement;
-  infoButton: HTMLDivElement;
   constructor(public position?: string) {
     this.headerElement = document.createElement('header');
     this.headerElement.id = 'header-wrapper';
@@ -16,20 +18,21 @@ class Header {
 
     this.subNavigator = new SubNavigator().instance;
     const navigator = new MainNavigator();
+
     this.mainNavigator = navigator.instance;
     this.pointer = navigator.pointerInstance;
-
-    this.infoButton = document.createElement('div');
-    this.infoButton.id = 'info-button';
-    this.infoButton.innerHTML = `<img src='/img/ico_plus.png' alt='info-icon'/>`;
 
     this.headerElement.addEventListener('mouseover', this.mouseOverHandler.bind(this));
     this.headerElement.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
 
+    const headerInfo = new HeaderInfo().instance;
+
     this.headerElement.appendChild(new Logo().instance);
     this.headerElement.appendChild(this.mainNavigator);
     this.headerElement.appendChild(this.subNavigator);
-    this.headerElement.appendChild(this.infoButton);
+    this.headerElement.appendChild(headerInfo);
+
+    this.headerElement.appendChild(new MobNavigator().instance);
   }
 
   private mouseOverHandler(e: MouseEvent) {

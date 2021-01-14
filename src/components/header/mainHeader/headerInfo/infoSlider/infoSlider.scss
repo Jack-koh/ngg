@@ -1,0 +1,175 @@
+#info-slider {
+  position: absolute;
+  top: 8rem;
+  right: -64rem;
+  width: 64rem;
+  height: 100vh;
+  padding: 0 6.4rem;
+  border-top: 2px solid var(--brand);
+  background-color: #fff;
+  transition: right 0.4s ease-in-out;
+
+  #background-screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 8rem;
+    z-index: -100;
+    background-color: #000;
+    opacity: 0.8;
+  }
+
+  &.show {
+    right: 0;
+    #background-screen {
+      display: block;
+    }
+  }
+
+  #headline {
+    width: 100%;
+    text-transform: uppercase;
+    margin-top: 40px;
+
+    h3 {
+      font-size: 20px;
+      font-family: 'hind100';
+    }
+
+    p.text {
+      font-size: 1.6rem;
+    }
+  }
+
+  #expense {
+    width: 100%;
+    font-family: 'hind100';
+    margin-top: 40px;
+
+    h4 {
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+
+    p.text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  ul#finance-cost {
+    width: 100%;
+
+    li {
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+
+      p {
+        font-size: 14px;
+        width: 100%;
+
+        &.total {
+          font-family: 'hind700';
+          margin: 10px 0;
+        }
+
+        .right {
+          float: right;
+        }
+
+        span {
+          display: block;
+          float: left;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          clear: both;
+        }
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  #diagram {
+    width: 100%;
+    overflow: hidden;
+
+    div {
+      width: 50%;
+      float: left;
+
+      p.subject {
+        width: 100%;
+        font-size: 14px;
+        font-family: 'hind700';
+        text-transform: uppercase;
+        text-align: center;
+        margin: 30px 0 20px;
+      }
+
+      p.img {
+        max-width: 60%;
+        margin: 0 auto;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      ul {
+        margin-top: 20px;
+
+        li {
+          width: 79%;
+          margin: 10px auto 0;
+
+          &::after {
+            content: '';
+            display: block;
+            clear: both;
+          }
+
+          p {
+            width: 12px;
+            height: 12px;
+            background-color: #333;
+            border-radius: 6px;
+            float: left;
+          }
+
+          span {
+            display: block;
+            font-size: 14px;
+            line-height: 12px;
+            margin-left: 5px;
+            float: left;
+          }
+
+          &:first-child p {
+            background-color: #babbbb;
+          }
+          &:nth-child(2) p {
+            background-color: #fdd200;
+          }
+          &:nth-child(3) p {
+            background-color: #eaebeb;
+          }
+          &:nth-child(4) p {
+            background-color: #6e6d6d;
+          }
+          &:nth-child(5) p {
+            background-color: #231916;
+          }
+        }
+      }
+    }
+  }
+}

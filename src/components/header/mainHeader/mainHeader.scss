@@ -16,26 +16,6 @@
     background-size: 13rem;
     cursor: pointer;
   }
-
-  #info-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 4.5rem;
-    height: 100%;
-    background-color: var(--brand);
-    cursor: pointer;
-
-    img {
-      transition: transform 0.3s;
-    }
-
-    &:hover {
-      img {
-        transform: rotate(90deg);
-      }
-    }
-  }
 }
 
 @media all and (min-width: 320px) and (max-width: 1024px) {
@@ -45,20 +25,8 @@
       width: 18rem;
       background: url(/img/logo.png) no-repeat center/contain;
     }
-    #navigator {
-      display: none;
-    }
-    #info-button {
-      display: none;
-    }
   }
 }
-
-// #headerIn {
-//   width: 100%;
-//   height: 80px;
-//   background-color: #fff;
-// }
 
 // h1 {
 //   width: 130px;
@@ -486,156 +454,6 @@
 //   position: fixed;
 //   background-color: #000;
 //   z-index: 9;
-// }
-
-// /*######################## finance ############################*/
-// #financeInfo {
-//   width: 640px;
-//   height: 851px;
-//   background-color: #fff;
-//   color: #333;
-//   position: absolute;
-//   right: -640px;
-//   top: 80px;
-//   z-index: 10;
-//   border-top: 2px solid #ffbf00;
-//   border-bottom: 40px solid #111;
-//   transition: all 0.7s;
-// }
-// #financeInfo .line {
-//   width: 100%;
-//   height: 2px;
-//   background-color: #ffbf00;
-//   margin-top: 70px;
-// }
-// #financeIn {
-//   width: 80%;
-//   padding: 0 10%;
-// }
-
-// #headline {
-//   width: 100%;
-//   text-transform: uppercase;
-//   margin-top: 40px;
-// }
-// #headline h3 {
-//   font-size: 20px;
-//   font-family: 'hind100';
-// }
-
-// #expense {
-//   width: 100%;
-//   font-family: 'hind100';
-//   margin-top: 40px;
-// }
-// #expense h4 {
-//   font-size: 16px;
-//   text-transform: uppercase;
-// }
-// #expense p {
-//   font-size: 14px;
-//   line-height: 20px;
-// }
-
-// #finaceCost {
-//   width: 100%;
-// }
-
-// #financeCost li {
-//   width: 100%;
-//   border-bottom: 1px solid #ccc;
-//   padding: 10px 0;
-// }
-// #financeCost li:last-child {
-//   border: none;
-// }
-// #financeCost li p {
-//   font-size: 14px;
-//   width: 100%;
-// }
-// #financeCost li p:after {
-//   content: '';
-//   display: block;
-//   clear: both;
-// }
-// #financeCost li .total {
-//   font-family: 'hind700';
-//   margin: 10px 0;
-// }
-// #financeCost li p span {
-//   display: block;
-//   float: left;
-// }
-// #financeCost li p .right {
-//   float: right;
-// }
-
-// #diagram {
-//   width: 100%;
-//   overflow: hidden;
-// }
-// #diagram > div {
-//   width: 50%;
-//   float: left;
-// }
-// .subject {
-//   width: 100%;
-//   font-size: 14px;
-//   font-family: 'hind700';
-//   text-transform: uppercase;
-//   text-align: center;
-//   margin: 30px 0 20px;
-// }
-// #diagram .img {
-//   max-width: 60%;
-//   margin: 0 auto;
-// }
-// #diagram .img img {
-//   width: 100%;
-// }
-
-// #diagram ul {
-//   margin-top: 20px;
-// }
-// #diagram li {
-//   width: 79%;
-//   margin: 10px auto 0;
-// }
-// #diagram li:after {
-//   content: '';
-//   display: block;
-//   clear: both;
-// }
-// #diagram li p {
-//   width: 12px;
-//   height: 12px;
-//   background-color: #333;
-//   border-radius: 6px;
-//   float: left;
-// }
-
-// #diagram li:first-child p {
-//   background-color: #babbbb;
-// }
-// #diagram li:nth-child(2) p {
-//   background-color: #fdd200;
-// }
-// #diagram li:nth-child(3) p {
-//   background-color: #eaebeb;
-// }
-// #diagram li:nth-child(4) p {
-//   background-color: #6e6d6d;
-// }
-// #diagram li:nth-child(5) p {
-//   background-color: #231916;
-// }
-
-// #diagram li span {
-//   display: block;
-//   font-size: 14px;
-//   line-height: 12px;
-//   margin-left: 5px;
-//   float: left;
 // }
 
 // @media all and (min-width: 1025px) and (max-width: 1370px) {

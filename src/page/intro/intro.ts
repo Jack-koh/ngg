@@ -1,4 +1,5 @@
 import Header from 'components/header/mainHeader/mainheader';
+import Footer from 'components/footer/footer';
 import Section from './section/Section';
 import './intro.scss';
 class IntroPage {
@@ -50,15 +51,15 @@ class IntroPage {
           'Explore our current portfolio of initiatives, and get the latest updates from them below.',
       },
     ];
+
     this.sectionElement = sectionData.map((item) => new Section(item).instance);
-    this.sectionElement.forEach((section) => {
-      this.introWrapperElement.appendChild(section);
-    });
+    this.sectionElement.forEach((section) => this.introWrapperElement.appendChild(section));
   }
 
   get instance() {
     const header = new Header('sticky').instance;
-    return [header, this.introWrapperElement];
+    const footer = new Footer().instance;
+    return [header, this.introWrapperElement, footer];
   }
 }
 

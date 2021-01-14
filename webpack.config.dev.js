@@ -16,7 +16,6 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'public'),
     port: 3000,
     index: 'index.html',
-    hot: true,
     open: true,
     compress: true,
     historyApiFallback: true,

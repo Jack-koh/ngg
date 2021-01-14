@@ -1,0 +1,42 @@
+#mob-nav-slider {
+  position: absolute;
+  top: 0;
+  right: -48rem;
+  width: 48rem;
+  height: 100vh;
+  background-color: #ffffff;
+  transition: right 0.4s ease;
+
+  #mob-navigators {
+    padding-top: 20rem;
+    padding-left: 3rem;
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      .main-nav-item {
+        display: flex;
+        align-items: center;
+        width: 70%;
+        height: 7rem;
+        font-size: 2.6rem;
+        font-family: 'Aldrich';
+        color: #333;
+        cursor: pointer;
+      }
+
+      .toggle-btn {
+        width: 3.9rem;
+        height: 3.9rem;
+        margin-left: 2rem;
+        background: url(/img/all.jpg) no-repeat center;
+        transition: transform 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
