@@ -1,0 +1,26 @@
+#intro-page-wrapper {
+  position: relative;
+
+  #scroll-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4rem;
+    height: 32rem;
+    position: fixed;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-40%);
+
+    & > div {
+      background-size: 100% !important;
+      cursor: pointer;
+    }
+  }
+}
+
+@media all and (min-width: 0) and (max-width: 1024px) {
+  #scroll-button-wrapper {
+    display: none !important;
+  }
+}

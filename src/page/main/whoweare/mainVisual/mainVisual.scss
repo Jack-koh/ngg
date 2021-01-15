@@ -1,0 +1,154 @@
+#who-we-are-main-visual {
+  width: 100%;
+  height: 89.3rem;
+  background: url('/img/images/whoweareMain.jpg') no-repeat center/cover;
+
+  .main-visual-title-feld {
+    .description {
+      width: 60rem;
+    }
+  }
+
+  .sub-circle-nav {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    margin: 7rem auto 0;
+
+    .sub-nav-circle-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 18px;
+      border-radius: 41px;
+      font-family: 'hind100';
+      z-index: 10;
+
+      &:first-child {
+        left: 15rem;
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        right: 0;
+        top: 15rem;
+      }
+
+      &:nth-child(3) {
+        left: 15rem;
+        bottom: 0;
+      }
+
+      &:nth-child(4) {
+        left: 0;
+        top: 15rem;
+      }
+
+      &:hover {
+        .circle-wrapper {
+          .sub-nav {
+            top: -6.4rem;
+          }
+        }
+
+        .nav-title {
+          color: var(--brand);
+        }
+      }
+
+      .circle-wrapper {
+        position: relative;
+        width: 8rem;
+        height: 8rem;
+        border: 1px solid #ffbf00;
+        border-radius: 41px;
+        overflow: hidden;
+        cursor: pointer;
+        transform: scale(0);
+        animation: subMenu 0.5s 0.5s forwards;
+
+        .sub-nav {
+          position: absolute;
+          left: 50%;
+          top: 1.7rem;
+          transform: translateX(-50%);
+          display: flex;
+          justify-content: center;
+          transition: all 0.4s ease;
+          opacity: 0;
+          animation: opacity 2.5s 1s forwards;
+        }
+      }
+
+      .nav-title {
+        color: #eee;
+        font-weight: 600;
+        transform: translateY(1rem);
+        opacity: 0;
+        animation: opacity 2.5s 1s forwards;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@keyframes subMenu {
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes opacity {
+  100% {
+    opacity: 1;
+  }
+}
+
+@media all and (min-width: 0) and (max-width: 480px) {
+  #who-we-are-main-visual {
+    height: 60rem;
+    .main-visual-title-feld {
+      .title {
+        font-size: 2.6rem;
+      }
+
+      .description {
+        width: 100% !important;
+        padding: 0 1rem !important;
+      }
+    }
+
+    .sub-circle-nav {
+      width: 100% !important;
+      display: flex;
+      justify-content: space-around;
+      height: auto !important;
+      .sub-nav-circle-item {
+        position: static !important;
+
+        &:hover {
+          .circle-wrapper {
+            .sub-nav {
+              top: -6.8rem;
+            }
+          }
+        }
+
+        .circle-wrapper {
+          width: 7rem !important;
+          height: 7rem !important;
+
+          .sub-nav {
+            top: 1.2rem;
+          }
+        }
+      }
+
+      #line-motion {
+        display: none;
+      }
+    }
+  }
+}

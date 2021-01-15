@@ -54,6 +54,31 @@ class IntroPage {
 
     this.sectionElement = sectionData.map((item) => new Section(item).instance);
     this.sectionElement.forEach((section) => this.introWrapperElement.appendChild(section));
+
+    const sideScrollBtns = document.createElement('div');
+    sideScrollBtns.id = 'scroll-button-wrapper';
+    const scrollData = [
+      '/img/scrollbtn01.png',
+      '/img/scrollbtn02.png',
+      '/img/scrollbtn03.png',
+      '/img/scrollbtn04.png',
+      '/img/scrollbtn05.png',
+    ];
+
+    scrollData.forEach((scrollBtn, index) => {
+      const item = document.createElement('div');
+      item.style.background = `url(${scrollBtn}) no-repeat center`;
+      item.style.width = '40px';
+      item.style.height = '40px';
+      const sectionCollection = document.getElementsByClassName('intro-section');
+
+      item.addEventListener('click', () => {
+        const sectionItem = [...sectionCollection][index] as HTMLElement;
+        window.scrollTo({ left: 0, top: sectionItem.offsetTop + 80, behavior: 'smooth' });
+      });
+      sideScrollBtns.appendChild(item);
+    });
+    this.introWrapperElement.appendChild(sideScrollBtns);
   }
 
   get instance() {

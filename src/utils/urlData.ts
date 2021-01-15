@@ -7,23 +7,23 @@ export const mainUrls: { title: string; url: string }[] = [
 ];
 
 export const subUrls: { [key: string]: { title: string; url: string }[] } = {
-  whoweare: [
+  'WHO WE ARE': [
     { title: 'ABOUT US', url: '/whoweare/aboutus' },
     { title: 'HISTORY', url: '/whoweare/history' },
     { title: 'LEADERSHIP', url: '/whoweare/leadership' },
     { title: 'NEWS ROOM', url: '/whoweare/newsroom' },
   ],
-  explorer: [
+  EXPLORER: [
     { title: 'EXPLORERS', url: '/explorer/explorers' },
     { title: 'FIELD MAP', url: '/explorer/fieldmap' },
     { title: 'EXPLORER BLOG', url: '/explorer/explorerblog' },
   ],
-  exhibition: [
+  EXHIBITION: [
     { title: 'VISITOR PLAN', url: '/exhibition/visitorplan' },
     { title: 'EVENT', url: '/exhibition/event' },
     { title: 'EXHIBITION', url: '/exhibition/exhibition' },
   ],
-  project: [
+  PROJECT: [
     { title: 'BEYOND STONE', url: '/project/beyondstone' },
     { title: 'BIG CAT', url: '/project/bigcat' },
     { title: 'LAST WILD', url: '/project/lastwild' },

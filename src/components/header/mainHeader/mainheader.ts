@@ -25,14 +25,32 @@ class Header {
     this.headerElement.addEventListener('mouseover', this.mouseOverHandler.bind(this));
     this.headerElement.addEventListener('mouseleave', this.mouseLeaveHandler.bind(this));
 
-    const headerInfo = new HeaderInfo().instance;
-
     this.headerElement.appendChild(new Logo().instance);
     this.headerElement.appendChild(this.mainNavigator);
     this.headerElement.appendChild(this.subNavigator);
-    this.headerElement.appendChild(headerInfo);
 
-    this.headerElement.appendChild(new MobNavigator().instance);
+    if (window.innerWidth > 1024) {
+      this.headerElement.appendChild(new HeaderInfo().instance);
+    } else {
+      this.headerElement.appendChild(new MobNavigator().instance);
+    }
+
+    const resizeHandler = () => {
+      const mobNavigator = document.getElementById('mobile-navigator')!;
+      const headerInfo = document.getElementById('header-info')!;
+      if (window.innerWidth > 1024) {
+        if (this.headerElement.contains(mobNavigator)) this.headerElement.removeChild(mobNavigator);
+        if (!this.headerElement.contains(headerInfo)) {
+          this.headerElement.appendChild(new HeaderInfo().instance);
+        }
+      } else {
+        if (this.headerElement.contains(headerInfo)) this.headerElement.removeChild(headerInfo);
+        if (!this.headerElement.contains(mobNavigator)) {
+          this.headerElement.appendChild(new MobNavigator().instance);
+        }
+      }
+    };
+    window.addEventListener('resize', resizeHandler);
   }
 
   private mouseOverHandler(e: MouseEvent) {

@@ -1,0 +1,128 @@
+#line-motion {
+  width: 38rem;
+  height: 38rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 3.5rem;
+
+  .quarter {
+    width: 155px;
+    height: 155px;
+    float: left;
+    position: relative;
+
+    &#right-top {
+      transform: rotatez(90deg);
+    }
+
+    &#left-bottom {
+      transform: rotatez(270deg);
+      .line-wrap {
+        width: 80px;
+      }
+
+      .smallCircle {
+        transform: rotatez(-28deg);
+      }
+
+      .line {
+        transform: rotatez(63deg);
+      }
+    }
+
+    &#right-bottom {
+      transform: rotatez(180deg);
+
+      .smallCircle {
+        animation: circler1 1s 1.7s forwards;
+      }
+
+      .line {
+        animation: border1 1s 1.7s forwards;
+      }
+    }
+  }
+
+  .line-wrap {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+
+    .line {
+      width: 155px;
+      height: 155px;
+      border-left: 1px solid orange;
+      border-top: 1px solid orange;
+      border-top-left-radius: 100%;
+      transform-origin: right bottom;
+      transform: rotatez(70deg);
+      animation: border 1s 1.7s forwards;
+    }
+  }
+
+  .circle-wrap {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .small-circle {
+    width: 155px;
+    height: 155px;
+    transform-origin: right bottom;
+    transform: rotateZ(-21deg);
+    animation: circler 1s 1.7s forwards;
+
+    p {
+      width: 6px;
+      height: 6px;
+      border: 1px solid orange;
+      border-radius: 50%;
+      margin-top: -3px;
+      float: right;
+      transform: scale(0);
+      animation: circle 1s 1s forwards;
+    }
+  }
+}
+
+@keyframes circle {
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes circler1 {
+  100% {
+    transform: rotatez(-57deg);
+  }
+}
+
+@keyframes circler {
+  100% {
+    transform: rotatez(-66deg);
+  }
+}
+
+@keyframes border1 {
+  100% {
+    transform: rotatez(33deg);
+  }
+}
+
+@keyframes border {
+  100% {
+    transform: rotatez(24deg);
+  }
+}
+
+@keyframes opacity {
+  100% {
+    opacity: 1;
+  }
+}

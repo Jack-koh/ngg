@@ -7,34 +7,84 @@
   background-color: #ffffff;
   transition: right 0.4s ease;
 
+  @mixin sub-nav-field-height($height) {
+    &.show {
+      .sub-nav-field {
+        height: $height;
+      }
+    }
+  }
+
   #mob-navigators {
     padding-top: 20rem;
-    padding-left: 3rem;
 
     .nav-item {
-      display: flex;
-      align-items: center;
-      .main-nav-item {
-        display: flex;
-        align-items: center;
-        width: 70%;
-        height: 7rem;
-        font-size: 2.6rem;
-        font-family: 'Aldrich';
-        color: #333;
-        cursor: pointer;
+      &:first-child {
+        @include sub-nav-field-height(20rem);
       }
 
-      .toggle-btn {
-        width: 3.9rem;
-        height: 3.9rem;
-        margin-left: 2rem;
-        background: url(/img/all.jpg) no-repeat center;
-        transition: transform 0.3s;
-        cursor: pointer;
+      &:nth-child(2) {
+        @include sub-nav-field-height(15rem);
+      }
 
-        &:hover {
-          transform: rotate(90deg);
+      &:nth-child(3) {
+        @include sub-nav-field-height(15rem);
+      }
+
+      &:nth-child(4) {
+        @include sub-nav-field-height(25rem);
+      }
+
+      .main-nav-row {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        .main-nav-item {
+          display: flex;
+          align-items: center;
+          width: 70%;
+          height: 7rem;
+          padding-left: 3rem;
+          font-size: 2.6rem;
+          font-family: 'Aldrich';
+          color: #333;
+          cursor: pointer;
+        }
+
+        .toggle-btn {
+          width: 3.9rem;
+          height: 3.9rem;
+          margin-left: 2rem;
+          background: url(/img/all.jpg) no-repeat center;
+          transition: transform 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .sub-nav-field {
+        height: 0;
+        overflow: hidden;
+        font-size: 14px;
+        color: #ccc;
+        transition: all 0.3s;
+
+        .sub-nav-item {
+          display: flex;
+          align-items: center;
+          height: 5rem;
+          background-color: #333333;
+          padding-left: 11%;
+          cursor: pointer;
+          transition: all 0.1s;
+
+          &:hover {
+            color: var(--brand);
+            background-color: #3f3f3f;
+          }
         }
       }
     }

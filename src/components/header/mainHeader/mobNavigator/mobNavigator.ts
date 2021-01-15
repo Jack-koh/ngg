@@ -26,16 +26,7 @@ class MobNavigator {
     };
     this.navigatorButton.addEventListener('click', toggleHandler);
     this.mobileNavigator.appendChild(this.navigatorButton);
-
     this.mobileNavigator.appendChild(new Slider().instance);
-
-    const resizeHandler = () => {
-      if (window.innerWidth > 1024) {
-        this.mobileNavigator.classList.remove('show');
-        this.show = false;
-      }
-    };
-    window.addEventListener('resize', resizeHandler);
   }
 
   get instance() {
