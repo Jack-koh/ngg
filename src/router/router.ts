@@ -12,6 +12,8 @@ class Router {
       this.location = history.state?.pathname || '/';
       this.excution('remove');
       this.insertPageToDom();
+      window.scrollTo(0, 0);
+      console.log('cehck');
     });
   }
 

@@ -1,4 +1,4 @@
-#line-motion {
+#visual-line-motion {
   width: 38rem;
   height: 38rem;
   position: absolute;
@@ -6,23 +6,51 @@
   top: 0;
   padding: 3.5rem;
 
-  .quarter {
-    width: 155px;
-    height: 155px;
-    float: left;
-    position: relative;
-
-    &#right-top {
+  &.who-we-are-main-visual {
+    #right-top {
       transform: rotatez(90deg);
     }
+  }
+
+  &.explorer-main-visual,
+  &.exhibition-main-visual {
+    #top {
+      width: 31rem;
+
+      .line-wrap {
+        width: 100%;
+        .line {
+          width: 100%;
+          border-top-left-radius: 15.5rem;
+          border-top-right-radius: 15.5rem;
+          transform: rotatez(159deg);
+          transform-origin: center bottom;
+          animation: topBorder 1s 1.7s forwards;
+        }
+      }
+
+      .circle-wrap {
+        width: 100%;
+        .small-circle {
+          transform: rotatez(69deg);
+        }
+      }
+    }
+  }
+
+  .quarter {
+    width: 15.5rem;
+    height: 15.5rem;
+    float: left;
+    position: relative;
 
     &#left-bottom {
       transform: rotatez(270deg);
       .line-wrap {
-        width: 80px;
+        width: 8rem;
       }
 
-      .smallCircle {
+      .small-circle {
         transform: rotatez(-28deg);
       }
 
@@ -34,7 +62,7 @@
     &#right-bottom {
       transform: rotatez(180deg);
 
-      .smallCircle {
+      .small-circle {
         animation: circler1 1s 1.7s forwards;
       }
 
@@ -116,6 +144,12 @@
 }
 
 @keyframes border {
+  100% {
+    transform: rotatez(24deg);
+  }
+}
+
+@keyframes topBorder {
   100% {
     transform: rotatez(24deg);
   }

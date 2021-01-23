@@ -2,11 +2,10 @@ import './lineMotion.scss';
 
 class LineMotion {
   motionElement: HTMLElement;
-  constructor() {
+  constructor(id: string, lineData: string[]) {
     this.motionElement = document.createElement('div');
-    this.motionElement.id = 'line-motion';
-
-    const lineData = ['left-top', 'right-top', 'left-bottom', 'right-bottom'];
+    this.motionElement.id = 'visual-line-motion';
+    this.motionElement.classList.add(id);
 
     lineData.forEach((item) => {
       const lineItem = document.createElement('div');

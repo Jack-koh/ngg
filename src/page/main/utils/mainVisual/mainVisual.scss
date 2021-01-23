@@ -1,32 +1,10 @@
-#who-we-are-main-visual {
+.page-main-visual {
   width: 100%;
   height: 89.3rem;
-  background: url('/img/images/whoweareMain.jpg') no-repeat center/cover;
 
-  .main-visual-title-feld {
-    .description {
-      width: 60rem;
-    }
-  }
-
-  .sub-circle-nav {
-    position: relative;
-    width: 380px;
-    height: 380px;
-    margin: 7rem auto 0;
-
+  &#who-we-are-main-visual {
+    background: url('/img/images/whoweareMain.jpg') no-repeat center/cover;
     .sub-nav-circle-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: absolute;
-      font-size: 14px;
-      letter-spacing: 1px;
-      line-height: 18px;
-      border-radius: 41px;
-      font-family: 'hind100';
-      z-index: 10;
-
       &:first-child {
         left: 15rem;
         top: 0;
@@ -46,6 +24,78 @@
         left: 0;
         top: 15rem;
       }
+    }
+  }
+
+  &#explorer-main-visual {
+    background: url('/img/images/explorer.jpg') no-repeat center/cover;
+  }
+
+  &#exhibition-main-visual {
+    background: url('/img/images/exhibitionMain.jpg') no-repeat center/cover;
+  }
+
+  &#explorer-main-visual,
+  &#exhibition-main-visual {
+    .sub-nav-circle-item {
+      &:first-child {
+        right: 0;
+        top: 15rem;
+      }
+
+      &:nth-child(2) {
+        left: 15rem;
+        bottom: 0;
+      }
+
+      &:nth-child(3) {
+        left: 0;
+        top: 15rem;
+      }
+    }
+  }
+
+  .main-visual-title-feld {
+    .title {
+      padding: 0 4rem;
+      word-break: break-word;
+      text-align: center;
+    }
+    .description {
+      padding: 0 4rem;
+      max-width: 60rem;
+    }
+  }
+
+  .sub-circle-nav {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    margin: 7rem auto 0;
+
+    .circle-nav-description {
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      bottom: 56%;
+      transform: translateX(-50%);
+      font-size: 1.6rem;
+      color: #eee;
+      opacity: 0;
+      animation: desc 1.4s 2.4s forwards;
+    }
+
+    .sub-nav-circle-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 18px;
+      border-radius: 41px;
+      font-family: 'hind100';
+      z-index: 10;
 
       &:hover {
         .circle-wrapper {
@@ -100,15 +150,24 @@
     transform: scale(1);
   }
 }
+
 @keyframes opacity {
   100% {
     opacity: 1;
   }
 }
 
+@keyframes desc {
+  100% {
+    opacity: 1;
+    bottom: 60%;
+  }
+}
+
 @media all and (min-width: 0) and (max-width: 480px) {
-  #who-we-are-main-visual {
+  .page-main-visual {
     height: 60rem;
+
     .main-visual-title-feld {
       .title {
         font-size: 2.6rem;
@@ -125,6 +184,11 @@
       display: flex;
       justify-content: space-around;
       height: auto !important;
+
+      .circle-nav-description {
+        display: none;
+      }
+
       .sub-nav-circle-item {
         position: static !important;
 
@@ -146,7 +210,7 @@
         }
       }
 
-      #line-motion {
+      #visual-line-motion {
         display: none;
       }
     }

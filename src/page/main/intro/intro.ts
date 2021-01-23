@@ -74,7 +74,7 @@ class IntroPage {
 
       item.addEventListener('click', () => {
         const sectionItem = [...sectionCollection][index] as HTMLElement;
-        window.scrollTo({ left: 0, top: sectionItem.offsetTop + 80, behavior: 'smooth' });
+        window.scrollTo({ left: 0, top: sectionItem.offsetTop, behavior: 'smooth' });
       });
       sideScrollBtns.appendChild(item);
     });

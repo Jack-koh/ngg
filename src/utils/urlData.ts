@@ -6,7 +6,9 @@ export const mainUrls: { title: string; url: string }[] = [
   { title: 'IMPACT', url: '/impact' },
 ];
 
-export const subUrls: { [key: string]: { title: string; url: string }[] } = {
+export const subUrls: {
+  [key: string]: { title: string; url: string }[];
+} = {
   'WHO WE ARE': [
     { title: 'ABOUT US', url: '/whoweare/aboutus' },
     { title: 'HISTORY', url: '/whoweare/history' },
@@ -20,8 +22,8 @@ export const subUrls: { [key: string]: { title: string; url: string }[] } = {
   ],
   EXHIBITION: [
     { title: 'VISITOR PLAN', url: '/exhibition/visitorplan' },
-    { title: 'EVENT', url: '/exhibition/event' },
     { title: 'EXHIBITION', url: '/exhibition/exhibition' },
+    { title: 'EVENT', url: '/exhibition/event' },
   ],
   PROJECT: [
     { title: 'BEYOND STONE', url: '/project/beyondstone' },
