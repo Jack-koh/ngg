@@ -3,16 +3,17 @@ import './button.scss';
 
 class EnterButton {
   buttonElement: HTMLElement;
-  constructor(linkArgs: { url: string; title: string }) {
+  constructor(props: { url: { url: string; title: string }; text: string }) {
+    const { url, text } = props;
     this.buttonElement = document.createElement('div');
     this.buttonElement.classList.add('section-button-wrapper');
 
     this.buttonElement.innerHTML = `
-          ENTER
+          ${text}
           <div class="section-button-sliding-bar"></div>
           <div class="section-button-arrow"></div>
       `;
-    link(this.buttonElement, linkArgs);
+    link(this.buttonElement, url);
   }
 
   get instance() {

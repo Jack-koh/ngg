@@ -1,0 +1,32 @@
+#project-page {
+  display: flex;
+  .visaul-items {
+    width: 25%;
+    height: 88.9rem;
+    cursor: pointer;
+
+    @mixin background($url) {
+      background: $url no-repeat center/cover;
+    }
+
+    &#beyond-yellow-stone {
+      @include background(url(/img/images/project01.jpg));
+    }
+
+    &#big-cat {
+      @include background(url(/img/images/project02.jpg));
+    }
+
+    &#last-wild-place {
+      @include background(url(/img/images/project03.jpg));
+    }
+
+    &#year-of-the-bird {
+      @include background(url(/img/images/project04.jpg));
+    }
+
+    &#pristine-seas {
+      @include background(url(/img/images/project05.jpg));
+    }
+  }
+}

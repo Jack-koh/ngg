@@ -4,11 +4,11 @@ import CardNavigator from '../utils/cardNavigator/cardNavigator';
 import MainVisual from '../utils/mainVisual/mainVisual';
 
 class WhoWeAre {
-  whoWeAreWrapperElement: HTMLElement;
+  wrapperElement: HTMLElement;
   constructor() {
-    this.whoWeAreWrapperElement = document.createElement('div');
+    this.wrapperElement = document.createElement('div');
 
-    this.whoWeAreWrapperElement.id = 'who-we-are-page';
+    this.wrapperElement.id = 'who-we-are-page';
 
     const key = 'WHO WE ARE';
     const titleData = {
@@ -18,7 +18,7 @@ class WhoWeAre {
         'The National Geographic Society is a nonprofit scientific and educational organization that pushes the boundaries of exploration',
     };
 
-    this.whoWeAreWrapperElement.appendChild(
+    this.wrapperElement.appendChild(
       new MainVisual({
         key,
         id: 'who-we-are-main-visual',
@@ -32,7 +32,7 @@ class WhoWeAre {
       }).instance
     );
 
-    this.whoWeAreWrapperElement.appendChild(
+    this.wrapperElement.appendChild(
       new CardNavigator({
         key,
         id: 'who-we-are-card-navigator',
@@ -67,7 +67,7 @@ class WhoWeAre {
   get instance() {
     const header = new Header('sticky').instance;
     const footer = new Footer().instance;
-    return [header, this.whoWeAreWrapperElement, footer];
+    return [header, this.wrapperElement, footer];
   }
 }
 

@@ -4,10 +4,10 @@ import CardNavigator from '../utils/cardNavigator/cardNavigator';
 import MainVisual from '../utils/mainVisual/mainVisual';
 
 class Exhibition {
-  ExhibitionWrapperElement: HTMLElement;
+  wrapperElement: HTMLElement;
   constructor() {
-    this.ExhibitionWrapperElement = document.createElement('div');
-    this.ExhibitionWrapperElement.id = 'exhibition-page';
+    this.wrapperElement = document.createElement('div');
+    this.wrapperElement.id = 'exhibition-page';
 
     const key = 'EXHIBITION';
     const titleData = {
@@ -17,7 +17,7 @@ class Exhibition {
         'The National Geographic Society is a nonprofit scientific and educational organization that pushes the boundaries of exploration.',
     };
 
-    this.ExhibitionWrapperElement.appendChild(
+    this.wrapperElement.appendChild(
       new MainVisual({
         key,
         id: 'exhibition-main-visual',
@@ -30,7 +30,7 @@ class Exhibition {
         circleDesc: 'INSPIRING COMMUNITY OF EXPLORERS',
       }).instance
     );
-    this.ExhibitionWrapperElement.appendChild(
+    this.wrapperElement.appendChild(
       new CardNavigator({
         key,
         id: 'exhibition-card-navigator',
@@ -61,7 +61,7 @@ class Exhibition {
   get instance() {
     const header = new Header('sticky').instance;
     const footer = new Footer().instance;
-    return [header, this.ExhibitionWrapperElement, footer];
+    return [header, this.wrapperElement, footer];
   }
 }
 

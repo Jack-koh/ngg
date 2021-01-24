@@ -3,11 +3,14 @@ import Footer from 'components/footer/footer';
 import CardNavigator from '../utils/cardNavigator/cardNavigator';
 import MainVisual from '../utils/mainVisual/mainVisual';
 
-class Explorer {
-  ExplorerWrapperElement: HTMLElement;
+interface Explorer {
+  wrapperElement: HTMLElement;
+}
+
+class Explorer implements Explorer {
   constructor() {
-    this.ExplorerWrapperElement = document.createElement('div');
-    this.ExplorerWrapperElement.id = 'explorer-page';
+    this.wrapperElement = document.createElement('div');
+    this.wrapperElement.id = 'explorer-page';
 
     const key = 'EXPLORER';
     const titleData = {
@@ -17,7 +20,7 @@ class Explorer {
         'We fund and support groundbreaking scientists, conservationists, educators, and storytellers.',
     };
 
-    this.ExplorerWrapperElement.appendChild(
+    this.wrapperElement.appendChild(
       new MainVisual({
         key,
         id: 'explorer-main-visual',
@@ -30,7 +33,7 @@ class Explorer {
         circleDesc: 'MAKING AN IMPACT FOR THE PLANET',
       }).instance
     );
-    this.ExplorerWrapperElement.appendChild(
+    this.wrapperElement.appendChild(
       new CardNavigator({
         key,
         id: 'explorer-card-navigator',
@@ -60,7 +63,7 @@ class Explorer {
   get instance() {
     const header = new Header('sticky').instance;
     const footer = new Footer().instance;
-    return [header, this.ExplorerWrapperElement, footer];
+    return [header, this.wrapperElement, footer];
   }
 }
 
