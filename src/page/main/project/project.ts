@@ -5,13 +5,16 @@ import { subUrls } from 'utils/urlData';
 
 interface Project {
   wrapperElement: HTMLElement;
+  selected: string;
+  data: { id: string; title: string; desc: string }[];
 }
 class Project implements Project {
   constructor() {
     this.wrapperElement = document.createElement('div');
     this.wrapperElement.id = 'project-page';
+    this.selected = 'beyond-yellow-stone';
 
-    const data = [
+    this.data = [
       {
         id: 'beyond-yellow-stone',
         title: 'Beyond Yellowstone',
@@ -20,40 +23,58 @@ class Project implements Project {
       },
       {
         id: 'big-cat',
-        title: 'Beyond Yellowstone',
+        title: 'Big Cats Initiative',
         desc:
           'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
       {
         id: 'last-wild-place',
-        title: 'Beyond Yellowstone',
+        title: 'Last Wild Places',
         desc:
           'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
       {
         id: 'year-of-the-bird',
-        title: 'Beyond Yellowstone',
+        title: 'Year of the Bird',
         desc:
           'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
       {
         id: 'pristine-seas',
-        title: 'Beyond Yellowstone',
+        title: 'Pristine Seas',
         desc:
           'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
     ];
 
-    data.forEach((item, index) => {
-      const visuals = new ProjectVisual({ data: item, url: subUrls['PROJECT'][index] }).instance;
-      this.wrapperElement.appendChild(visuals);
-    });
+    this.renderVisuals(this.data);
   }
 
   get instance() {
     const header = new Header('sticky').instance;
     const footer = new Footer().instance;
     return [header, this.wrapperElement, footer];
+  }
+
+  setSelected() {
+    if (this.wrapperElement.classList.contains('selected')) {
+      this.wrapperElement.classList.remove('selected');
+    } else {
+      const selected = document.getElementsByClassName('visaul-items selected');
+      if (selected.length) selected[0].classList.remove('selected');
+      this.wrapperElement.classList.add('selected');
+    }
+  }
+
+  renderVisuals(data: { id: string; title: string; desc: string }[]) {
+    data.forEach((item, index) => {
+      const visuals = new ProjectVisual({
+        data: item,
+        url: subUrls['PROJECT'][index],
+        setSelected: this.setSelected,
+      }).instance;
+      this.wrapperElement.appendChild(visuals);
+    });
   }
 }
 
