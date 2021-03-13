@@ -29,7 +29,7 @@ class MainVisual implements MainVisual {
 
     subUrls[key].forEach((nav, index) => {
       const subNavItem = document.createElement('div');
-      link(subNavItem, { url: nav.url, title: nav.title });
+      link(subNavItem, nav.url);
       subNavItem.classList.add('sub-nav-circle-item');
       subNavItem.innerHTML = `
         <div class="circle-wrapper">
@@ -39,7 +39,6 @@ class MainVisual implements MainVisual {
         </div>
         <div class="nav-title">${data[index].text}</div>
       `;
-
       this.circleNav.appendChild(subNavItem);
     });
 
@@ -51,7 +50,6 @@ class MainVisual implements MainVisual {
     }
 
     this.circleNav.appendChild(new LineMotion(id, lineData).instance);
-
     this.mainVisual.appendChild(new VisualTitle(titleData).instance);
     this.mainVisual.appendChild(this.circleNav);
 

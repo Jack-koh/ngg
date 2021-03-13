@@ -150,6 +150,9 @@
   &.intro-section:not(#section-01) {
     .section-title-field {
       @include floating-title-field(60%);
+      .enter-button-wrapper {
+        margin-top: 6rem;
+      }
     }
     .section-title-field {
       opacity: 0;

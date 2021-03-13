@@ -70,7 +70,7 @@ class Project implements Project {
     data.forEach((item, index) => {
       const visuals = new ProjectVisual({
         data: item,
-        url: subUrls['PROJECT'][index],
+        urlData: subUrls['PROJECT'][index],
         setSelected: this.setSelected,
       }).instance;
       this.wrapperElement.appendChild(visuals);

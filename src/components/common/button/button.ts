@@ -3,10 +3,10 @@ import './button.scss';
 
 class EnterButton {
   buttonElement: HTMLElement;
-  constructor(props: { url: { url: string; title: string }; text: string }) {
+  constructor(props: { url: string; text: string }) {
     const { url, text } = props;
     this.buttonElement = document.createElement('div');
-    this.buttonElement.classList.add('section-button-wrapper');
+    this.buttonElement.classList.add('enter-button-wrapper');
 
     this.buttonElement.innerHTML = `
           ${text}

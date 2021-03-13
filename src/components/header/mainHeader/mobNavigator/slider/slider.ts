@@ -25,7 +25,7 @@ class Slider {
       const mainNavItem = document.createElement('div');
       mainNavItem.classList.add('main-nav-item');
       mainNavItem.textContent = nav.title;
-      link(mainNavItem, { url: nav.url, title: nav.title });
+      link(mainNavItem, nav.url);
 
       const toggleBtn = document.createElement('div');
       toggleBtn.classList.add('toggle-btn');
@@ -46,7 +46,7 @@ class Slider {
           const subNavItem = document.createElement('div');
           subNavItem.classList.add('sub-nav-item');
           subNavItem.textContent = subNav.title;
-          link(subNavItem, { url: subNav.url, title: subNav.title });
+          link(subNavItem, subNav.url);
           subNavField.appendChild(subNavItem);
         });
       }

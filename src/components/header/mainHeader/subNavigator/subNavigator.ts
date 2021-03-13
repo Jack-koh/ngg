@@ -22,7 +22,7 @@ class SubNavigator {
         const item = document.createElement('li');
         item.classList.add('column-item');
         item.textContent = nav.title;
-        link(item, { url: nav.url, title: nav.title });
+        link(item, nav.url);
         columnWrapper.appendChild(item);
       });
 

@@ -1,0 +1,172 @@
+#section3 {
+  width: 100%;
+  padding: 10rem 0;
+  overflow: hidden;
+  position: relative;
+  background-color: #f1f1f1;
+
+  #section3In {
+    width: 100%;
+    padding: 0 8%;
+
+    #historyVideo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      .yellowBar {
+        width: 889px;
+        height: 1px;
+        background-color: #ffbf00;
+      }
+
+      #videoFrame {
+        width: 50%;
+        #video {
+          width: 100%;
+
+          video {
+            width: 100%;
+          }
+        }
+      }
+
+      #textFrame {
+        width: 47%;
+        margin-left: 3%;
+        position: relative;
+
+        .enter-button-wrapper {
+          margin-top: 3rem;
+          color: #333;
+        }
+
+        .hr {
+          width: 300px;
+          height: 9px;
+          position: relative;
+          overflow: hidden;
+
+          span {
+            display: block;
+          }
+
+          .hrLine {
+            width: 230px;
+            height: 1px;
+            background-color: #333;
+            margin-top: 3px;
+
+            .innerCircle {
+              width: 7px;
+              height: 7px;
+              border: 1px solid #555;
+              border-radius: 20px;
+              position: absolute;
+              left: 0;
+              top: 0;
+              background-color: #eee;
+            }
+          }
+        }
+
+        .subtitle {
+          font-size: 1.6rem;
+          padding-left: 10px;
+          font-family: 'hind700';
+        }
+
+        .title {
+          display: block;
+          font-weight: normal;
+          font-size: 60px;
+          text-transform: uppercase;
+          font-family: 'Aldrich';
+          padding-top: 22px;
+          padding-bottom: 20px;
+        }
+
+        .yellowBarField {
+          width: 100%;
+          margin-bottom: 10px;
+
+          .yellowBar {
+            width: 100%;
+            height: 1px;
+            background-color: gold;
+          }
+        }
+
+        .desc {
+          font-size: 14px;
+          color: #555;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 1025px) and (max-width: 1370px) {
+  #section3 {
+    #section3In {
+      #historyVideo {
+        display: block;
+
+        #videoFrame {
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        #textFrame {
+          width: 80%;
+          margin: 0 auto;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 1024px) {
+  #section3 {
+    #section3In {
+      #historyVideo {
+        display: block;
+
+        #videoFrame {
+          width: 90%;
+          margin: 0 auto;
+        }
+
+        #textFrame {
+          width: 90%;
+          margin: 0 auto;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 0) and (max-width: 480px) {
+  #section3 {
+    #section3In {
+      #historyVideo {
+        display: block;
+
+        #videoFrame {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        #textFrame {
+          width: 100%;
+          margin: 0 auto;
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}

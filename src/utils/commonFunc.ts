@@ -1,10 +1,7 @@
-export const link = (
-  target: HTMLElement | HTMLDivElement,
-  args: { url: string; title: string }
-) => {
+export const link = (target: HTMLElement | HTMLDivElement, url: string) => {
   const pushStateHandler = () => {
-    const state = { pathname: args.url, previousPath: window.location.pathname };
-    history.pushState(state, args.title, args.url);
+    const state = { pathname: url, previousPath: window.location.pathname };
+    history.pushState(state, `ngg-${url}`, url);
     window.dispatchEvent(new Event('popstate'));
   };
   target.addEventListener('click', pushStateHandler);

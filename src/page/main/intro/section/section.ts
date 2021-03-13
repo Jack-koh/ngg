@@ -1,6 +1,6 @@
 import _ from 'utils/lodash';
 import { mainUrls } from 'utils/urlData';
-import EnterButton from '../../../../components/common/button/button';
+import EnterButton from 'components/common/button/button';
 import './section.scss';
 import './sectionRP.scss';
 
@@ -36,8 +36,9 @@ class Section {
         entry.target.classList.add('show');
         observer.unobserve(target);
       });
+
       inspection.observe(this.titleElement);
-      const button = new EnterButton({ url: mainUrls[data.index], text: 'ENTER' }).instance;
+      const button = new EnterButton({ url: mainUrls[data.index - 1].url, text: 'ENTER' }).instance;
       this.titleElement.appendChild(button);
     }
 

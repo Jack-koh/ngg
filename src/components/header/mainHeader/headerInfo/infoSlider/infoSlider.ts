@@ -54,7 +54,7 @@ class InfoSlider {
         <div>
           <p class="subject">2016 cash sources</p>
           <p class="img">
-            <img src="img/diagram01.jpg" alt="diagram01" />
+            <img src="/img/diagram01.jpg" alt="diagram01" />
           </p>
           <ul>
             <li>
@@ -82,7 +82,7 @@ class InfoSlider {
       <div>
         <p class="subject">2016 operationg</p>
         <p class="img">
-            <img src="img/diagram01.jpg" alt="diagram01" />
+            <img src="/img/diagram01.jpg" alt="diagram01" />
         </p>
         <ul>
             <li>

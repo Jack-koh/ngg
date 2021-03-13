@@ -16,7 +16,7 @@ class Footer {
 
     this.footerLogo = document.createElement('div');
     this.footerLogo.id = 'footer-logo';
-    link(this.footerLogo, { title: 'index-page', url: '/' });
+    link(this.footerLogo, '/');
 
     this.footerElement.appendChild(this.copyright);
     this.footerElement.appendChild(this.footerLogo);

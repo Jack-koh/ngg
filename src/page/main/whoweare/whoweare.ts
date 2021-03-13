@@ -7,9 +7,7 @@ class WhoWeAre {
   wrapperElement: HTMLElement;
   constructor() {
     this.wrapperElement = document.createElement('div');
-
     this.wrapperElement.id = 'who-we-are-page';
-
     const key = 'WHO WE ARE';
     const titleData = {
       subTitle: 'Working for a Planet in Balance',

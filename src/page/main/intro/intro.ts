@@ -71,7 +71,6 @@ class IntroPage {
       item.style.width = '40px';
       item.style.height = '40px';
       const sectionCollection = document.getElementsByClassName('intro-section');
-
       item.addEventListener('click', () => {
         const sectionItem = [...sectionCollection][index] as HTMLElement;
         window.scrollTo({ left: 0, top: sectionItem.offsetTop, behavior: 'smooth' });

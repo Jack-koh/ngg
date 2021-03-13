@@ -1,4 +1,4 @@
-import EnterButton from '../../../../components/common/button/button';
+import EnterButton from 'components/common/button/button';
 import './projectVisual.scss';
 
 interface ProjectVisual {
@@ -10,16 +10,16 @@ interface ProjectVisual {
 class ProjectVisual implements ProjectVisual {
   constructor(props: {
     data: { id: string; title: string; desc: string };
-    url: { url: string; title: string };
+    urlData: { url: string; title: string };
     setSelected: () => void;
   }) {
-    const { data, url, setSelected } = props;
+    const { data, urlData, setSelected } = props;
     this.wrapperElement = document.createElement('div');
     this.wrapperElement.id = data.id;
     this.wrapperElement.classList.add('visaul-items');
     this.wrapperElement.addEventListener('click', setSelected.bind(this));
 
-    const button = new EnterButton({ url, text: 'ENTER' }).instance;
+    const button = new EnterButton({ url: urlData.url, text: 'ENTER' }).instance;
     this.titleElement = document.createElement('div');
     this.titleElement.classList.add('visual-title-field');
     this.titleElement.innerHTML = `

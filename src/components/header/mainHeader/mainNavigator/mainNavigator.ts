@@ -26,7 +26,7 @@ class MainNavigator {
         const defaultWidth = this.ulElement.clientWidth / 5;
         this.mousePoniner.style.left = `${defaultWidth * index}px`;
       });
-      link(item, { url: nav.url, title: nav.title });
+      link(item, nav.url);
       return item;
     });
   }

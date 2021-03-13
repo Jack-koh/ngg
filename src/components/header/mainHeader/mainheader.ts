@@ -81,7 +81,7 @@ class Logo {
   constructor() {
     this.logoElement = document.createElement('h1');
     this.logoElement.id = 'logo';
-    link(this.logoElement, { title: 'index-page', url: '/' });
+    link(this.logoElement, '/');
   }
 
   get instance() {

@@ -17,12 +17,11 @@ class CardNavigator implements CardNavigator {
 
     subUrls[key].forEach((nav, index) => {
       const subNavItem = document.createElement('div');
-      link(subNavItem, { url: nav.url, title: nav.title });
+      link(subNavItem, nav.url);
       subNavItem.classList.add('sub-nav-card-item');
       subNavItem.innerHTML = `
           <div class="card-item" style="background-image: url(${data[index].img})">
             <div class="hover-color">
-
               <div class="top-move">
                 <div class="number-icon">
                   <p>
@@ -38,7 +37,6 @@ class CardNavigator implements CardNavigator {
               <p class="desc">
                 ${data[index].desc}
               </p>
-              
             </div>
           </div>
         `;
