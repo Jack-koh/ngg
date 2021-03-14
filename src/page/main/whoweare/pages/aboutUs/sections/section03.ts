@@ -12,8 +12,8 @@ class AboutUsSection03 {
             <div id="historyVideo">
               <div id="videoFrame">
                 <div id="video">
-                  <video controls poster="../../img/images/poster.jpg">
-                    <source src="../../video/videoplayback.mp4" type="video/mp4" />
+                  <video controls poster="/img/images/poster.jpg">
+                    <source src="/video/videoplayback.mp4" type="video/mp4" />
                   </video>
                 </div>
               </div>

@@ -13,7 +13,6 @@ class Router {
       this.excution('remove');
       this.insertPageToDom();
       window.scrollTo(0, 0);
-      console.log('cehck');
     });
   }
 

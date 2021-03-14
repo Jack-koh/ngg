@@ -1,0 +1,102 @@
+#siteWrap {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 4rem;
+
+  #siteLocationIn {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    padding: 0 4px 0 13px;
+
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 100%;
+      border-left: 1px solid #333;
+      border-right: 1px solid #333;
+
+      a {
+        line-height: 0;
+      }
+    }
+
+    dl {
+      @mixin open {
+        &.open {
+          dt {
+            background-color: #111;
+            border-bottom: 1px solid #333;
+            .img {
+              background-image: url('/img/subHeader/burgerBarOn.png');
+            }
+          }
+          dd {
+            display: block;
+          }
+        }
+      }
+      &#way1-container {
+        @include open;
+      }
+
+      &#way2-container {
+        @include open;
+      }
+      dt {
+        padding-left: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 18.5rem;
+        height: 4rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #aaa;
+        border-right: 1px solid #333;
+        cursor: pointer;
+        border-bottom: 1px solid #333;
+
+        .img {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 4rem;
+          height: 100%;
+          background: url('/img/subHeader/burgerBar.png') no-repeat;
+          background-position: center;
+        }
+      }
+
+      dd.sublocate {
+        background-color: #111;
+        display: none;
+        overflow: hidden;
+
+        & > div.nav-item {
+          width: 100%;
+          height: 4rem;
+          display: flex;
+          align-items: center;
+          padding-left: 1.5rem;
+          font-size: 1.1rem;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          color: #aaa;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #333;
+          }
+        }
+      }
+    }
+  }
+}
