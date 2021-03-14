@@ -48,15 +48,14 @@ class ContentHeader {
         `)
       );
     }).then(() => {
-      this.addLocations();
+      const mainTarget = document.getElementById('main-locate') as HTMLElement;
+      const subTarget = document.getElementById('sub-locate') as HTMLElement;
+      this.addLocations(mainTarget, subTarget);
       this.toggle();
     });
   }
 
-  addLocations() {
-    const mainTarget = document.getElementById('main-locate') as HTMLElement;
-    const subTarget = document.getElementById('sub-locate') as HTMLElement;
-
+  addLocations(mainTarget: HTMLElement, subTarget: HTMLElement) {
     mainUrls.forEach((nav) => {
       const item = document.createElement('div');
       item.classList.add('nav-item');
@@ -77,15 +76,40 @@ class ContentHeader {
   toggle() {
     const mainButton = <HTMLElement>document.getElementById('way1');
     const mainBtnContainer = <HTMLElement>document.getElementById('way1-container');
+    const mainHeight = mainButton.nextElementSibling! as HTMLElement;
+
     const subButton = <HTMLElement>document.getElementById('way2');
     const subBtnContainer = <HTMLElement>document.getElementById('way2-container');
+    const subHeight = subButton.nextElementSibling! as HTMLElement;
+    const resetSub = () => {
+      subHeight.style.height = '0px';
+      subBtnContainer.classList.remove('open');
+    };
+
+    const resetMain = () => {
+      mainHeight.style.height = '0px';
+      mainBtnContainer.classList.remove('open');
+    };
+
     mainButton.onclick = () => {
       mainBtnContainer.classList.toggle('open');
-      if (subBtnContainer.classList.contains('open')) subBtnContainer.classList.remove('open');
+      const isOpen = mainBtnContainer.classList.contains('open');
+      const subOpen = subBtnContainer.classList.contains('open');
+      let height = '0px';
+      isOpen ? (height = '200px') : (height = '0px');
+      mainHeight.style.height = height;
+      if (subOpen) resetSub();
     };
     subButton.onclick = () => {
       subBtnContainer.classList.toggle('open');
-      if (mainBtnContainer.classList.contains('open')) mainBtnContainer.classList.remove('open');
+
+      const isOpen = subBtnContainer.classList.contains('open');
+      const mainOpen = mainBtnContainer.classList.contains('open');
+      let height = '0px';
+      const adjustHeight = subUrls[this.path.main].length * 40;
+      isOpen ? (height = `${adjustHeight}px`) : (height = '0px');
+      subHeight.style.height = height;
+      if (mainOpen) resetMain();
     };
   }
 
