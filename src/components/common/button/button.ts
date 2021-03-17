@@ -3,7 +3,7 @@ import './button.scss';
 
 class EnterButton {
   buttonElement: HTMLElement;
-  constructor(props: { url: string; text: string }) {
+  constructor(props: { url?: string; text: string }) {
     const { url, text } = props;
     this.buttonElement = document.createElement('div');
     this.buttonElement.classList.add('enter-button-wrapper');
@@ -13,7 +13,7 @@ class EnterButton {
           <div class="section-button-sliding-bar"></div>
           <div class="section-button-arrow"></div>
       `;
-    link(this.buttonElement, url);
+    if (url) link(this.buttonElement, url);
   }
 
   get instance() {

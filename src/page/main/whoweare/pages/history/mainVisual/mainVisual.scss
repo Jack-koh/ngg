@@ -1,0 +1,43 @@
+#videoWrap {
+  width: 50%;
+  height: 849px;
+  position: relative;
+  overflow: hidden;
+
+  #history-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    .subtitle {
+      padding-left: 10px;
+      font-family: 'hind700';
+      font-size: 1.6rem;
+      color: #eee;
+    }
+    .title {
+      display: block;
+      font-weight: normal;
+      font-size: 100px;
+      font-family: 'Aldrich';
+      color: #eee;
+      text-transform: uppercase;
+      padding-top: 22px;
+      padding-bottom: 10px;
+    }
+    .desc {
+      font-family: 'hind100';
+      color: #ccc;
+      padding-bottom: 70px;
+
+      .orange {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

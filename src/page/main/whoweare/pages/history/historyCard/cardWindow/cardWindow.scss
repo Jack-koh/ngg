@@ -1,0 +1,65 @@
+#history-card-window {
+  display: flex;
+  overflow: auto;
+  height: 46rem;
+  margin-top: 1rem;
+
+  li {
+    position: relative;
+    flex-shrink: 0;
+    width: 260px;
+    height: 420px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &:hover {
+      .blackC {
+        opacity: 0.8;
+      }
+      .title {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+    .imgFrame {
+      width: 90%;
+      height: 90%;
+      margin: 20px auto;
+
+      img {
+        width: 100%;
+        transition: transform 0.5s;
+      }
+    }
+
+    .blackC {
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -10%);
+      color: #eee;
+      z-index: 2;
+      font-size: 20px;
+      text-align: center;
+      opacity: 0;
+      transition: all 1s;
+    }
+  }
+}

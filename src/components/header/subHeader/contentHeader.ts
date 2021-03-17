@@ -14,6 +14,7 @@ class ContentHeader {
       // URL DATA 의 타이을값으로 치환해줘야함
       if (locations[0] === 'whoweare') main = 'WHO WE ARE';
       if (locations[1] === 'aboutus') sub = 'ABOUT US';
+      if (locations[1] === 'history') sub = 'HISTORY';
       return { main, sub };
     })();
     this.wrapperElement = document.createElement('div');
