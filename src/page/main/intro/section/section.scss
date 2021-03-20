@@ -76,6 +76,25 @@
         height: 100%;
         opacity: 0;
         transition: opacity 4s;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &.mainVisual_011 {
+          background-image: url('/img/images/mainVisual_011.jpg');
+        }
+
+        &.mainVisual_012 {
+          background-image: url('/img/images/mainVisual_012.jpg');
+        }
+
+        &.mainVisual_013 {
+          background-image: url('/img/images/mainVisual_013.jpg');
+        }
+
+        &.mainVisual_014 {
+          background-image: url('/img/images/mainVisual_014.jpg');
+        }
       }
     }
 

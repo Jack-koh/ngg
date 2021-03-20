@@ -70,9 +70,8 @@ const utils = {
     bgElementsWrapper.id = 'section-01-bg-wrapper';
     backgrounds.forEach((bg, index) => {
       const bgboard = document.createElement('div');
-      bgboard.classList.add('background-item');
+      bgboard.classList.add('background-item', bg);
       bgboard.style.opacity = index === 0 ? '1' : '0';
-      bgboard.style.background = `url(/img/images/${bg}.jpg) no-repeat center/cover`;
       bgElementsWrapper.appendChild(bgboard);
     });
     target.prepend(bgElementsWrapper);

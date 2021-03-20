@@ -12,9 +12,26 @@
     top: 50%;
     transform: translateY(-40%);
 
-    & > div {
+    .scroll-button {
+      background-repeat: no-repeat;
+      background-position: center;
       background-size: 100% !important;
       cursor: pointer;
+      &.scrollbtn01 {
+        background-image: url('/img/scrollbtn01.png');
+      }
+      &.scrollbtn02 {
+        background-image: url('/img/scrollbtn02.png');
+      }
+      &.scrollbtn03 {
+        background-image: url('/img/scrollbtn03.png');
+      }
+      &.scrollbtn04 {
+        background-image: url('/img/scrollbtn04.png');
+      }
+      &.scrollbtn05 {
+        background-image: url('/img/scrollbtn05.png');
+      }
     }
   }
 }

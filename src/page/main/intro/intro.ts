@@ -57,17 +57,11 @@ class IntroPage {
 
     const sideScrollBtns = document.createElement('div');
     sideScrollBtns.id = 'scroll-button-wrapper';
-    const scrollData = [
-      '/img/scrollbtn01.png',
-      '/img/scrollbtn02.png',
-      '/img/scrollbtn03.png',
-      '/img/scrollbtn04.png',
-      '/img/scrollbtn05.png',
-    ];
+    const scrollData = ['scrollbtn01', 'scrollbtn02', 'scrollbtn03', 'scrollbtn04', 'scrollbtn05'];
 
     scrollData.forEach((scrollBtn, index) => {
       const item = document.createElement('div');
-      item.style.background = `url(${scrollBtn}) no-repeat center`;
+      item.classList.add('scroll-button', scrollBtn);
       item.style.width = '40px';
       item.style.height = '40px';
       const sectionCollection = document.getElementsByClassName('intro-section');
