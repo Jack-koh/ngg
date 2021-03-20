@@ -1,5 +1,13 @@
 import './cardHeader.scss';
-type cardData = { id: string; type: string; title: string; img: string }[];
+type cardData = {
+  id: string;
+  type: string;
+  title: string;
+  img: string;
+  year: string;
+  contentTitle: string;
+  desc: string;
+}[];
 
 class CardHeader {
   wrapperElement: HTMLElement;

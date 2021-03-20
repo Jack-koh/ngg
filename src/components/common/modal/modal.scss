@@ -1,0 +1,65 @@
+#modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  #modal-content-wrapper {
+    width: 80rem;
+    height: 50rem;
+    padding: 3rem 4rem;
+    background-color: #fff;
+    border-radius: 0.7rem;
+
+    #modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      #cancle-modal-button {
+        cursor: pointer;
+      }
+    }
+
+    #modal-content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+
+      #image-field {
+        width: 24rem;
+        height: 34rem;
+        overflow: hidden;
+      }
+
+      #modal-conetent-context {
+        width: 40rem;
+
+        .year {
+          font-size: 1.6rem;
+          font-weight: bold;
+          font-family: 'hind100';
+        }
+
+        .title {
+          font-size: 20px;
+          margin-top: 30px;
+          font-family: 'Aldrich';
+        }
+
+        .content {
+          font-size: 14px;
+          line-height: 22px;
+          font-family: 'hind100';
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
