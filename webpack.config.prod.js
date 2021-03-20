@@ -25,16 +25,19 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|mp4)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            // path: 파일 경로 폴더 생성, name: 파일이름, ext: 확장자 이름
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'images',
-            },
-          },
-        ],
+        test: /\.(png|jpg|mp4)$/,
+        include: [path.resolve(__dirname, './public/img')],
+        use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     // path: 파일 경로 폴더 생성, name: 파일이름, ext: 확장자 이름
+        //     options: {
+        //       name: '[name].[ext]',
+        //       outputPath: 'images',
+        //     },
+        //   },
+        // ],
       },
       {
         test: /\.css$/,
