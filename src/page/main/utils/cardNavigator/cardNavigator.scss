@@ -28,6 +28,46 @@
       background-repeat: no-repeat;
       background-position: center;
 
+      &.mainCateAbout {
+        background-image: url('/img/images/mainCateAbout.jpg');
+      }
+
+      &.mainCateHistory {
+        background-image: url('/img/images/mainCateHistory.jpg');
+      }
+
+      &.mainCateLeadership {
+        background-image: url('/img/images/mainCateLeadership.jpg');
+      }
+
+      &.mainCateNewroom {
+        background-image: url('/img/images/mainCateNewroom.jpg');
+      }
+
+      &.mainCateFindAnExplorer {
+        background-image: url('/img/images/mainCateFindAnExplorer.jpg');
+      }
+
+      &.mainCateFieldMap {
+        background-image: url('/img/images/mainCateFieldMap.jpg');
+      }
+
+      &.mainCateExplorerBlog {
+        background-image: url('/img/images/mainCateExplorerBlog.jpg');
+      }
+
+      &.mainCatePlan {
+        background-image: url('/img/images/mainCatePlan.jpg');
+      }
+
+      &.mainCateExhibition {
+        background-image: url('/img/images/mainCateExhibition.jpg');
+      }
+
+      &.mainCateEvent {
+        background-image: url('/img/images/mainCateEvent.jpg');
+      }
+
       &:hover {
         .hover-color {
           background-color: rgba(0, 0, 0, 0.5);

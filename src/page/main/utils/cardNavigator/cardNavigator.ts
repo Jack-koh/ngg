@@ -20,7 +20,7 @@ class CardNavigator implements CardNavigator {
       link(subNavItem, nav.url);
       subNavItem.classList.add('sub-nav-card-item');
       subNavItem.innerHTML = `
-          <div class="card-item" style="background-image: url(${data[index].img})">
+          <div class="card-item ${data[index].img}">
             <div class="hover-color">
               <div class="top-move">
                 <div class="number-icon">

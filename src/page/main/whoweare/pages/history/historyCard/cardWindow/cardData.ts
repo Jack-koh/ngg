@@ -3,7 +3,7 @@ const cardData = [
     id: 'no1',
     type: 'inn',
     title: 'OUR STORY<br/>BEGINS',
-    img: '/img/images/timeline/image01.jpg',
+    img: '/img/images/timeline/timelineImage01.jpg',
     year: '1885',
     contentTitle: 'OUR STORY BEGINS',
     desc:
@@ -13,7 +13,7 @@ const cardData = [
     id: 'no2',
     type: 'dis',
     title: 'REACHING FOR<br/>THE POLE',
-    img: '/img/images/timeline/image02.jpg',
+    img: '/img/images/timeline/timelineImage02.jpg',
     year: '1909',
     contentTitle: 'REACHING FOR THE POLE',
     desc:
@@ -23,7 +23,7 @@ const cardData = [
     id: 'no3',
     type: 'orga',
     title: 'A WORLD<br/>IN COLOR',
-    img: '/img/images/timeline/image03.jpg',
+    img: '/img/images/timeline/timelineImage03.jpg',
     year: '1914',
     contentTitle: 'A WORLD IN COLOR',
     desc:
@@ -33,7 +33,7 @@ const cardData = [
     id: 'no4',
     type: 'inn',
     title: 'CARLSBAD<br/>CAVERNS',
-    img: '/img/images/timeline/image04.jpg',
+    img: '/img/images/timeline/timelineImage04.jpg',
     year: '1924',
     contentTitle: 'CARLSBAD CAVERNS',
     desc:
@@ -43,7 +43,7 @@ const cardData = [
     id: 'no5',
     type: 'dis',
     title: 'OUR OCENAN<br/>IN COLOR',
-    img: '/img/images/timeline/image05.jpg',
+    img: '/img/images/timeline/timelineImage05.jpg',
     year: '1926',
     contentTitle: 'OUR OCEAN IN COLOR',
     desc:
@@ -53,7 +53,7 @@ const cardData = [
     id: 'no6',
     type: 'orga',
     title: 'OLMEC<br/>HEAD',
-    img: '/img/images/timeline/image06.jpg',
+    img: '/img/images/timeline/timelineImage06.jpg',
     year: '1938',
     contentTitle: 'OLMEC HEADS',
     desc:
@@ -63,7 +63,7 @@ const cardData = [
     id: 'no7',
     type: 'inn',
     title: 'WORLD WAR<br/>II',
-    img: '/img/images/timeline/image07.jpg',
+    img: '/img/images/timeline/timelineImage07.jpg',
     year: '1941',
     contentTitle: 'WORLD WAR II',
     desc:
@@ -73,7 +73,7 @@ const cardData = [
     id: 'no8',
     type: 'dis',
     title: 'UNDERWATER<br/>ARCHEAEOLOGY',
-    img: '/img/images/timeline/image08.jpg',
+    img: '/img/images/timeline/timelineImage08.jpg',
     year: '1961',
     contentTitle: 'UNDERWATER ARCHAEOLOGY',
     desc:
@@ -83,7 +83,7 @@ const cardData = [
     id: 'no9',
     type: 'orga',
     title: 'FIRST ORBITAL<br/>FLIGHT',
-    img: '/img/images/timeline/image09.jpg',
+    img: '/img/images/timeline/timelineImage09.jpg',
     year: '1962',
     contentTitle: 'FIRST ORBITAL FLIGHT',
     desc:
@@ -93,7 +93,7 @@ const cardData = [
     id: 'no10',
     type: 'inn',
     title: 'DIAN<br/>FOSSEY',
-    img: '/img/images/timeline/image10.jpg',
+    img: '/img/images/timeline/timelineImage10.jpg',
     year: '1967',
     contentTitle: 'DIAN FOSSEY',
     desc:
@@ -103,7 +103,7 @@ const cardData = [
     id: 'no11',
     type: 'orga',
     title: 'KID<br/>MAGAZINE',
-    img: '/img/images/timeline/image11.jpg',
+    img: '/img/images/timeline/timelineImage11.jpg',
     year: '1975',
     contentTitle: 'KIDS MAGAZINE',
     desc:
@@ -113,7 +113,7 @@ const cardData = [
     id: 'no12',
     type: 'dis',
     title: 'TRAILER<br/>MAGAZINE',
-    img: '/img/images/timeline/image12.jpg',
+    img: '/img/images/timeline/timelineImage12.jpg',
     year: '1984',
     contentTitle: 'TRAVELER MAGAZINE',
     desc:
@@ -123,7 +123,7 @@ const cardData = [
     id: 'no13',
     type: 'inn',
     title: 'SUSTAINABLE<br/>SEAS',
-    img: '/img/images/timeline/image13.jpg',
+    img: '/img/images/timeline/timelineImage13.jpg',
     year: '1999',
     contentTitle: 'SUSTAINABLE SEAS',
     desc:
@@ -133,7 +133,7 @@ const cardData = [
     id: 'no14',
     type: 'dis',
     title: 'MARCH OF<br/>THE PENGUIN',
-    img: '/img/images/timeline/image14.jpg',
+    img: '/img/images/timeline/timelineImage14.jpg',
     year: '2005',
     contentTitle: 'MARCH OF THE PENGUINS',
     desc:
@@ -143,7 +143,7 @@ const cardData = [
     id: 'no15',
     type: 'orga',
     title: 'BREAKTHROUGH<br/>FIND',
-    img: '/img/images/timeline/image15.jpg',
+    img: '/img/images/timeline/timelineImage15.jpg',
     year: '2010',
     contentTitle: 'BREAKTHROUGH FIND',
     desc:
@@ -153,7 +153,7 @@ const cardData = [
     id: 'no16',
     type: 'inn',
     title: 'JACQUES<br/>COUSTEAU',
-    img: '/img/images/timeline/image16.jpg',
+    img: '/img/images/timeline/timelineImage16.jpg',
     year: '2011',
     contentTitle: 'JACQUES COUSTEAU',
     desc:
@@ -163,7 +163,7 @@ const cardData = [
     id: 'no17',
     type: 'dis',
     title: 'PRISTINE<br/>SEAS',
-    img: '/img/images/timeline/image17.jpg',
+    img: '/img/images/timeline/timelineImage17.jpg',
     year: '2012',
     contentTitle: 'PRISTINE SEAS',
     desc:
@@ -173,7 +173,7 @@ const cardData = [
     id: 'no18',
     type: 'dis',
     title: 'HUBBARD<br/>MEDAL',
-    img: '/img/images/timeline/image18.jpg',
+    img: '/img/images/timeline/timelineImage18.jpg',
     year: '2013',
     contentTitle: 'HUBBARD MEDAL',
     desc:
@@ -183,7 +183,7 @@ const cardData = [
     id: 'no19',
     type: 'orga',
     title: 'MONARCH<br/>DISCOVERY',
-    img: '/img/images/timeline/image19.jpg',
+    img: '/img/images/timeline/timelineImage19.jpg',
     year: '2014',
     contentTitle: 'MONARCH DISCOVERY',
     desc:
@@ -193,7 +193,7 @@ const cardData = [
     id: 'no20',
     type: 'inn',
     title: 'OUR FIRST HQ',
-    img: '/img/images/timeline/image20.jpg',
+    img: '/img/images/timeline/timelineImage20.jpg',
     year: '2014',
     contentTitle: 'OUR FIRST HQ',
     desc:
@@ -203,7 +203,7 @@ const cardData = [
     id: 'no21',
     type: 'dis',
     title: 'ALEXANDER GRAHAM<br/>BELL',
-    img: '/img/images/timeline/image21.jpg',
+    img: '/img/images/timeline/timelineImage21.jpg',
     year: '2015',
     contentTitle: 'ALEXANDER GRAHAM BELL',
     desc:
@@ -213,7 +213,7 @@ const cardData = [
     id: 'no22',
     type: 'dis',
     title: 'BIG CATS<br/>INITIATIVE',
-    img: '/img/images/timeline/image22.jpg',
+    img: '/img/images/timeline/timelineImage22.jpg',
     year: '2016',
     contentTitle: 'BIG CATS INITIATIVE',
     desc:
@@ -223,7 +223,7 @@ const cardData = [
     id: 'no23',
     type: 'inn',
     title: 'THE DIGITAL<br/>DOMAIN',
-    img: '/img/images/timeline/image23.jpg',
+    img: '/img/images/timeline/timelineImage23.jpg',
     year: '2016',
     contentTitle: 'THE DIGITAL DOMAIN',
     desc:
@@ -233,7 +233,7 @@ const cardData = [
     id: 'no24',
     type: 'orga',
     title: 'NATIONAL<br/>GEOGRAPHIC<br/>BEE',
-    img: '/img/images/timeline/image24.jpg',
+    img: '/img/images/timeline/timelineImage24.jpg',
     year: '2016',
     contentTitle: 'NATIONAL GEOGRAPHIC BEE',
     desc:
@@ -243,7 +243,7 @@ const cardData = [
     id: 'no25',
     type: 'dis',
     title: 'PROTECTING<br/>THE OKAVANGO',
-    img: '/img/images/timeline/image25.jpg',
+    img: '/img/images/timeline/timelineImage25.jpg',
     year: '2017',
     contentTitle: 'PROTECTING THE OKAVANGO',
     desc:
@@ -253,7 +253,7 @@ const cardData = [
     id: 'no26',
     type: 'orga',
     title: 'EXPANDED<br/>PARTNERSHIP',
-    img: '/img/images/timeline/image26.jpg',
+    img: '/img/images/timeline/timelineImage26.jpg',
     year: '2017',
     contentTitle: 'EXPANDED PARTNERSHIP',
     desc:
@@ -263,7 +263,7 @@ const cardData = [
     id: 'no27',
     type: 'orga',
     title: 'SPACE<br/>ARCHEAOLOGY',
-    img: '/img/images/timeline/image27.jpg',
+    img: '/img/images/timeline/timelineImage27.jpg',
     year: '2018',
     contentTitle: 'SPACE ARCHAEOLOGY',
     desc:

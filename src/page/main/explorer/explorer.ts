@@ -39,18 +39,18 @@ class Explorer implements Explorer {
         id: 'explorer-card-navigator',
         data: [
           {
-            img: '/img/images/findAnExplorer.jpg',
+            img: 'mainCateFindAnExplorer',
             text: 'Find an explorer',
             desc:
               'For 130 years, we’ve founded groundbreaking scientists and explorers and shared.',
           },
           {
-            img: '/img/images/fieldMap.jpg',
+            img: 'mainCateFieldMap',
             text: 'Field map',
             desc: 'travel through 130 years of national geographic histry.',
           },
           {
-            img: '/img/images/explorerBLog.jpg',
+            img: 'mainCateExplorerBlog',
             text: 'blog',
             desc:
               'International Council of Advisors,and Education Foundation Board ensure optimal impact of our programs.',

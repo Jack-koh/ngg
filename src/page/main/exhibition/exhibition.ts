@@ -36,19 +36,19 @@ class Exhibition {
         id: 'exhibition-card-navigator',
         data: [
           {
-            img: '/img/images/plan.jpg',
+            img: 'mainCatePlan',
             text: 'Plan Your Visit',
             desc:
               'The National Geographic Museum hosts a variety of rotating exhibitions and programs year-round. To see what the museum is currently offering',
           },
           {
-            img: '/img/images/exhibition.jpg',
+            img: 'mainCateExhibition',
             text: 'Exhibition',
             desc:
               'The National Geographic Museum is great for all ages and features a wide range of changing exhibitions',
           },
           {
-            img: '/img/images/event.jpg',
+            img: 'mainCateEvent',
             text: 'Event',
             desc:
               'Get closer to the edge of your seat with National Geographic events in D.C.! Enjoy live talks with National Geographic explorers, happy hours, and more.',

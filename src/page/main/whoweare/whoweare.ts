@@ -36,24 +36,24 @@ class WhoWeAre {
         id: 'who-we-are-card-navigator',
         data: [
           {
-            img: '/img/images/about.jpg',
+            img: 'mainCateAbout',
             text: 'About us',
             desc:
               'For 130 years, we’ve founded groundbreaking scientists and explorers and shared.',
           },
           {
-            img: '/img/images/history.jpg',
+            img: 'mainCateHistory',
             text: 'History',
             desc: 'travel through 130 years of national geographic histry.',
           },
           {
-            img: '/img/images/leadership.jpg',
+            img: 'mainCateLeadership',
             text: 'Leadership',
             desc:
               'International Council of Advisors,and Education Foundation Board ensure optimal impact of our programs.',
           },
           {
-            img: '/img/images/newroom.jpg',
+            img: 'mainCateNewroom',
             text: 'News room',
             desc: 'National geographic- archive News, press, release.',
           },

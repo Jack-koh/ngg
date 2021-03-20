@@ -24,7 +24,7 @@ module.exports = {
         use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
       },
       {
-        test: /\.(png|jpg|mp4)$/,
+        test: /\.(png|jpg)$/,
         include: [path.resolve(__dirname, './public/img')],
         use: [{ loader: 'file-loader', options: { name: '[name].[ext]', outputPath: 'img' } }],
         // use: [
@@ -37,6 +37,11 @@ module.exports = {
         //     },
         //   },
         // ],
+      },
+      {
+        test: /\.(mp4)$/,
+        include: [path.resolve(__dirname, './public/video')],
+        use: [{ loader: 'file-loader', options: { name: '[name].[ext]', outputPath: 'img' } }],
       },
       {
         test: /\.css$/,
