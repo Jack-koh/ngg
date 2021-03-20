@@ -13,8 +13,29 @@ class ContentHeader {
       let sub = '서브';
       // URL DATA 의 타이을값으로 치환해줘야함
       if (locations[0] === 'whoweare') main = 'WHO WE ARE';
+      if (locations[0] === 'explorer') main = 'EXPLORER';
+      if (locations[0] === 'exhibition') main = 'EXHIBITION';
+      if (locations[0] === 'project') main = 'PROJECT';
+      if (locations[0] === 'impact') main = 'IMPACT';
+
       if (locations[1] === 'aboutus') sub = 'ABOUT US';
       if (locations[1] === 'history') sub = 'HISTORY';
+      if (locations[1] === 'leadership') sub = 'LEADER SHIP';
+      if (locations[1] === 'newsroom') sub = 'NEWS ROOM';
+
+      if (locations[1] === 'explorers') sub = 'EXPLORERS';
+      if (locations[1] === 'fieldmap') sub = 'FILED MAP';
+      if (locations[1] === 'explorerblog') sub = 'EXPLORER BLOG';
+
+      if (locations[1] === 'visitorplan') sub = 'VISITOR PLAN';
+      if (locations[1] === 'exhibition') sub = 'EXHIBITION';
+      if (locations[1] === 'event') sub = 'EVENT';
+
+      if (locations[1] === 'beyondstone') sub = 'BEYOND STONE';
+      if (locations[1] === 'bigcat') sub = 'BIG CAT';
+      if (locations[1] === 'lastwild') sub = 'LAST WILD';
+      if (locations[1] === 'yearofbird') sub = 'YEAR OF BIRD';
+      if (locations[1] === 'pristineseas') sub = 'PRISTINE SEAS';
       return { main, sub };
     })();
     this.wrapperElement = document.createElement('div');

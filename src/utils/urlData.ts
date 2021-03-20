@@ -12,7 +12,7 @@ export const subUrls: {
   'WHO WE ARE': [
     { title: 'ABOUT US', url: '/whoweare/aboutus' },
     { title: 'HISTORY', url: '/whoweare/history' },
-    { title: 'LEADERSHIP', url: '/whoweare/leadership' },
+    { title: 'LEADER SHIP', url: '/whoweare/leadership' },
     { title: 'NEWS ROOM', url: '/whoweare/newsroom' },
   ],
   EXPLORER: [

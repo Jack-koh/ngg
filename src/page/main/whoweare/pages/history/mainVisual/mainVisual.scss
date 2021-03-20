@@ -14,8 +14,37 @@
     transform: translate(-50%, -50%);
     z-index: 10;
 
+    .hr {
+      width: 100px;
+      height: 9px;
+      padding-left: 7px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+
+      .hrLine {
+        width: 200px;
+        height: 1px;
+        background-color: #eee;
+        margin-top: 3px;
+
+        .innerCircle {
+          width: 7px;
+          height: 7px;
+          border: 1px solid #eee;
+          border-radius: 20px;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+
+      span {
+        display: block;
+      }
+    }
+
     .subtitle {
-      padding-left: 10px;
       font-family: 'hind700';
       font-size: 1.6rem;
       color: #eee;
@@ -37,6 +66,25 @@
 
       .orange {
         font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 767px) {
+  #videoWrap {
+    #history-title {
+      .title {
+        font-size: 70px;
+      }
+    }
+  }
+}
+@media all and (min-width: 0) and (max-width: 480px) {
+  #videoWrap {
+    #history-title {
+      .title {
+        font-size: 50px;
       }
     }
   }
