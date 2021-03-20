@@ -47,7 +47,7 @@ class ContentHeader {
             <div id="siteLocationIn">
                 <div id="home" class="lac">
                     <a href="/" title="home">
-                        <img src="/img/subHeader/home.png" alt="homeBtn" />
+                        <img src="/img/home.png" alt="homeBtn" />
                     </a>
                 </div>
                 <dl id="way1-container">
