@@ -25,9 +25,8 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|mp4)$/,
-        test: /\.(png|jpg|mp4)$/,
         include: [path.resolve(__dirname, './public/img')],
-        use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
+        use: [{ loader: 'file-loader', options: { name: '[name].[ext]', outputPath: 'images' } }],
         // use: [
         //   {
         //     loader: 'file-loader',
