@@ -12,7 +12,7 @@ class AboutUsSection03 {
             <div id="historyVideo">
               <div id="videoFrame">
                 <div id="video">
-                  <video controls poster="/img/images/posterVideoIntro.jpg">
+                  <video controls poster="/img/posterVideoIntro.jpg">
                     <source src="/video/videoplayback.mp4" type="video/mp4" />
                   </video>
                 </div>

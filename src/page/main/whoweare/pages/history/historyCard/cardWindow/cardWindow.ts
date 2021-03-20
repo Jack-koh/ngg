@@ -19,7 +19,7 @@ class CardWindow {
     data.forEach((item) => {
       const li = document.createElement('li');
       li.innerHTML = `
-        <p class="imgFrame"><img src="${item.img}" alt="image06" alt="${item.id}"/></p>
+        <div class="imgFrame"><div class="img ${item.img}"/></div>
         <p class="blackC" />
         <p class="title">${item.title}</p>
       `;

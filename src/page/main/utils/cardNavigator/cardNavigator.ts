@@ -25,7 +25,7 @@ class CardNavigator implements CardNavigator {
               <div class="top-move">
                 <div class="number-icon">
                   <p>
-                    <img src="/img/images/cateIcon.png" alt="number-icon"/>
+                    <img src="/img/cateIcon.png" alt="number-icon"/>
                   </p>
                   <p class="number">${index + 1}</p>
                 </div>
