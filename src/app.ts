@@ -2,7 +2,8 @@ import Router from './router/router';
 import IntroPage from 'page/main/intro/intro';
 import WhoWeArePage from 'page/main/whoweare/whoweare';
 import AboutUsPage from 'page/main/whoweare/pages/aboutUs/aboutUs';
-import LeadershipPage from 'page/main/whoweare/pages/readership/leaderShip';
+import LeadershipPage from 'page/main/whoweare/pages/leadership/leaderShip';
+import LeaderPage from 'page/main/whoweare/pages/leaders/leaderDetail';
 import HistoryPage from 'page/main/whoweare/pages/history/history';
 
 import Explorer from 'page/main/explorer/explorer';
@@ -20,6 +21,7 @@ class App {
       '/whoweare/aboutus': AboutUsPage,
       '/whoweare/history': HistoryPage,
       '/whoweare/leadership': LeadershipPage,
+      '/whoweare/leadership/leaders': LeaderPage,
       '/whoweare/newsroom': AboutUsPage,
       '/explorer': Explorer,
       '/explorer/explorers': AboutUsPage,

@@ -5,4 +5,4 @@ window.onbeforeunload = function () {
 };
 
 const app = new App();
-app.render();
+window.addEventListener('DOMContentLoaded', app.render);

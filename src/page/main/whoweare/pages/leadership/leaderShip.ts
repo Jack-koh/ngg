@@ -1,8 +1,8 @@
 import Header from 'components/header/mainHeader/mainheader';
 import Footer from 'components/footer/footer';
+import SubHeader from 'components/header/subHeader/contentHeader';
 import Section01 from './sections/section01';
 import Leaders from './sections/leaders';
-import SubHeader from 'components/header/subHeader/contentHeader';
 import './leaderShip.scss';
 
 class LeaderShip {

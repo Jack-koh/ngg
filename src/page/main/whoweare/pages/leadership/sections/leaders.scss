@@ -1,0 +1,148 @@
+#about-us-readers-wrapper {
+  padding: 40px 0;
+  border-top: 1px solid #ffbf00;
+  #title {
+    width: 100%;
+    text-align: center;
+    .subtitle {
+      font-family: 'hind700';
+      margin: 0 auto;
+      font-size: 1.6rem;
+    }
+
+    .hr {
+      width: 200px;
+      height: 9px;
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+      .hrLine {
+        display: block;
+        width: 200px;
+        height: 1px;
+        background-color: #333;
+        margin-top: 3px;
+        .innerCircle {
+          display: block;
+          width: 0.7rem;
+          height: 0.7rem;
+          border: 1px solid #555;
+          border-radius: 20px;
+          position: absolute;
+          left: 100px;
+          top: 0;
+          background-color: #fff;
+        }
+      }
+    }
+
+    .title {
+      display: block;
+      font-weight: normal;
+      font-size: 40px;
+      font-family: 'Aldrich';
+      text-transform: uppercase;
+      padding-top: 22px;
+      padding-bottom: 30px;
+      margin: 0 auto;
+    }
+  }
+
+  .list-wrapper {
+    width: 100%;
+    #leaders-list {
+      max-width: 1244px;
+      padding: 12px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, max(0.25fr));
+      grid-gap: 1.6rem;
+      li {
+        .leaderBox {
+          width: 100%;
+          overflow: hidden;
+          .imgArea {
+            cursor: pointer;
+            width: 100%;
+            height: calc(100% - 50px);
+            .image-content {
+              position: relative;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .image-content:hover {
+              .colorOver {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                opacity: 0.3;
+                transition: all 0.3s;
+              }
+            }
+          }
+
+          .textArea {
+            width: 100%;
+            height: 50px;
+            padding-top: 6px;
+            padding-left: 4%;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            .exName {
+              height: 18px;
+              color: #111;
+              font-size: 14px;
+            }
+
+            .research {
+              height: 10px;
+              color: #aaa;
+              font-size: 12px;
+              font-family: 'hind100';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // @mixin media_grid($max) {
+  //   .leaders-list {
+  //     grid-template-columns: repeat(auto-fit, minmax(14.9rem, $max)) !important;
+  //   }
+  // }
+
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    #leaders-list {
+      grid-template-columns: repeat(3, max(0.33fr)) !important;
+    }
+  }
+
+  @media screen and (min-width: 400px) and (max-width: 768px) {
+    #leaders-list {
+      grid-template-columns: repeat(2, max(0.5fr)) !important;
+    }
+  }
+
+  // @media screen and (min-width: 618px) and (max-width: 782px) {
+  //   @include media_grid(0.5fr);
+  // }
+
+  // @media screen and (max-width: 617px) {
+  //   @include media_grid(1fr);
+  // }
+}
