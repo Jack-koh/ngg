@@ -35,6 +35,8 @@
 }
 
 html {
+  width: 100%;
+  height: 100%;
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -48,6 +50,8 @@ input {
 }
 
 body {
+  width: 100%;
+  height: 100%;
   font-family: 'hind400', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

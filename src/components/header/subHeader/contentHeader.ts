@@ -6,7 +6,7 @@ class ContentHeader {
   wrapperElement: HTMLElement;
   path: { main: string; sub: string };
   constructor() {
-    const locations = history.state.pathname.split('/');
+    const locations = history.state?.pathname?.split('/') ?? [];
     locations.shift();
     this.path = (() => {
       let main = '메인';
@@ -72,8 +72,10 @@ class ContentHeader {
     }).then(() => {
       const mainTarget = document.getElementById('main-locate') as HTMLElement;
       const subTarget = document.getElementById('sub-locate') as HTMLElement;
-      this.addLocations(mainTarget, subTarget);
-      this.toggle();
+      if (mainTarget && subTarget) {
+        this.addLocations(mainTarget, subTarget);
+        this.toggle();
+      }
     });
   }
 
