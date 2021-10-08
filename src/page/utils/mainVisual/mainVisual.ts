@@ -1,8 +1,8 @@
-import VisualTitle from 'page/main/utils/visualTitle/visualTitle';
-import LineMotion from './lineMotion/lineMotion';
-import { link } from 'utils/commonFunc';
-import { subUrls } from 'utils/urlData';
-import './mainVisual.scss';
+import VisualTitle from "page/utils/visualTitle/visualTitle";
+import LineMotion from "./lineMotion/lineMotion";
+import { link } from "utils/commonFunc";
+import { subUrls } from "utils/urlData";
+import "./mainVisual.scss";
 
 interface MainVisual {
   mainVisual: HTMLElement;
@@ -21,16 +21,16 @@ class MainVisual implements MainVisual {
     }
   ) {
     const { key, id, titleData, data, circleDesc } = props;
-    this.mainVisual = document.createElement('div');
+    this.mainVisual = document.createElement("div");
     this.mainVisual.id = id;
-    this.mainVisual.classList.add('page-main-visual');
-    this.circleNav = document.createElement('div');
-    this.circleNav.classList.add('sub-circle-nav');
+    this.mainVisual.classList.add("page-main-visual");
+    this.circleNav = document.createElement("div");
+    this.circleNav.classList.add("sub-circle-nav");
 
     subUrls[key].forEach((nav, index) => {
-      const subNavItem = document.createElement('div');
+      const subNavItem = document.createElement("div");
       link(subNavItem, nav.url);
-      subNavItem.classList.add('sub-nav-circle-item');
+      subNavItem.classList.add("sub-nav-circle-item");
       subNavItem.innerHTML = `
         <div class="circle-wrapper">
           <div class="sub-nav">
@@ -42,11 +42,11 @@ class MainVisual implements MainVisual {
       this.circleNav.appendChild(subNavItem);
     });
 
-    let lineData = ['left-bottom', 'right-bottom'];
-    if (key === 'WHO WE ARE') {
-      lineData = ['left-top', 'right-top', ...lineData];
+    let lineData = ["left-bottom", "right-bottom"];
+    if (key === "WHO WE ARE") {
+      lineData = ["left-top", "right-top", ...lineData];
     } else {
-      lineData = ['top', ...lineData];
+      lineData = ["top", ...lineData];
     }
 
     this.circleNav.appendChild(new LineMotion(id, lineData).instance);
@@ -54,8 +54,8 @@ class MainVisual implements MainVisual {
     this.mainVisual.appendChild(this.circleNav);
 
     if (circleDesc) {
-      this.circleNavDesc = document.createElement('div');
-      this.circleNavDesc.classList.add('circle-nav-description');
+      this.circleNavDesc = document.createElement("div");
+      this.circleNavDesc.classList.add("circle-nav-description");
       this.circleNavDesc.textContent = circleDesc;
       this.circleNav.appendChild(this.circleNavDesc);
     }

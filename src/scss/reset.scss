@@ -1,4 +1,4 @@
-@import './fonts.scss';
+@import "./fonts.scss";
 
 :root {
   --brand: #ffbf00;
@@ -43,8 +43,9 @@ html {
 
 input {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,7 +53,7 @@ input {
 body {
   width: 100%;
   height: 100%;
-  font-family: 'hind400', sans-serif;
+  font-family: "hind400", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -72,6 +73,11 @@ a:focus {
   text-decoration: none;
 }
 
+#app {
+  width: 100%;
+  height: 100%;
+}
+
 .orange {
   color: #ffbf00;
 }
@@ -80,7 +86,7 @@ a:focus {
   width: 170px;
   height: 24px;
   letter-spacing: 5px;
-  font-family: 'hind700';
+  font-family: "hind700";
   position: relative;
   overflow: hidden;
 }

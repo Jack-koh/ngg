@@ -1,21 +1,20 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: './src/index.ts',
+    index: "./src/index.ts",
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "./dist"),
+    publicPath: "/",
   },
-  mode: 'development',
+  mode: "development",
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
-    port: 3000,
-    index: 'index.html',
+    contentBase: path.resolve(__dirname, "public"),
+    index: "index.html",
     open: true,
     compress: true,
     historyApiFallback: true,
@@ -24,73 +23,76 @@ module.exports = {
     rules: [
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        include: [path.resolve(__dirname, './public/font')],
-        use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
+        include: [path.resolve(__dirname, "./public/font")],
+        use: [{ loader: "file-loader", options: { name: "[name].[ext]" } }],
       },
       {
         test: /\.(png|jpg|mp4)$/,
-        include: [path.resolve(__dirname, './public/img')],
-        use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
+        include: [path.resolve(__dirname, "./public/img")],
+        use: [{ loader: "file-loader", options: { name: "[name].[ext]" } }],
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
-          'css-loader',
+          "style-loader",
+          "css-loader",
           {
-            loader: 'resolve-url-loader',
+            loader: "resolve-url-loader",
             options: {
               debug: true,
-              root: path.join(__dirname, './public'),
+              root: path.join(__dirname, "./public"),
               absolute: true,
             },
           },
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: { sourceMap: true },
           },
         ],
       },
       {
         test: /\.ts?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/env'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
+            presets: ["@babel/env"],
+            plugins: ["@babel/plugin-proposal-class-properties"],
           },
         },
       },
       {
         test: /\.hbs$/,
-        use: ['handlebars-loader'],
+        use: ["handlebars-loader"],
       },
     ],
   },
   resolve: {
-    modules: [path.resolve(__dirname, './src'), 'node_modules'],
-    extensions: ['.js', '.ts'],
+    modules: [path.resolve(__dirname, "./src"), "node_modules"],
+    extensions: [".js", ".ts"],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      chunks: ['index'],
-      title: 'National geographic',
-      template: 'src/index.hbs',
-      description: 'National geographic',
+      filename: "index.html",
+      chunks: ["index"],
+      title: "National geographic",
+      template: "src/index.hbs",
+      description: "National geographic",
     }),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['**/*', path.join(process.cwd(), 'build/**/*')],
+      cleanOnceBeforeBuildPatterns: [
+        "**/*",
+        path.join(process.cwd(), "build/**/*"),
+      ],
     }),
   ],
 };
