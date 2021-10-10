@@ -1,4 +1,4 @@
-import Header from 'components/header/mainHeader/mainheader';
+import Header from 'components/header/mainHeader/Header';
 import Footer from 'components/footer/footer';
 import ProjectVisual from './projectVisual/projectVisual';
 import { subUrls } from 'utils/urlData';
@@ -51,9 +51,7 @@ class Project implements Project {
   }
 
   get instance() {
-    const header = new Header('sticky').instance;
-    const footer = new Footer().instance;
-    return [header, this.wrapperElement, footer];
+    return [this.wrapperElement];
   }
 
   setSelected() {

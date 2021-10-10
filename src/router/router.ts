@@ -1,16 +1,17 @@
-import IntroPage from "page/intro/intro";
-import WhoWeArePage from "page/whoweare/whoweare";
-import AboutUsPage from "page/whoweare/pages/aboutUs/aboutUs";
-import LeadershipPage from "page/whoweare/pages/leadership/leaderShip";
-import LeaderPage from "page/whoweare/pages/leaders/leaderDetail";
-import HistoryPage from "page/whoweare/pages/history/history";
+import IntroPage from 'page/intro/intro';
+import WhoWeArePage from 'page/whoweare/whoweare';
+import AboutUsPage from 'page/whoweare/pages/aboutUs/aboutUs';
+import LeadershipPage from 'page/whoweare/pages/leadership/leaderShip';
+import LeaderPage from 'page/whoweare/pages/leaders/leaderDetail';
+import HistoryPage from 'page/whoweare/pages/history/history';
 
-import Explorer from "page/explorer/explorer";
-import Exhibition from "page/exhibition/exhibition";
-import Project from "page/project/project";
+import Explorer from 'page/explorer/explorer';
+import Exhibition from 'page/exhibition/exhibition';
+import Project from 'page/project/project';
+import Footer from 'components/footer/footer';
 
 const routes = [
-  { path: "/", view: IntroPage },
+  { path: '/', view: IntroPage },
   // { path: "/whoweare", view: WhoWeArePage },
   // { path: "/whoweare/aboutus", view: AboutUsPage },
   // { path: "/whoweare/history", view: HistoryPage },
@@ -37,10 +38,10 @@ export default class Router {
   body: HTMLElement;
 
   constructor() {
-    this.body = document.querySelector("body")! as HTMLElement;
+    this.body = document.querySelector('body')! as HTMLElement;
     // this.location = history.state?.pathname || '/';
 
-    window.addEventListener("popstate", () => {
+    window.addEventListener('popstate', () => {
       // this.location = history.state?.pathname || '/';
       // this.excution("remove");
     });
@@ -71,8 +72,8 @@ export default class Router {
     let match = data.find((pm) => pm.result !== null);
     if (!match) match = { route: routes[0], result: [location.pathname] };
     const view = new match.route.view(params(match));
-    const app = document.querySelector("#app");
-    if (app) app.innerHTML = view.getHtml();
+    const app = document.querySelector('#app');
+    if (app) view.render(app, view.getHtml());
   }
 
   // excution(type: "append" | "remove") {

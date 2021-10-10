@@ -1,30 +1,26 @@
 import { link } from 'utils/commonFunc';
+import View from 'page/View';
 import 'components/footer/footer.scss';
 
-class Footer {
-  footerElement: HTMLElement;
-  copyright: HTMLElement;
-  footerLogo: HTMLElement;
+export default class Footer extends View {
   constructor() {
-    this.footerElement = document.createElement('div');
-    this.footerElement.id = 'footer-wrapper';
-
-    this.copyright = document.createElement('div');
-    this.copyright.id = 'footer-copyright';
-    this.copyright.textContent =
-      'National Geographic Society is a 501 (c)(3) organization. ©Jack.koh All rights reserved. See my work at https://www.Jacky.co.kr';
-
-    this.footerLogo = document.createElement('div');
-    this.footerLogo.id = 'footer-logo';
-    link(this.footerLogo, '/');
-
-    this.footerElement.appendChild(this.copyright);
-    this.footerElement.appendChild(this.footerLogo);
+    super();
+    this.generateMarkup();
   }
 
-  get instance() {
-    return this.footerElement;
+  generateMarkup() {
+    this.markup = `
+      <div id="footer-wrapper">
+        <div id="footer-copyright">
+          'National Geographic Society is a 501 (c)(3) organization. ©Jack.koh All rights reserved. See my work at https://www.Jacky.co.kr';
+        </div>
+        <div id="footer-logo"></div>
+      </div>
+    `;
+  }
+
+  addEvents() {
+    const logo = document.getElementById('footer-logo');
+    if (logo) link(logo, '/');
   }
 }
-
-export default Footer;

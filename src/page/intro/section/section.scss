@@ -74,26 +74,30 @@
         top: 0;
         width: 100%;
         height: 100%;
-        opacity: 0;
+
         transition: opacity 4s;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
 
         &.mainVisual_011 {
-          background-image: url("/img/images/mainVisual_011.jpg");
+          opacity: 1;
+          background-image: url('/img/images/mainVisual_011.jpg');
         }
 
         &.mainVisual_012 {
-          background-image: url("/img/images/mainVisual_012.jpg");
+          opacity: 0;
+          background-image: url('/img/images/mainVisual_012.jpg');
         }
 
         &.mainVisual_013 {
-          background-image: url("/img/images/mainVisual_013.jpg");
+          opacity: 0;
+          background-image: url('/img/images/mainVisual_013.jpg');
         }
 
         &.mainVisual_014 {
-          background-image: url("/img/images/mainVisual_014.jpg");
+          opacity: 0;
+          background-image: url('/img/images/mainVisual_014.jpg');
         }
       }
     }
@@ -105,6 +109,7 @@
       transform: translate(-50%, -50%);
       width: 700px;
       height: 700px;
+      z-index: 1;
 
       .circle-item {
         @include circle-animation;
@@ -129,7 +134,7 @@
       .scroll-text {
         font-size: 14px;
         letter-spacing: 0.5rem;
-        font-family: "Aldrich";
+        font-family: 'Aldrich';
         color: #ccc;
       }
 
@@ -208,7 +213,7 @@
   .section-title-field {
     width: 350px;
 
-    &.field-section-01 {
+    &#field-section-01 {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -240,7 +245,7 @@
 
     .title {
       font-size: 5rem;
-      font-family: "Aldrich";
+      font-family: 'Aldrich';
       margin-top: 1.2rem;
       color: #fff;
     }
@@ -252,7 +257,7 @@
       color: #fff;
 
       &::before {
-        content: "";
+        content: '';
         display: block;
         position: absolute;
         left: 0;

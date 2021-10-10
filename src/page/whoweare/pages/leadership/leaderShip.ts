@@ -1,4 +1,4 @@
-import Header from 'components/header/mainHeader/mainheader';
+import Header from 'components/header/mainHeader/Header';
 import Footer from 'components/footer/footer';
 import SubHeader from 'components/header/subHeader/contentHeader';
 import Section01 from './sections/section01';
@@ -19,9 +19,7 @@ class LeaderShip {
   }
 
   get instance() {
-    const header = new Header().instance;
-    const footer = new Footer().instance;
-    return [header, this.wrapperElement, footer];
+    return [this.wrapperElement];
   }
 }
 

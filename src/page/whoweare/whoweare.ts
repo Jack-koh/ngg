@@ -1,4 +1,4 @@
-import Header from 'components/header/mainHeader/mainheader';
+import Header from 'components/header/mainHeader/Header';
 import Footer from 'components/footer/footer';
 import CardNavigator from '../utils/cardNavigator/cardNavigator';
 import MainVisual from '../utils/mainVisual/mainVisual';
@@ -63,9 +63,9 @@ class WhoWeAre {
   }
 
   get instance() {
-    const header = new Header('sticky').instance;
-    const footer = new Footer().instance;
-    return [header, this.wrapperElement, footer];
+    // const header = new Header('sticky').instance;
+    // const footer = new Footer().instance;
+    return [this.wrapperElement];
   }
 }
 

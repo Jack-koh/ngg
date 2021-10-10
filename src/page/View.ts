@@ -1,11 +1,11 @@
+import _ from 'utils/lodash';
+
 export default abstract class {
   params?: any;
-  fragment: null | HTMLElement;
   markup: string;
   constructor(params?: any) {
     this.params = params;
-    this.fragment = null;
-    this.markup = "";
+    this.markup = '';
   }
 
   setTitle(title: string) {
@@ -14,12 +14,13 @@ export default abstract class {
 
   async render(fragment: any, markup?: string) {
     if (markup) fragment.innerHTML = markup;
-    this.fragment = fragment;
   }
 
   getHtml(): string {
+    _.debounce(this.addEvents, 0)();
     return this.markup;
   }
 
-  public abstract events(): void;
+  public abstract generateMarkup(): void;
+  public abstract addEvents(): void;
 }

@@ -1,4 +1,4 @@
-import Header from 'components/header/mainHeader/mainheader';
+import Header from 'components/header/mainHeader/Header';
 import Footer from 'components/footer/footer';
 import SubHeader from 'components/header/subHeader/contentHeader';
 import list from './data';
@@ -106,9 +106,7 @@ class LeadersDetail {
   }
 
   get instance() {
-    const header = new Header().instance;
-    const footer = new Footer().instance;
-    return [header, this.wrapperElement, footer];
+    return [this.wrapperElement];
   }
 }
 
