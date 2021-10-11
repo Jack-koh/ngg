@@ -1,34 +1,34 @@
+import View from 'page/View';
 import './lineMotion.scss';
 
-class LineMotion {
-  motionElement: HTMLElement;
-  constructor(id: string, lineData: string[]) {
-    this.motionElement = document.createElement('div');
-    this.motionElement.id = 'visual-line-motion';
-    this.motionElement.classList.add(id);
+export default class LineMotion extends View {
+  constructor(public id: string, public lineData: string[]) {
+    super();
+    this.generateMarkup();
+  }
 
-    lineData.forEach((item) => {
-      const lineItem = document.createElement('div');
-      lineItem.classList.add('quarter');
-      lineItem.id = item;
-      lineItem.innerHTML = `
-            <div class="line-wrap">
-              <div class="line"></div>
-            </div>
-            <div class="circle-wrap">
-              <div class="small-circle">
-              <p></p>
+  generateMarkup() {
+    this.markup = `
+      <div id="visual-line-motion" class="${this.id}">
+        ${this.lineData
+          .map((el) => {
+            return `
+              <div id="${el}" class="quarter">
+                <div class="line-wrap">
+                  <div class="line"></div>
+                </div>
+                <div class="circle-wrap">
+                  <div class="small-circle">
+                  <p></p>
+                  </div>
+                </div>
               </div>
-            </div>
-        `;
-
-      this.motionElement.appendChild(lineItem);
-    });
+            `;
+          })
+          .join('')}
+      </div>
+    `;
   }
 
-  get instance() {
-    return this.motionElement;
-  }
+  addEvents() {}
 }
-
-export default LineMotion;

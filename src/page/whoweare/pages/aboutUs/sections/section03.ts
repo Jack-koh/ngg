@@ -47,8 +47,8 @@ class AboutUsSection03 {
       );
     }).then(() => {
       const textFrame = document.getElementById('textFrame') as HTMLElement;
-      const button = new EnterButton({ url: '/whoweare/history', text: 'EXPLORE' }).instance;
-      textFrame.appendChild(button);
+      // const button = new EnterButton({ url: '/whoweare/history', text: 'EXPLORE' }).instance;
+      // textFrame.appendChild(button);
     });
   }
   get instance() {

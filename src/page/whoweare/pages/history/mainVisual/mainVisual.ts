@@ -25,12 +25,12 @@ class MainVisual {
         <source src="/video/historyBg.mp4" type="video/mp4"/>
       </video>
     `;
-    const button = new EnterButton({ text: 'EXPLORE' }).instance;
-    button.onclick = () => {
-      const container = document.getElementById('history-visual-container') as HTMLElement;
-      container.style.transform = 'translateX(-50%)';
-    };
-    titleEl.appendChild(button);
+    // const button = new EnterButton({ text: 'EXPLORE' });
+    // button.onclick = () => {
+    //   const container = document.getElementById('history-visual-container') as HTMLElement;
+    //   container.style.transform = 'translateX(-50%)';
+    // };
+    // titleEl.appendChild(button);
     this.videoElement.appendChild(titleEl);
   }
 

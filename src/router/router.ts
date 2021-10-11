@@ -1,32 +1,29 @@
-import IntroPage from 'page/intro/intro';
-import WhoWeArePage from 'page/whoweare/whoweare';
 import AboutUsPage from 'page/whoweare/pages/aboutUs/aboutUs';
 import LeadershipPage from 'page/whoweare/pages/leadership/leaderShip';
 import LeaderPage from 'page/whoweare/pages/leaders/leaderDetail';
 import HistoryPage from 'page/whoweare/pages/history/history';
 
-import Explorer from 'page/explorer/explorer';
-import Exhibition from 'page/exhibition/exhibition';
-import Project from 'page/project/project';
+import * as Pages from 'page';
+
 import Footer from 'components/footer/footer';
 
 const routes = [
-  { path: '/', view: IntroPage },
-  // { path: "/whoweare", view: WhoWeArePage },
+  { path: '/', view: Pages.Intro },
+  { path: '/whoweare', view: Pages.WhoWeAre },
   // { path: "/whoweare/aboutus", view: AboutUsPage },
   // { path: "/whoweare/history", view: HistoryPage },
   // { path: "/whoweare/leadership", view: LeadershipPage },
   // { path: "/whoweare/leadership/leaders", view: LeaderPage },
   // { path: "/whoweare/newsroom", view: AboutUsPage },
-  // { path: "/explorer", view: Explorer },
+  { path: '/explorer', view: Pages.Explorer },
   // { path: "/explorer/explorers", view: AboutUsPage },
   // { path: "/explorer/fieldmap", view: AboutUsPage },
   // { path: "/explorer/explorerblog", view: AboutUsPage },
-  // { path: "/exhibition", view: Exhibition },
+  { path: '/exhibition', view: Pages.Exhibition },
   // { path: "/exhibition/visitorplan", view: AboutUsPage },
   // { path: "/exhibition/exhibition", view: AboutUsPage },
   // { path: "/exhibition/event", view: AboutUsPage },
-  // { path: "/project", view: Project },
+  { path: '/project', view: Pages.Project },
   // { path: "/project/beyondstone", view: AboutUsPage },
   // { path: "/project/bigcat", view: AboutUsPage },
   // { path: "/project/lastwild", view: AboutUsPage },
@@ -39,19 +36,13 @@ export default class Router {
 
   constructor() {
     this.body = document.querySelector('body')! as HTMLElement;
-    // this.location = history.state?.pathname || '/';
-
-    window.addEventListener('popstate', () => {
-      // this.location = history.state?.pathname || '/';
-      // this.excution("remove");
-    });
   }
 
   pathToRegex(path: string) {
     return new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$"); // prettier-ignore
   }
 
-  async render() {
+  render() {
     window.scrollTo(0, 0);
     const params = (match: any) => {
       const { result, route } = match;

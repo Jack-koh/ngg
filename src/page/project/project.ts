@@ -1,19 +1,16 @@
 import Header from 'components/header/mainHeader/Header';
 import Footer from 'components/footer/footer';
-import ProjectVisual from './projectVisual/projectVisual';
+import EnterButton from 'components/common/button/button';
 import { subUrls } from 'utils/urlData';
+import View from 'page/View';
+import './Project.scss';
 
-interface Project {
-  wrapperElement: HTMLElement;
+export class Project extends View {
   selected: string;
   data: { id: string; title: string; desc: string }[];
-}
-class Project implements Project {
   constructor() {
-    this.wrapperElement = document.createElement('div');
-    this.wrapperElement.id = 'project-page';
+    super();
     this.selected = 'beyond-yellow-stone';
-
     this.data = [
       {
         id: 'beyond-yellow-stone',
@@ -46,34 +43,54 @@ class Project implements Project {
           'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
     ];
-
-    this.renderVisuals(this.data);
+    this.generateMarkup();
   }
 
-  get instance() {
-    return [this.wrapperElement];
+  generateMarkup() {
+    const header = new Header('sticky').getHtml();
+    const footer = new Footer().getHtml();
+    this.markup = `
+      ${header}
+      <div id="project-page">
+        ${this.data
+          .map((el, i) => {
+            const { url } = subUrls['PROJECT'][i];
+            const button = new EnterButton({ url, text: 'ENTER' });
+            return `
+              <div id="${el.id}" class="visaul-items">
+                <div class="visual-title-field">
+                  <div class="visual-logo"></div>
+                  <div class="visual-title">${el.title}</div>
+                  ${button.getHtml()}
+                </div>
+                <div class="desc-field">
+                  <div class="desc-title">${el.title}</div>
+                  <div class="desc">
+                    ${el.desc}
+                  </div>
+                </div>
+              </div>
+            `;
+          })
+          .join('')}
+      </div>
+      ${footer}
+    `;
   }
-
-  setSelected() {
-    if (this.wrapperElement.classList.contains('selected')) {
-      this.wrapperElement.classList.remove('selected');
-    } else {
-      const selected = document.getElementsByClassName('visaul-items selected');
-      if (selected.length) selected[0].classList.remove('selected');
-      this.wrapperElement.classList.add('selected');
+  addEvents() {
+    const wrapper = document.getElementsByClassName('visaul-items');
+    if (wrapper) {
+      [...wrapper].forEach((el) => {
+        el.addEventListener('click', function () {
+          if (el.classList.contains('selected')) {
+            el.classList.remove('selected');
+          } else {
+            const selected = document.getElementsByClassName('visaul-items selected');
+            if (selected.length) selected[0].classList.remove('selected');
+            el.classList.add('selected');
+          }
+        });
+      });
     }
   }
-
-  renderVisuals(data: { id: string; title: string; desc: string }[]) {
-    data.forEach((item, index) => {
-      const visuals = new ProjectVisual({
-        data: item,
-        urlData: subUrls['PROJECT'][index],
-        setSelected: this.setSelected,
-      }).instance;
-      this.wrapperElement.appendChild(visuals);
-    });
-  }
 }
-
-export default Project;

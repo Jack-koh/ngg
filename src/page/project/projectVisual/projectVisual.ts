@@ -13,27 +13,20 @@ class ProjectVisual implements ProjectVisual {
     urlData: { url: string; title: string };
     setSelected: () => void;
   }) {
-    const { data, urlData, setSelected } = props;
+    const { urlData, setSelected } = props;
     this.wrapperElement = document.createElement('div');
-    this.wrapperElement.id = data.id;
     this.wrapperElement.classList.add('visaul-items');
     this.wrapperElement.addEventListener('click', setSelected.bind(this));
 
-    const button = new EnterButton({ url: urlData.url, text: 'ENTER' }).instance;
+    const button = new EnterButton({ url: urlData.url, text: 'ENTER' });
     this.titleElement = document.createElement('div');
     this.titleElement.classList.add('visual-title-field');
     this.titleElement.innerHTML = `
       <div class="visual-logo"></div>
-      <div class="visual-title">${data.title}</div>
     `;
-    this.titleElement.appendChild(button);
 
     this.descElement = document.createElement('div');
     this.descElement.classList.add('desc-field');
-    this.descElement.innerHTML = `
-      <div class="desc-title">${data.title}</div>
-      <div class="desc">${data.desc}</div>
-    `;
 
     this.wrapperElement.appendChild(this.titleElement);
     this.wrapperElement.appendChild(this.descElement);

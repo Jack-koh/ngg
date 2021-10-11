@@ -56,12 +56,35 @@
   }
 
   .main-visual-title-feld {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15rem;
     .title {
       padding: 0 4rem;
       word-break: break-word;
       text-align: center;
+      font-size: 5rem;
+      font-family: 'Aldrich';
+      margin-top: 1.2rem;
+      color: #fff;
+    }
+    .subtitle {
+      padding: 0 2rem !important;
+      width: max-content;
+      line-height: 2.4rem;
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      background-color: var(--brand);
     }
     .description {
+      color: #fff;
+      font-size: 1.4rem;
+      margin-top: 2.5rem;
+      letter-spacing: 0.1rem;
+      font-family: 'hind100';
+      text-align: center;
       padding: 0 4rem;
       max-width: 60rem;
     }

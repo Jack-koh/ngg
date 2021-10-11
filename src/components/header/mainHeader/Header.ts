@@ -2,6 +2,7 @@ import { link } from 'utils/commonFunc';
 import View from 'page/View';
 import MobileHeader from './MobileHeader';
 import HeaderInfo from './HeaderInfo';
+import { mainUrls, subUrls } from 'utils/urlData';
 import './Header.scss';
 
 export default class Header extends View {
@@ -18,38 +19,36 @@ export default class Header extends View {
         <h1 id="logo"></h1>
         <nav id="navigator">
           <ul id="navigator-items">
-            <li class="nav-item">WHO WE ARE</li>
-            <li class="nav-item">EXPLORER</li>
-            <li class="nav-item">EXHIBITION</li>
-            <li class="nav-item">PROJECT</li>
-            <li class="nav-item">IMPACT</li>
+            ${mainUrls
+              .map((urls) => `<li class="nav-item"><a href="${urls.url}">${urls.title}</a></li>`)
+              .join('')}
             <div id="navigation-mouse-pointer"></div>
           </ul>
         </nav>
         <div id="sub-navigator">
           <div id="sub-nav-column-list">
             <ul id="WHO WE ARE" class="nav-column">
-              <li class="column-item">ABOUT US</li>
-              <li class="column-item">HISTORY</li>
-              <li class="column-item">LEADER SHIP</li>
-              <li class="column-item">NEWS ROOM</li>
+              ${subUrls['WHO WE ARE']
+                .map((sub) => `<li class="column-item"><a href="${sub.url}">${sub.title}</a></li>`)
+                .join('')}
             </ul>
+
             <ul id="EXPLORER" class="nav-column">
-              <li class="column-item">EXPLORERS</li>
-              <li class="column-item">FIELD MAP</li>
-              <li class="column-item">EXPLORER BLOG</li>
+              ${subUrls['EXPLORER']
+                .map((sub) => `<li class="column-item"><a href="${sub.url}">${sub.title}</a></li>`)
+                .join('')}
             </ul>
+
             <ul id="EXHIBITION" class="nav-column">
-              <li class="column-item">VISITOR PLAN</li>
-              <li class="column-item">EXHIBITION</li>
-              <li class="column-item">EVENT</li>
+              ${subUrls['EXHIBITION']
+                .map((sub) => `<li class="column-item"><a href="${sub.url}">${sub.title}</a></li>`)
+                .join('')}
             </ul>
+
             <ul id="PROJECT" class="nav-column">
-              <li class="column-item">BEYOND STONE</li>
-              <li class="column-item">BIG CAT</li>
-              <li class="column-item">LAST WILD</li>
-              <li class="column-item">YEAR OF BIRD</li>
-              <li class="column-item">PRISTINE SEAS</li>
+              ${subUrls['PROJECT']
+                .map((sub) => `<li class="column-item"><a href="${sub.url}">${sub.title}</a></li>`)
+                .join('')}
             </ul>
           </div>
         </div>

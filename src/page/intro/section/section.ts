@@ -63,6 +63,11 @@ export default class Section extends View {
           <div class="description">
             ${data.description}
           </div>
+          ${
+            this.data.index - 1 > -1
+              ? new EnterButton({ url: mainUrls[this.data.index - 1].url, text: 'ENTER' }).getHtml()
+              : ''
+          }
         </div>
       </section>
     `;
@@ -93,12 +98,7 @@ export default class Section extends View {
         observer.unobserve(target);
       });
       const title = document.getElementById(`field-${this.data.id}`);
-
-      if (title && title.id !== 'field-section-01') {
-        inspection.observe(title);
-        const button = new EnterButton({ url: mainUrls[this.data.index - 1].url, text: 'ENTER' });
-        title.insertAdjacentElement('beforeend', button.instance);
-      }
+      if (title) inspection.observe(title);
     };
 
     fadingBackground();

@@ -1,53 +1,51 @@
 import { link } from 'utils/commonFunc';
 import { subUrls } from 'utils/urlData';
-import './cardNavigator.scss';
+import View from 'page/View';
+import './CardNavigator.scss';
 
-interface CardNavigator {
-  navigatorElement: HTMLElement;
-}
-
-class CardNavigator implements CardNavigator {
+class CardNavigator extends View {
   constructor(
     public props: { key: string; id: string; data: { img: string; text: string; desc: string }[] }
   ) {
-    const { key, id, data } = props;
-    this.navigatorElement = document.createElement('div');
-    this.navigatorElement.id = id;
-    this.navigatorElement.classList.add('sub-card-nav-wrapper');
+    super();
+    this.generateMarkup();
+  }
 
-    subUrls[key].forEach((nav, index) => {
-      const subNavItem = document.createElement('div');
-      link(subNavItem, nav.url);
-      subNavItem.classList.add('sub-nav-card-item');
-      subNavItem.innerHTML = `
-          <div class="card-item ${data[index].img}">
-            <div class="hover-color">
-              <div class="top-move">
-                <div class="number-icon">
-                  <p>
-                    <img src="/img/cateIcon.png" alt="number-icon"/>
+  generateMarkup() {
+    const { id, key, data } = this.props;
+    this.markup = `
+      <div id="${id}" class="sub-card-nav-wrapper">
+        ${subUrls[key]
+          .map((el, i) => {
+            return `
+            <a href="${el.url}" class="sub-nav-card-item">
+              <div class="card-item ${data[i].img}">
+                <div class="hover-color">
+                  <div class="top-move">
+                    <div class="number-icon">
+                      <p>
+                        <img src="/img/cateIcon.png" alt="number-icon"/>
+                      </p>
+                      <p class="number">${i + 1}</p>
+                    </div>
+                    <h3>${data[i].text}</h3>
+                  </div>
+
+                  <div class="vertical-bar"></div>
+
+                  <p class="desc">
+                    ${data[i].desc}
                   </p>
-                  <p class="number">${index + 1}</p>
                 </div>
-                <h3>${data[index].text}</h3>
               </div>
-
-              <div class="vertical-bar"></div>
-
-              <p class="desc">
-                ${data[index].desc}
-              </p>
-            </div>
-          </div>
-        `;
-
-      this.navigatorElement.appendChild(subNavItem);
-    });
+            </a>
+          `;
+          })
+          .join('')}
+      </div>
+    `;
   }
-
-  get instance() {
-    return this.navigatorElement;
-  }
+  addEvents() {}
 }
 
 export default CardNavigator;

@@ -5,9 +5,9 @@ import data from './data';
 import View from 'page/View';
 import ScrollNav from './scrollNav/ScrollNav';
 
-import './intro.scss';
+import './Intro.scss';
 
-class IntroPage extends View {
+export class Intro extends View {
   constructor(params: any) {
     super(params);
     this.generateMarkup();
@@ -23,5 +23,3 @@ class IntroPage extends View {
 
   addEvents() {}
 }
-
-export default IntroPage;

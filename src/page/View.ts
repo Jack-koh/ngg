@@ -12,7 +12,7 @@ export default abstract class {
     document.title = title;
   }
 
-  async render(fragment: any, markup?: string) {
+  render(fragment: any, markup?: string) {
     if (markup) fragment.innerHTML = markup;
   }
 

@@ -1,0 +1,155 @@
+#project-page {
+  display: flex;
+  .visaul-items {
+    position: relative;
+    flex: 1;
+    height: 88.9rem;
+    cursor: pointer;
+    transition: flex 0.5s;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    &.selected {
+      flex: 2.5;
+      .visual-title-field {
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 0.5;
+      }
+
+      .desc-field {
+        opacity: 0;
+      }
+    }
+
+    @mixin background($url) {
+      background: $url no-repeat center/cover;
+    }
+
+    &#beyond-yellow-stone {
+      @include background(url(/img/images/project01.jpg));
+    }
+
+    &#big-cat {
+      @include background(url(/img/images/project02.jpg));
+    }
+
+    &#last-wild-place {
+      @include background(url(/img/images/project03.jpg));
+    }
+
+    &#year-of-the-bird {
+      @include background(url(/img/images/project04.jpg));
+    }
+
+    &#pristine-seas {
+      @include background(url(/img/images/project05.jpg));
+    }
+
+    .visual-title-field {
+      position: absolute;
+      top: 36%;
+      left: 50%;
+      width: 25rem;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      .visual-logo {
+        width: 12rem;
+        height: 3.6rem;
+        background: url(/img/logoW.png) no-repeat center/contain;
+      }
+
+      .visual-title {
+        font-size: 50px;
+        color: #fff;
+        font-family: 'Aldrich';
+        margin-top: 10px;
+      }
+    }
+
+    .desc-field {
+      position: absolute;
+      padding: 0 1.6em;
+      bottom: 3rem;
+      .desc-title {
+        font-size: 24px;
+        color: #ffbf00;
+        font-family: 'Aldrich';
+        margin-bottom: 5px;
+      }
+      .desc {
+        max-width: 310px;
+        font-size: 14px;
+        font-family: 'hind100';
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  #project-page {
+    display: block;
+
+    .visaul-items {
+      cursor: initial;
+      &.selected {
+        &::before {
+          opacity: 0 !important;
+        }
+      }
+
+      .visual-title-field {
+        top: 30%;
+        opacity: 1 !important;
+      }
+
+      .desc-field {
+        display: none;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 0) and (max-width: 767px) {
+  #project-page {
+    display: block;
+
+    .visaul-items {
+      height: 50rem;
+      cursor: initial;
+      &.selected {
+        &::before {
+          opacity: 0 !important;
+        }
+      }
+
+      .visual-title-field {
+        width: 18rem;
+        top: 30%;
+        opacity: 1 !important;
+
+        .visual-title {
+          font-size: 3.8rem;
+        }
+      }
+
+      .desc-field {
+        display: none;
+      }
+    }
+  }
+}

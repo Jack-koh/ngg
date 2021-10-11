@@ -1,4 +1,5 @@
 import View from 'page/View';
+import { mainUrls, subUrls } from 'utils/urlData';
 import './MobileHeader.scss';
 
 export default class MobileHeader extends View {
@@ -22,59 +23,63 @@ export default class MobileHeader extends View {
           <div id="mob-navigators">
             <div class="nav-item">
               <div class="main-nav-row">
-                <div class="main-nav-item">WHO WE ARE</div>
+                <a href="/whoweare" class="main-nav-item">WHO WE ARE</a>
                 <div class="toggle-btn"></div>
               </div>
               <div class="sub-nav-field">
-                <div class="sub-nav-item">ABOUT US</div>
-                <div class="sub-nav-item">HISTORY</div>
-                <div class="sub-nav-item">LEADER SHIP</div>
-                <div class="sub-nav-item">NEWS ROOM</div>
+              ${subUrls['WHO WE ARE']
+                .map(({ url, title }) => {
+                  return `<div class="sub-nav-item"><a href="${url}">${title}</a></div>`;
+                })
+                .join('')}
               </div>
             </div>
 
             <div class="nav-item">
               <div class="main-nav-row">
-                <div class="main-nav-item">EXPLORER</div>
+                <a href="/explorer" class="main-nav-item">EXPLORER</a>
                 <div class="toggle-btn"></div>
               </div>
               <div class="sub-nav-field">
-                <div class="sub-nav-item">EXPLORERS</div>
-                <div class="sub-nav-item">FIELD MAP</div>
-                <div class="sub-nav-item">EXPLORER BLOG</div>
+              ${subUrls['EXPLORER']
+                .map(({ url, title }) => {
+                  return `<div class="sub-nav-item"><a href="${url}">${title}</a></div>`;
+                })
+                .join('')}
               </div>
             </div>
 
             <div class="nav-item">
               <div class="main-nav-row">
-                <div class="main-nav-item">EXHIBITION</div>
+                <a href="/exhibition" class="main-nav-item">EXHIBITION</a>
                 <div class="toggle-btn"></div>
               </div>
               <div class="sub-nav-field">
-                <div class="sub-nav-item">VISITOR PLAN</div>
-                <div class="sub-nav-item">EXHIBITION</div>
-                <div class="sub-nav-item">EVENT</div>
+              ${subUrls['EXHIBITION']
+                .map(({ url, title }) => {
+                  return `<div class="sub-nav-item"><a href="${url}">${title}</a></div>`;
+                })
+                .join('')}
               </div>
             </div>
 
             <div class="nav-item">
               <div class="main-nav-row">
-                <div class="main-nav-item">PROJECT</div>
+                <a href="/project" class="main-nav-item">PROJECT</a>
                 <div class="toggle-btn"></div>
               </div>
               <div class="sub-nav-field">
-                <div class="sub-nav-item">BEYOND STONE</div>
-                <div class="sub-nav-item">BIG CAT</div>
-                <div class="sub-nav-item">LAST WILD</div>
-                <div class="sub-nav-item">YEAR OF BIRD</div>
-                <div class="sub-nav-item">PRISTINE SEAS</div>
+              ${subUrls['PROJECT']
+                .map(({ url, title }) => {
+                  return `<div class="sub-nav-item"><a href="${url}">${title}</a></div>`;
+                })
+                .join('')}
               </div>
             </div>
 
             <div class="nav-item">
               <div class="main-nav-row">
-                <div class="main-nav-item">IMPACT</div>
-                <div class="toggle-btn"></div>
+                <a href="/impact" class="main-nav-item">IMPACT</a>
               </div>
             </div>
 
@@ -92,6 +97,26 @@ export default class MobileHeader extends View {
         navigator.classList.remove(!this.show ? 'show' : 'none');
         navigator.classList.add(this.show ? 'show' : 'none');
       });
+
+      const navItems = navigator.getElementsByClassName('nav-item');
+      if (navItems) {
+        [...navItems].forEach((el) => {
+          const toggle = el.getElementsByClassName('toggle-btn')[0];
+          if (toggle) {
+            toggle.addEventListener('click', function () {
+              const wrapper = toggle.closest('.nav-item');
+              if (wrapper?.classList.contains('show')) {
+                wrapper.classList.remove('show');
+              } else {
+                [...navItems].forEach((item) => {
+                  item.classList.remove('show');
+                  wrapper?.classList.add('show');
+                });
+              }
+            });
+          }
+        });
+      }
     }
   };
 }
