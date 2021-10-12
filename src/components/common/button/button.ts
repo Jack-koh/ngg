@@ -1,6 +1,6 @@
-import { link } from 'utils/commonFunc';
-import View from 'page/View';
-import './button.scss';
+import { link } from "utils/commonFunc";
+import View from "page/View";
+import "./button.scss";
 
 class EnterButton extends View {
   constructor(public props: { url?: string; text: string }) {
@@ -10,13 +10,16 @@ class EnterButton extends View {
 
   generateMarkup() {
     const { url, text } = this.props;
-    this.markup = `
-      <a href="${url}" class="enter-button-wrapper">
+
+    this.markup = link({
+      url,
+      child: `
         ${text}
         <div class="section-button-sliding-bar"></div>
         <div class="section-button-arrow"></div>
-      </a>
-    `;
+      `,
+      className: "enter-button-wrapper",
+    });
   }
 
   addEvents() {}

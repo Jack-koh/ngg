@@ -1,29 +1,29 @@
-import AboutUsPage from 'page/whoweare/pages/aboutUs/aboutUs';
-import LeadershipPage from 'page/whoweare/pages/leadership/leaderShip';
-import LeaderPage from 'page/whoweare/pages/leaders/leaderDetail';
-import HistoryPage from 'page/whoweare/pages/history/history';
+import AboutUsPage from "page/whoweare/pages/aboutUs/aboutUs";
+import LeadershipPage from "page/whoweare/pages/leadership/leaderShip";
+import LeaderPage from "page/whoweare/pages/leaders/leaderDetail";
+import HistoryPage from "page/whoweare/pages/history/history";
 
-import * as Pages from 'page';
+import * as Pages from "page";
 
-import Footer from 'components/footer/footer';
+import Footer from "components/footer/footer";
 
 const routes = [
-  { path: '/', view: Pages.Intro },
-  { path: '/whoweare', view: Pages.WhoWeAre },
+  { path: "/", view: Pages.Intro },
+  { path: "/whoweare", view: Pages.WhoWeAre },
   // { path: "/whoweare/aboutus", view: AboutUsPage },
   // { path: "/whoweare/history", view: HistoryPage },
   // { path: "/whoweare/leadership", view: LeadershipPage },
   // { path: "/whoweare/leadership/leaders", view: LeaderPage },
   // { path: "/whoweare/newsroom", view: AboutUsPage },
-  { path: '/explorer', view: Pages.Explorer },
+  { path: "/explorer", view: Pages.Explorer },
   // { path: "/explorer/explorers", view: AboutUsPage },
   // { path: "/explorer/fieldmap", view: AboutUsPage },
   // { path: "/explorer/explorerblog", view: AboutUsPage },
-  { path: '/exhibition', view: Pages.Exhibition },
+  { path: "/exhibition", view: Pages.Exhibition },
   // { path: "/exhibition/visitorplan", view: AboutUsPage },
   // { path: "/exhibition/exhibition", view: AboutUsPage },
   // { path: "/exhibition/event", view: AboutUsPage },
-  { path: '/project', view: Pages.Project },
+  { path: "/project", view: Pages.Project },
   // { path: "/project/beyondstone", view: AboutUsPage },
   // { path: "/project/bigcat", view: AboutUsPage },
   // { path: "/project/lastwild", view: AboutUsPage },
@@ -35,7 +35,7 @@ export default class Router {
   body: HTMLElement;
 
   constructor() {
-    this.body = document.querySelector('body')! as HTMLElement;
+    this.body = document.querySelector("body")! as HTMLElement;
   }
 
   pathToRegex(path: string) {
@@ -63,7 +63,7 @@ export default class Router {
     let match = data.find((pm) => pm.result !== null);
     if (!match) match = { route: routes[0], result: [location.pathname] };
     const view = new match.route.view(params(match));
-    const app = document.querySelector('#app');
+    const app = document.querySelector("#app");
     if (app) view.render(app, view.getHtml());
   }
 

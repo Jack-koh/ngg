@@ -1,11 +1,15 @@
-import { link } from 'utils/commonFunc';
-import { subUrls } from 'utils/urlData';
-import View from 'page/View';
-import './CardNavigator.scss';
+import { link } from "utils/commonFunc";
+import { subUrls } from "utils/urlData";
+import View from "page/View";
+import "./CardNavigator.scss";
 
 class CardNavigator extends View {
   constructor(
-    public props: { key: string; id: string; data: { img: string; text: string; desc: string }[] }
+    public props: {
+      key: string;
+      id: string;
+      data: { img: string; text: string; desc: string }[];
+    }
   ) {
     super();
     this.generateMarkup();
@@ -41,7 +45,7 @@ class CardNavigator extends View {
             </a>
           `;
           })
-          .join('')}
+          .join("")}
       </div>
     `;
   }

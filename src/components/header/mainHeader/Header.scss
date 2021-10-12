@@ -58,7 +58,7 @@
           color: var(--brand);
         }
 
-        a {
+        .nav__link {
           display: flex;
           align-items: center;
           justify-content: center;
@@ -94,7 +94,7 @@
         height: 100%;
 
         &:after {
-          content: '';
+          content: "";
           display: block;
           position: absolute;
           top: 10px;

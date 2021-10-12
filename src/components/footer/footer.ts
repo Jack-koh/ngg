@@ -1,6 +1,6 @@
-import { link } from 'utils/commonFunc';
-import View from 'page/View';
-import 'components/footer/footer.scss';
+import { link } from "utils/commonFunc";
+import View from "page/View";
+import "components/footer/footer.scss";
 
 export default class Footer extends View {
   constructor() {
@@ -20,7 +20,7 @@ export default class Footer extends View {
   }
 
   addEvents() {
-    const logo = document.getElementById('footer-logo');
-    if (logo) link(logo, '/');
+    const logo = document.getElementById("footer-logo");
+    // if (logo) link(logo, "/");
   }
 }

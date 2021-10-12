@@ -7,7 +7,10 @@ import "scss/reset.scss";
 
 const router = new Router();
 
-window.addEventListener("popstate", router.render);
+window.addEventListener("popstate", () => {
+  console.log("route");
+  router.render();
+});
 document.addEventListener("DOMContentLoaded", () => {
   router.render();
 });
