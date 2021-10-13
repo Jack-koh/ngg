@@ -1,7 +1,7 @@
-import Header from 'components/header/mainHeader/Header';
-import Footer from 'components/footer/footer';
+import { Header, Footer } from 'page/common';
 import EnterButton from 'components/common/button/button';
 import { subUrls } from 'utils/urlData';
+import { map } from 'utils/commonFunc';
 import View from 'page/View';
 import './Project.scss';
 
@@ -15,48 +15,41 @@ export class Project extends View {
       {
         id: 'beyond-yellow-stone',
         title: 'Beyond Yellowstone',
-        desc:
-          'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
+        desc: 'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
       {
         id: 'big-cat',
         title: 'Big Cats Initiative',
-        desc:
-          'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
+        desc: 'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
       {
         id: 'last-wild-place',
         title: 'Last Wild Places',
-        desc:
-          'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
+        desc: 'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
       {
         id: 'year-of-the-bird',
         title: 'Year of the Bird',
-        desc:
-          'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
+        desc: 'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
       {
         id: 'pristine-seas',
         title: 'Pristine Seas',
-        desc:
-          'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
+        desc: 'Wildlife movement and migration is not just a story of enormous herds roaming across the open plains.',
       },
     ];
-    this.generateMarkup();
   }
 
   generateMarkup() {
     const header = new Header('sticky').getHtml();
     const footer = new Footer().getHtml();
-    this.markup = `
+    return `
       ${header}
       <div id="project-page">
-        ${this.data
-          .map((el, i) => {
-            const { url } = subUrls['PROJECT'][i];
-            const button = new EnterButton({ url, text: 'ENTER' });
-            return `
+        ${map(this.data, (el, i) => {
+          const { url } = subUrls['PROJECT'][i];
+          const button = new EnterButton({ url, text: 'ENTER', color: '#fff' });
+          return `
               <div id="${el.id}" class="visaul-items">
                 <div class="visual-title-field">
                   <div class="visual-logo"></div>
@@ -71,8 +64,7 @@ export class Project extends View {
                 </div>
               </div>
             `;
-          })
-          .join('')}
+        })}
       </div>
       ${footer}
     `;

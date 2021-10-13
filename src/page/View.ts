@@ -1,11 +1,9 @@
-import _ from 'utils/lodash';
+import _ from "utils/lodash";
 
-export default abstract class {
+export default abstract class View {
   params?: any;
-  markup: string;
   constructor(params?: any) {
     this.params = params;
-    this.markup = '';
   }
 
   setTitle(title: string) {
@@ -18,9 +16,9 @@ export default abstract class {
 
   getHtml(): string {
     _.debounce(this.addEvents, 0)();
-    return this.markup;
+    return this.generateMarkup();
   }
 
-  public abstract generateMarkup(): void;
+  public abstract generateMarkup(): string;
   public abstract addEvents(): void;
 }

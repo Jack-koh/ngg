@@ -1,16 +1,13 @@
-import AboutUsPage from "page/whoweare/pages/aboutUs/aboutUs";
 import LeadershipPage from "page/whoweare/pages/leadership/leaderShip";
 import LeaderPage from "page/whoweare/pages/leaders/leaderDetail";
 import HistoryPage from "page/whoweare/pages/history/history";
 
 import * as Pages from "page";
 
-import Footer from "components/footer/footer";
-
 const routes = [
   { path: "/", view: Pages.Intro },
   { path: "/whoweare", view: Pages.WhoWeAre },
-  // { path: "/whoweare/aboutus", view: AboutUsPage },
+  { path: "/whoweare/aboutus", view: Pages.AboutUs },
   // { path: "/whoweare/history", view: HistoryPage },
   // { path: "/whoweare/leadership", view: LeadershipPage },
   // { path: "/whoweare/leadership/leaders", view: LeaderPage },

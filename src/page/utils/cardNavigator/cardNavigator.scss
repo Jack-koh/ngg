@@ -29,43 +29,43 @@
       background-position: center;
 
       &.mainCateAbout {
-        background-image: url('/img/images/mainCateAbout.jpg');
+        background-image: url("/img/images/mainCateAbout.jpg");
       }
 
       &.mainCateHistory {
-        background-image: url('/img/images/mainCateHistory.jpg');
+        background-image: url("/img/images/mainCateHistory.jpg");
       }
 
       &.mainCateLeadership {
-        background-image: url('/img/images/mainCateLeadership.jpg');
+        background-image: url("/img/images/mainCateLeadership.jpg");
       }
 
       &.mainCateNewroom {
-        background-image: url('/img/images/mainCateNewroom.jpg');
+        background-image: url("/img/images/mainCateNewroom.jpg");
       }
 
       &.mainCateFindAnExplorer {
-        background-image: url('/img/images/mainCateFindAnExplorer.jpg');
+        background-image: url("/img/images/mainCateFindAnExplorer.jpg");
       }
 
       &.mainCateFieldMap {
-        background-image: url('/img/images/mainCateFieldMap.jpg');
+        background-image: url("/img/images/mainCateFieldMap.jpg");
       }
 
       &.mainCateExplorerBlog {
-        background-image: url('/img/images/mainCateExplorerBlog.jpg');
+        background-image: url("/img/images/mainCateExplorerBlog.jpg");
       }
 
       &.mainCatePlan {
-        background-image: url('/img/images/mainCatePlan.jpg');
+        background-image: url("/img/images/mainCatePlan.jpg");
       }
 
       &.mainCateExhibition {
-        background-image: url('/img/images/mainCateExhibition.jpg');
+        background-image: url("/img/images/mainCateExhibition.jpg");
       }
 
       &.mainCateEvent {
-        background-image: url('/img/images/mainCateEvent.jpg');
+        background-image: url("/img/images/mainCateEvent.jpg");
       }
 
       &:hover {
@@ -113,7 +113,7 @@
             font-size: 3.6rem;
             text-transform: uppercase;
             letter-spacing: 0.1rem;
-            font-family: 'Aldrich';
+            font-family: "Aldrich";
             margin-top: 1.5rem;
           }
         }
@@ -132,7 +132,7 @@
           width: 80%;
           margin: 0 auto;
           font-size: 1.4rem;
-          font-family: 'hind100';
+          font-family: "hind100";
           transform: translatey(2rem);
           opacity: 0;
           transition: all 0.2s ease-in-out;

@@ -1,14 +1,13 @@
-import View from 'page/View';
-import './lineMotion.scss';
+import View from "page/View";
+import "./lineMotion.scss";
 
 export default class LineMotion extends View {
   constructor(public id: string, public lineData: string[]) {
     super();
-    this.generateMarkup();
   }
 
   generateMarkup() {
-    this.markup = `
+    return `
       <div id="visual-line-motion" class="${this.id}">
         ${this.lineData
           .map((el) => {
@@ -25,7 +24,7 @@ export default class LineMotion extends View {
               </div>
             `;
           })
-          .join('')}
+          .join("")}
       </div>
     `;
   }

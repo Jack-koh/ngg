@@ -3,22 +3,21 @@ import View from "page/View";
 import "./button.scss";
 
 class EnterButton extends View {
-  constructor(public props: { url?: string; text: string }) {
+  constructor(public props: { url?: string; text: string; color?: string }) {
     super();
-    this.generateMarkup();
   }
 
   generateMarkup() {
-    const { url, text } = this.props;
-
-    this.markup = link({
+    const { url, text, color } = this.props;
+    return link({
       url,
       child: `
-        ${text}
-        <div class="section-button-sliding-bar"></div>
-        <div class="section-button-arrow"></div>
+        <div class="enter-button-wrapper" style="color: ${color ?? "#191919"}">
+          ${text}
+          <div class="section-button-sliding-bar"></div>
+          <div class="section-button-arrow"></div>
+        </div>
       `,
-      className: "enter-button-wrapper",
     });
   }
 

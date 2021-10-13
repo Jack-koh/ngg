@@ -1,62 +1,30 @@
 import Router from "router/Router";
 import View from "page/View";
-
-// export const link = (target: HTMLElement | HTMLDivElement, url: string) => {
-//   const pushStateHandler = () => {
-//     history.pushState(
-//       { pathname: url, previousPath: window.location.pathname },
-//       `ngg-${url}`,
-//       url
-//     );
-//     window.dispatchEvent(new Event("popstate"));
-//   };
-//   target.addEventListener("click", pushStateHandler);
-// };
-
-// export const link2 = ({
-//   url,
-//   child,
-//   className = "",
-// }: {
-//   url?: string;
-//   child: string;
-//   className?: string;
-// }) => {
-//   const el = document.createElement("div");
-//   el.classList.add("nav__link");
-//   el.addEventListener("click", () => {
-//     if (url) {
-//       const state = { pathname: url, previousPath: window.location.pathname };
-//       history.pushState(state, "", url);
-//       window.dispatchEvent(new Event("popstate"));
-//     }
-//   });
-//   el.innerHTML = child;
-//   return el.outerHTML;
-// };
+import { v4 as uuid } from "uuid";
 
 export class Link extends View {
   className?: string;
   url?: string;
   child: string;
+  private uuid: string;
   constructor(data: { url?: string; child: string; className?: string }) {
     super();
+    this.uuid = uuid();
     this.className = data.className ?? "";
     this.url = data.url;
     this.child = data.child;
-    this.generateMarkup();
   }
 
-  generateMarkup() {
-    this.markup = `
-      <div class="nav__link ${this.className}" data-url="${this.url}">
+  generateMarkup = () => {
+    return `
+      <div class="nav__link ${this.className}" data-id="${this.uuid}">
         ${this.child}
       </div>
     `;
-  }
+  };
 
   addEvents = () => {
-    const navLink = document.querySelectorAll(`[data-url="${this.url}`)[0];
+    const navLink = document.querySelector(`[data-id="${this.uuid}`);
     if (navLink) {
       (navLink as HTMLElement).onclick = () => {
         if (this.url) {
@@ -69,10 +37,6 @@ export class Link extends View {
         }
       };
     }
-
-    // if (navLink) {
-    //   navLink.addEventListener("click", () => {});
-    // }
   };
 }
 
@@ -82,4 +46,15 @@ export const link = (data: {
   child: string;
 }) => {
   return new Link(data).getHtml();
+};
+
+// Markup Return
+export const map = <T>(arr: T[], f?: (arg: T, index: number) => string) => {
+  if (f) return arr.map(f).join("");
+  return arr.join("");
+};
+
+export const con = (arg: { value: boolean; markup: string }): string => {
+  if (!!arg.value) return arg.markup;
+  return "";
 };

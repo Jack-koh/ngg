@@ -1,18 +1,16 @@
-import Header from 'components/header/mainHeader/Header';
-import Footer from 'components/footer/footer';
-import SubHeader from 'components/header/subHeader/contentHeader';
-import list from './data';
-const subHeader = new SubHeader();
-import './leaderDetail.scss';
+// import { Header, Footer, SubHeader } from "page/common";
+import list from "./data";
+// const subHeader = new SubHeader();
+import "./leaderDetail.scss";
 
 class LeadersDetail {
   step: number;
   wrapperElement: HTMLElement;
   constructor() {
     this.step = 0;
-    this.wrapperElement = document.createElement('div');
-    this.wrapperElement.id = 'about-us-leader-detail';
-    this.wrapperElement.appendChild(subHeader.instance);
+    this.wrapperElement = document.createElement("div");
+    this.wrapperElement.id = "about-us-leader-detail";
+    // this.wrapperElement.appendChild(subHeader.instance);
     this.wrapperElement.appendChild(this.buttons());
     this.render();
   }
@@ -22,17 +20,19 @@ class LeadersDetail {
   }
 
   buttons() {
-    const buttons = document.createElement('div');
-    buttons.id = 'buttons';
-    const prev = document.createElement('p');
-    const next = document.createElement('p');
-    prev.id = 'prev';
-    next.id = 'next';
+    const buttons = document.createElement("div");
+    buttons.id = "buttons";
+    const prev = document.createElement("p");
+    const next = document.createElement("p");
+    prev.id = "prev";
+    next.id = "next";
 
     prev.innerHTML = `
       <div class="button-cont">
         <span class="thum">
-          <img src="${list[Math.abs(list.length - (list.length + this.step + 1))].image}" alt="jo"/>
+          <img src="${
+            list[Math.abs(list.length - (list.length + this.step + 1))].image
+          }" alt="jo"/>
         </span>
         <span class="desc">
           <span class="name">${list[this.step + 1].name}</span>
@@ -47,7 +47,9 @@ class LeadersDetail {
     next.innerHTML = `
       <div class="button-cont">
         <span class="thum">
-          <img src="${list[Math.abs(list.length - (list.length + this.step - 1))].image}" alt="jo"/>
+          <img src="${
+            list[Math.abs(list.length - (list.length + this.step - 1))].image
+          }" alt="jo"/>
         </span>
         <span class="desc">
           <span class="name">Jonathan Baillie </span>
@@ -59,12 +61,12 @@ class LeadersDetail {
       </span>
     `;
 
-    prev.addEventListener('click', () => {
+    prev.addEventListener("click", () => {
       this.step--;
       this.render();
     });
 
-    next.addEventListener('click', () => {
+    next.addEventListener("click", () => {
       this.step++;
       this.render();
     });
@@ -76,8 +78,8 @@ class LeadersDetail {
   }
 
   detailContent() {
-    const detailContent = document.createElement('div');
-    detailContent.id = 'leader-detail-content';
+    const detailContent = document.createElement("div");
+    detailContent.id = "leader-detail-content";
     detailContent.innerHTML = `
       <div id="spaceIn">
         <div id="portrait">

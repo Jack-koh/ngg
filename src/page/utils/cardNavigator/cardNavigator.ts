@@ -1,4 +1,4 @@
-import { link } from "utils/commonFunc";
+import { con, map, link } from "utils/commonFunc";
 import { subUrls } from "utils/urlData";
 import View from "page/View";
 import "./CardNavigator.scss";
@@ -12,17 +12,17 @@ class CardNavigator extends View {
     }
   ) {
     super();
-    this.generateMarkup();
   }
 
   generateMarkup() {
     const { id, key, data } = this.props;
-    this.markup = `
+    return `
       <div id="${id}" class="sub-card-nav-wrapper">
-        ${subUrls[key]
-          .map((el, i) => {
-            return `
-            <a href="${el.url}" class="sub-nav-card-item">
+        ${map(subUrls[key], (el, i) => {
+          return link({
+            url: el.url,
+            className: "sub-nav-card-item",
+            child: `
               <div class="card-item ${data[i].img}">
                 <div class="hover-color">
                   <div class="top-move">
@@ -42,10 +42,9 @@ class CardNavigator extends View {
                   </p>
                 </div>
               </div>
-            </a>
-          `;
-          })
-          .join("")}
+            `,
+          });
+        })}
       </div>
     `;
   }
