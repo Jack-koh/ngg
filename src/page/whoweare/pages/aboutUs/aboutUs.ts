@@ -11,6 +11,7 @@ export class AboutUs extends View {
 
   generateMarkup() {
     const header = new Header().getHtml();
+    const subHeader = new SubHeader().getHtml();
     const footer = new Footer().getHtml();
     const Button = new EnterButton({
       url: '/whoweare/history',

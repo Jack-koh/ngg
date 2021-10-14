@@ -45,27 +45,27 @@ export class Project extends View {
     const footer = new Footer().getHtml();
     return `
       ${header}
-      <div id="project-page">
-        ${map(this.data, (el, i) => {
-          const { url } = subUrls['PROJECT'][i];
-          const button = new EnterButton({ url, text: 'ENTER', color: '#fff' });
-          return `
-              <div id="${el.id}" class="visaul-items">
-                <div class="visual-title-field">
-                  <div class="visual-logo"></div>
-                  <div class="visual-title">${el.title}</div>
-                  ${button.getHtml()}
-                </div>
-                <div class="desc-field">
-                  <div class="desc-title">${el.title}</div>
-                  <div class="desc">
-                    ${el.desc}
+        <div id="project-page">
+          ${map(this.data, (el, i) => {
+            const { url } = subUrls['PROJECT'][i];
+            const button = new EnterButton({ url, text: 'ENTER', color: '#fff' });
+            return `
+                <div id="${el.id}" class="visaul-items">
+                  <div class="visual-title-field">
+                    <div class="visual-logo"></div>
+                    <div class="visual-title">${el.title}</div>
+                    ${button.getHtml()}
+                  </div>
+                  <div class="desc-field">
+                    <div class="desc-title">${el.title}</div>
+                    <div class="desc">
+                      ${el.desc}
+                    </div>
                   </div>
                 </div>
-              </div>
-            `;
-        })}
-      </div>
+              `;
+          })}
+        </div>
       ${footer}
     `;
   }

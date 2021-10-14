@@ -1,14 +1,14 @@
 import { mainUrls, subUrls } from 'utils/urlData';
-import { link } from 'utils/commonFunc';
+import View from 'page/View';
 import './SubHeader.scss';
 
-export class SubHeader {
-  wrapperElement: HTMLElement;
+export class SubHeader extends View {
   path: { main: string; sub: string };
   constructor() {
+    super();
     const locations = history.state?.pathname?.split('/') ?? [];
     locations.shift();
-    this.path = (() => {
+    const substitutions = () => {
       let main = '메인';
       let sub = '서브';
       // URL DATA 의 타이을값으로 치환해줘야함
@@ -37,46 +37,45 @@ export class SubHeader {
       if (locations[1] === 'yearofbird') sub = 'YEAR OF BIRD';
       if (locations[1] === 'pristineseas') sub = 'PRISTINE SEAS';
       return { main, sub };
-    })();
-    this.wrapperElement = document.createElement('div');
-    this.wrapperElement.id = 'siteWrap';
+    };
+    this.path = substitutions();
+  }
 
-    new Promise((resolve) => {
-      resolve(
-        (this.wrapperElement.innerHTML = `
-            <div id="siteLocationIn">
-                <div id="home" class="lac">
-                    <a href="/" title="home">
-                        <img src="/img/home.png" alt="homeBtn" />
-                    </a>
-                </div>
-                <dl id="way1-container">
-                    <dt id="way1">
-                        <span class="text">${this.path.main}</span>
-                        <span class="img"></span>
-                    </dt>
-                    <dd id="main-locate" class="sublocate">
-                    </dd>
-                </dl>
-                <dl id="way2-container">
-                    <dt id="way2">
-                        <span class="text">${this.path.sub}</span>
-                        <span class="img"></span>
-                    </dt>
-                    <dd id="sub-locate" class="sublocate">
-                    </dd>
-                </dl>
-            </div>
-        `)
-      );
-    }).then(() => {
-      const mainTarget = document.getElementById('main-locate') as HTMLElement;
-      const subTarget = document.getElementById('sub-locate') as HTMLElement;
-      if (mainTarget && subTarget) {
-        this.addLocations(mainTarget, subTarget);
-        this.toggle();
-      }
-    });
+  generateMarkup() {
+    return `
+      <div id="siteWrap">
+        <div id="siteLocationIn">
+          <div id="home" class="lac">
+            <a href="/" title="home">
+              <img src="/img/home.png" alt="homeBtn" />
+            </a>
+          </div>
+          <dl id="way1-container">
+            <dt id="way1">
+              <span class="text">${this.path.main}</span>
+              <span class="img"></span>
+            </dt>
+            <dd id="main-locate" class="sublocate"></dd>
+          </dl>
+          <dl id="way2-container">
+            <dt id="way2">
+              <span class="text">${this.path.sub}</span>
+              <span class="img"></span>
+            </dt>
+            <dd id="sub-locate" class="sublocate"></dd>
+          </dl>
+        </div>
+      </div>
+    `;
+  }
+
+  addEvents() {
+    const mainTarget = document.getElementById('main-locate');
+    const subTarget = document.getElementById('sub-locate');
+    if (mainTarget && subTarget) {
+      this.addLocations(mainTarget, subTarget);
+      this.toggle();
+    }
   }
 
   addLocations(mainTarget: HTMLElement, subTarget: HTMLElement) {
@@ -135,9 +134,5 @@ export class SubHeader {
       subHeight.style.height = height;
       if (mainOpen) resetMain();
     };
-  }
-
-  get instance() {
-    return this.wrapperElement;
   }
 }

@@ -1,5 +1,5 @@
-import Router from "./router/Router";
-import "scss/reset.scss";
+import Router from './router/Router';
+import 'scss/reset.scss';
 
 // window.onbeforeunload = function () {
 //   document.body.remove();
@@ -7,10 +7,9 @@ import "scss/reset.scss";
 
 const router = new Router();
 
-window.addEventListener("popstate", () => {
-  console.log("route");
+window.addEventListener('popstate', () => {
   router.render();
 });
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   router.render();
 });
