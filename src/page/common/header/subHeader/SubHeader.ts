@@ -1,5 +1,5 @@
 import { mainUrls, subUrls } from 'utils/urlData';
-import { link, map } from 'utils/commonFunc';
+import { map, link } from 'utils/commonFunc';
 import View from 'page/View';
 import './SubHeader.scss';
 

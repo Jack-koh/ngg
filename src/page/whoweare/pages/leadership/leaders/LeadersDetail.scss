@@ -1,10 +1,10 @@
 #about-us-leader-detail {
   position: relative;
   width: 100%;
-  height: calc(100% - 157px);
+  height: calc(100% - 197px);
   #leader-detail-content {
     width: 100%;
-    height: calc(100% - 40px);
+    height: 100%;
     background-image: url('/img/images/leadersBg.jpg');
     background-repeat: no-repeat;
     overflow: hidden;
@@ -95,7 +95,7 @@
     span {
       display: block;
     }
-    p {
+    & > div {
       height: 100px;
       position: absolute;
       top: 50%;

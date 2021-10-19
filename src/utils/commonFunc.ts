@@ -37,6 +37,12 @@ export const link = (data: { className?: string; url?: string; child?: string })
   return new Link(data).getHtml();
 };
 
+export const pushState = (url: string) => {
+  const state = { pathname: url, previousPath: window.location.pathname };
+  history.pushState(state, '', url);
+  window.dispatchEvent(new Event('popstate'));
+};
+
 // Markup Return
 export const map = <T>(arr: T[], f?: (arg: T, index: number) => string) => {
   if (f) return arr.map(f).join('');
