@@ -17,7 +17,6 @@ export class AboutUs extends View {
       ${header}
       ${subHeader}
         <div id="about-us-page">
-        ${subHeader}
           <div id="section1">
             <div id="section1In">
               <div class="left">

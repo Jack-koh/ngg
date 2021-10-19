@@ -62,41 +62,43 @@ export class Header extends View {
   }
 
   addEvents() {
-    const header = document.getElementById('header-wrapper');
-    const navigator = document.getElementById('navigator');
-    const subNavigator = document.getElementById('sub-navigator');
-    const pointer = document.getElementById('navigation-mouse-pointer');
-    const ulElement = document.getElementById('navigator-items');
-    const logo = document.getElementById('logo');
-    if (logo && header && navigator && subNavigator && pointer && ulElement) {
-      header.addEventListener('mouseover', (e) => {
-        const target = e.target as Node;
-        if (navigator.contains(target) || subNavigator.contains(target)) {
-          pointer.style.display = 'block';
-          subNavigator.style.height = '260px';
-        } else {
-          pointer.style.display = 'none';
-          subNavigator.style.height = '0';
-        }
-      });
-      header.addEventListener('mouseleave', (e) => {
-        const target = e.target as Node;
-        if (navigator.contains(target) || subNavigator.contains(target)) {
-          pointer.style.display = 'block';
-          subNavigator.style.height = '260px';
-        } else {
-          pointer.style.display = 'none';
-          subNavigator.style.height = '0';
-        }
-      });
+    const header = document.getElementById('header-wrapper') as HTMLElement;
+    const navigator = document.getElementById('navigator') as HTMLElement;
+    const subNavigator = document.getElementById('sub-navigator') as HTMLElement;
+    const pointer = document.getElementById('navigation-mouse-pointer') as HTMLInputElement;
+    const ulElement = document.getElementById('navigator-items') as HTMLElement;
+    const logo = document.getElementById('logo') as HTMLElement;
 
-      const navItem = navigator.getElementsByClassName('nav-item');
-      [...navItem].forEach((el, i) => {
-        el.addEventListener('mouseover', () => {
-          const defaultWidth = ulElement.clientWidth / 5;
-          pointer.style.left = `${defaultWidth * i}px`;
-        });
-      });
-    }
+    header.onmouseover = (e) => {
+      {
+        const target = e.target as Node;
+        if (navigator.contains(target) || subNavigator.contains(target)) {
+          pointer.style.display = 'block';
+          subNavigator.style.height = '260px';
+        } else {
+          pointer.style.display = 'none';
+          subNavigator.style.height = '0';
+        }
+      }
+    };
+
+    header.onmouseleave = (e) => {
+      const target = e.target as Node;
+      if (navigator.contains(target) || subNavigator.contains(target)) {
+        pointer.style.display = 'block';
+        subNavigator.style.height = '260px';
+      } else {
+        pointer.style.display = 'none';
+        subNavigator.style.height = '0';
+      }
+    };
+
+    const navItem = navigator.getElementsByClassName('nav-item');
+    [...navItem].forEach((el, i) => {
+      (el as HTMLElement).onmouseover = () => {
+        const defaultWidth = ulElement.clientWidth / 5;
+        pointer.style.left = `${defaultWidth * i}px`;
+      };
+    });
   }
 }

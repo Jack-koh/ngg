@@ -13,7 +13,7 @@ export class Footer extends View {
         <div id="footer-copyright">
           National Geographic Society is a 501 (c)(3) organization. ©Jack.koh All rights reserved. See my work at https://www.Jacky.co.kr
         </div>
-        ${link({ url: '/', className: 'footer-logo' })}
+        ${link({ url: '/', className: 'footer__logo' })}
       </div>
     `;
   };

@@ -105,31 +105,29 @@ export default class MobileHeader extends View {
     const button = document.getElementById('mobile-navigator-button');
     const navigator = document.getElementById('mobile-navigator');
     if (button && navigator) {
-      button.addEventListener('click', () => {
+      button.onclick = () => {
         this.show = !this.show;
         navigator.classList.remove(!this.show ? 'show' : 'none');
         navigator.classList.add(this.show ? 'show' : 'none');
-      });
+      };
 
       const navItems = navigator.getElementsByClassName('nav-item');
-      if (navItems) {
-        [...navItems].forEach((el) => {
-          const toggle = el.getElementsByClassName('toggle-btn')[0];
-          if (toggle) {
-            toggle.addEventListener('click', function () {
-              const wrapper = toggle.closest('.nav-item');
-              if (wrapper?.classList.contains('show')) {
-                wrapper.classList.remove('show');
-              } else {
-                [...navItems].forEach((item) => {
-                  item.classList.remove('show');
-                  wrapper?.classList.add('show');
-                });
-              }
-            });
-          }
-        });
-      }
+      [...navItems].forEach((el) => {
+        const toggle = el.getElementsByClassName('toggle-btn')[0] as HTMLElement;
+        if (toggle) {
+          toggle.onclick = () => {
+            const wrapper = toggle.closest('.nav-item');
+            if (wrapper?.classList.contains('show')) {
+              wrapper.classList.remove('show');
+            } else {
+              [...navItems].forEach((item) => {
+                item.classList.remove('show');
+                wrapper?.classList.add('show');
+              });
+            }
+          };
+        }
+      });
     }
   };
 }

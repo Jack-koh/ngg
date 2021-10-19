@@ -66,9 +66,9 @@ export class Intro extends View {
     const footer = new Footer().getHtml();
     return `
       ${header}
-      <div id="intro-page-wrapper">
-        ${sections + nav}
-      </div>
+        <div id="intro-page-wrapper">
+          ${sections + nav}
+        </div>
       ${footer}
     `;
   };

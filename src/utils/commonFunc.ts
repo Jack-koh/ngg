@@ -14,7 +14,7 @@ export class Link extends View {
   generateMarkup() {
     return `
       <div class="nav__link ${this.className}" data-id="${this.uuid}">
-        ${this.data.child}
+        ${this.data.child ?? ''}
       </div>
     `;
   }

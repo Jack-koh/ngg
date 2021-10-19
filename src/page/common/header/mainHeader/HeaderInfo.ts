@@ -1,5 +1,5 @@
-import View from "page/View";
-import "./HeaderInfo.scss";
+import View from 'page/View';
+import './HeaderInfo.scss';
 
 export default class HeaderInfo extends View {
   show: boolean;
@@ -114,22 +114,19 @@ export default class HeaderInfo extends View {
     `;
   }
   addEvents = () => {
-    const headerInfo = document.getElementById("header-info");
-    const infoButton = document.getElementById("info-button");
-    const slider = document.getElementById("info-slider");
-    if (infoButton && slider) {
-      infoButton.addEventListener("click", () => {
-        this.show = !this.show;
-        slider.classList.remove(!this.show ? "show" : "none");
-        slider.classList.add(this.show ? "show" : "none");
-      });
+    const infoButton = document.getElementById('info-button') as HTMLElement;
+    const slider = document.getElementById('info-slider') as HTMLElement;
+    infoButton.onclick = () => {
+      this.show = !this.show;
+      slider.classList.remove(!this.show ? 'show' : 'none');
+      slider.classList.add(this.show ? 'show' : 'none');
+    };
 
-      window.addEventListener("resize", () => {
-        if (window.innerWidth <= 1024) {
-          slider.classList.remove("show");
-          this.show = false;
-        }
-      });
-    }
+    window.onresize = () => {
+      if (window.innerWidth <= 1024) {
+        slider.classList.remove('show');
+        this.show = false;
+      }
+    };
   };
 }

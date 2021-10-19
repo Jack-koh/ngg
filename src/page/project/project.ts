@@ -73,7 +73,7 @@ export class Project extends View {
     const wrapper = document.getElementsByClassName('visaul-items');
     if (wrapper) {
       [...wrapper].forEach((el) => {
-        el.addEventListener('click', function () {
+        (el as HTMLElement).onclick = () => {
           if (el.classList.contains('selected')) {
             el.classList.remove('selected');
           } else {
@@ -81,7 +81,7 @@ export class Project extends View {
             if (selected.length) selected[0].classList.remove('selected');
             el.classList.add('selected');
           }
-        });
+        };
       });
     }
   }

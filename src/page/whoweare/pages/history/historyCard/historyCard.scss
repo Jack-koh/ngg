@@ -3,4 +3,208 @@
   height: 854px;
   padding: 80px 1% 1%;
   background-color: #fff;
+
+  #history-card-inner {
+    max-width: 1841px;
+    margin: 0 auto;
+
+    #prev {
+      width: 39px;
+      height: 39px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    #history-category {
+      width: 100%;
+      height: 30px;
+      margin-top: 45px;
+      border-bottom: 1px solid var(--brand);
+
+      li {
+        display: inline-block;
+        padding-right: 15px;
+        line-height: 30px;
+        font-size: 14px;
+        color: #555;
+        cursor: pointer;
+      }
+    }
+  }
+
+  #history-card-window {
+    display: flex;
+    overflow: auto;
+    height: 46rem;
+    margin-top: 1rem;
+
+    li {
+      position: relative;
+      flex-shrink: 0;
+      width: 260px;
+      height: 420px;
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+
+      &:hover {
+        .blackC {
+          opacity: 0.8;
+        }
+        .title {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+        .img {
+          transform: scale(1.1);
+        }
+      }
+
+      .imgFrame {
+        width: 90%;
+        height: 90%;
+        margin: 20px auto;
+
+        .img {
+          width: 100%;
+          height: 100%;
+          transition: transform 0.5s;
+          background-repeat: no-repeat;
+
+          &.timelineImage01 {
+            background-image: url('/img/images/timeline/timelineImage01.jpg');
+          }
+
+          &.timelineImage02 {
+            background-image: url('/img/images/timeline/timelineImage02.jpg');
+          }
+
+          &.timelineImage03 {
+            background-image: url('/img/images/timeline/timelineImage03.jpg');
+          }
+
+          &.timelineImage04 {
+            background-image: url('/img/images/timeline/timelineImage04.jpg');
+          }
+
+          &.timelineImage05 {
+            background-image: url('/img/images/timeline/timelineImage05.jpg');
+          }
+
+          &.timelineImage06 {
+            background-image: url('/img/images/timeline/timelineImage06.jpg');
+          }
+
+          &.timelineImage07 {
+            background-image: url('/img/images/timeline/timelineImage07.jpg');
+          }
+
+          &.timelineImage08 {
+            background-image: url('/img/images/timeline/timelineImage08.jpg');
+          }
+
+          &.timelineImage09 {
+            background-image: url('/img/images/timeline/timelineImage09.jpg');
+          }
+
+          &.timelineImage10 {
+            background-image: url('/img/images/timeline/timelineImage10.jpg');
+          }
+
+          &.timelineImage11 {
+            background-image: url('/img/images/timeline/timelineImage11.jpg');
+          }
+
+          &.timelineImage12 {
+            background-image: url('/img/images/timeline/timelineImage12.jpg');
+          }
+
+          &.timelineImage13 {
+            background-image: url('/img/images/timeline/timelineImage13.jpg');
+          }
+
+          &.timelineImage14 {
+            background-image: url('/img/images/timeline/timelineImage14.jpg');
+          }
+
+          &.timelineImage15 {
+            background-image: url('/img/images/timeline/timelineImage15.jpg');
+          }
+
+          &.timelineImage16 {
+            background-image: url('/img/images/timeline/timelineImage16.jpg');
+          }
+
+          &.timelineImage18 {
+            background-image: url('/img/images/timeline/timelineImage18.jpg');
+          }
+
+          &.timelineImage19 {
+            background-image: url('/img/images/timeline/timelineImage19.jpg');
+          }
+
+          &.timelineImage20 {
+            background-image: url('/img/images/timeline/timelineImage20.jpg');
+          }
+
+          &.timelineImage21 {
+            background-image: url('/img/images/timeline/timelineImage21.jpg');
+          }
+
+          &.timelineImage22 {
+            background-image: url('/img/images/timeline/timelineImage22.jpg');
+          }
+
+          &.timelineImage23 {
+            background-image: url('/img/images/timeline/timelineImage23.jpg');
+          }
+
+          &.timelineImage24 {
+            background-image: url('/img/images/timeline/timelineImage24.jpg');
+          }
+
+          &.timelineImage25 {
+            background-image: url('/img/images/timeline/timelineImage25.jpg');
+          }
+
+          &.timelineImage26 {
+            background-image: url('/img/images/timeline/timelineImage26.jpg');
+          }
+
+          &.timelineImage27 {
+            background-image: url('/img/images/timeline/timelineImage27.jpg');
+          }
+        }
+      }
+
+      .blackC {
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+
+      .title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -10%);
+        color: #eee;
+        z-index: 2;
+        font-size: 20px;
+        text-align: center;
+        opacity: 0;
+        transition: all 1s;
+      }
+    }
+  }
 }

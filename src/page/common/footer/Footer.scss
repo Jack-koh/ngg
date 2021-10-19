@@ -17,18 +17,14 @@
     padding: 1.8rem;
   }
 
-  #footer-logo {
+  .footer__logo {
     width: 18rem;
     height: 3.2rem;
     margin-top: 1.2rem;
-    background: url(/img/logo.png) no-repeat;
+    background: url('/img/logo.png') no-repeat;
     background-size: 100%;
     cursor: pointer;
   }
-}
-
-#footer #footerLogo img {
-  width: 100%;
 }
 
 @media all and (min-width: 0) and (max-width: 1025px) {
@@ -39,7 +35,7 @@
       padding: 18px;
     }
 
-    #footer-logo {
+    .footer__logo {
       width: 180px;
     }
   }
@@ -51,7 +47,7 @@
     align-items: center;
   }
 
-  #footer-logo {
+  .footer__logo {
     width: 180px;
     margin: 0;
   }
