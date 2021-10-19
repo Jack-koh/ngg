@@ -101,16 +101,19 @@
             background-color: #eee;
           }
           .text {
-            width: 70%;
+            width: 80%;
             margin-top: 14px;
           }
         }
 
         .enterBtn {
+          position: absolute;
           width: 200px;
           margin-top: 40px;
           color: #eee;
           cursor: pointer;
+          z-index: 10;
+          font-size: 1.6rem;
 
           .slidingBar {
             display: block;
