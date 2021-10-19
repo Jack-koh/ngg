@@ -4,7 +4,7 @@ export { WhoWeAre } from 'page/whoweare/Whoweare';
 export { AboutUs } from 'page/whoweare/pages/aboutUs/AboutUs';
 import LeadershipPage from 'page/whoweare/pages/leadership/leaderShip';
 import LeaderPage from 'page/whoweare/pages/leaders/leaderDetail';
-import HistoryPage from 'page/whoweare/pages/history/history';
+export { History } from 'page/whoweare/pages/history/History';
 
 export { Explorer } from 'page/explorer/Explorer';
 export { Exhibition } from 'page/exhibition/Exhibition';

@@ -1,6 +1,5 @@
 import LeadershipPage from 'page/whoweare/pages/leadership/leaderShip';
 import LeaderPage from 'page/whoweare/pages/leaders/leaderDetail';
-import HistoryPage from 'page/whoweare/pages/history/history';
 
 import * as Pages from 'page';
 
@@ -8,7 +7,7 @@ const routes = [
   { path: '/', view: Pages.Intro },
   { path: '/whoweare', view: Pages.WhoWeAre },
   { path: '/whoweare/aboutus', view: Pages.AboutUs },
-  // { path: "/whoweare/history", view: HistoryPage },
+  { path: '/whoweare/history', view: Pages.History },
   // { path: "/whoweare/leadership", view: LeadershipPage },
   // { path: "/whoweare/leadership/leaders", view: LeaderPage },
   // { path: "/whoweare/newsroom", view: AboutUsPage },

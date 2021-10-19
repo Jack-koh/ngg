@@ -1,60 +1,49 @@
-import Router from "router/Router";
-import View from "page/View";
-import { v4 as uuid } from "uuid";
+import Router from 'router/Router';
+import View from 'page/View';
+import { v4 as uuid } from 'uuid';
 
 export class Link extends View {
-  className?: string;
-  url?: string;
-  child: string;
   private uuid: string;
-  constructor(data: { url?: string; child: string; className?: string }) {
+  private className: string;
+  constructor(public data: { url?: string; child?: string; className?: string }) {
     super();
     this.uuid = uuid();
-    this.className = data.className ?? "";
-    this.url = data.url;
-    this.child = data.child;
+    this.className = data.className ?? '';
   }
 
-  generateMarkup = () => {
+  generateMarkup() {
     return `
       <div class="nav__link ${this.className}" data-id="${this.uuid}">
-        ${this.child}
+        ${this.data.child}
       </div>
     `;
-  };
+  }
 
   addEvents = () => {
     const navLink = document.querySelector(`[data-id="${this.uuid}`);
     if (navLink) {
       (navLink as HTMLElement).onclick = () => {
-        if (this.url) {
-          const state = {
-            pathname: this.url,
-            previousPath: window.location.pathname,
-          };
-          history.pushState(state, "", this.url);
-          window.dispatchEvent(new Event("popstate"));
+        if (this.data.url) {
+          const state = { pathname: this.data.url, previousPath: window.location.pathname };
+          history.pushState(state, '', this.data.url);
+          window.dispatchEvent(new Event('popstate'));
         }
       };
     }
   };
 }
 
-export const link = (data: {
-  className?: string;
-  url?: string;
-  child: string;
-}) => {
+export const link = (data: { className?: string; url?: string; child?: string }) => {
   return new Link(data).getHtml();
 };
 
 // Markup Return
 export const map = <T>(arr: T[], f?: (arg: T, index: number) => string) => {
-  if (f) return arr.map(f).join("");
-  return arr.join("");
+  if (f) return arr.map(f).join('');
+  return arr.join('');
 };
 
 export const con = (arg: { value: boolean; markup: string }): string => {
   if (!!arg.value) return arg.markup;
-  return "";
+  return '';
 };

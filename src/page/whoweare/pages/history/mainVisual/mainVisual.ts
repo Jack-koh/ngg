@@ -4,8 +4,6 @@ import './mainVisual.scss';
 class MainVisual {
   videoElement: HTMLElement;
   constructor() {
-    this.videoElement = document.createElement('div');
-    this.videoElement.id = 'videoWrap';
     const titleEl = document.createElement('div');
     titleEl.id = 'history-title';
     titleEl.innerHTML = `
@@ -20,6 +18,9 @@ class MainVisual {
         <span class="orange">can explore this fascinating history</span>
       </p>
     `;
+
+    this.videoElement = document.createElement('div');
+    this.videoElement.id = 'videoWrap';
     this.videoElement.innerHTML = `
       <video id="myVideo" muted autoplay playsinline loop>
         <source src="/video/historyBg.mp4" type="video/mp4"/>

@@ -2,7 +2,7 @@ import { link } from 'utils/commonFunc';
 import { Header, Footer, SubHeader } from 'page/common';
 import EnterButton from 'components/common/button/button';
 import View from 'page/View';
-import './aboutUs.scss';
+import './AboutUs.scss';
 
 export class AboutUs extends View {
   constructor() {
@@ -20,6 +20,7 @@ export class AboutUs extends View {
     return `
       ${header}
         <div id="about-us-page">
+        ${subHeader}
           <div id="section1">
             <div id="section1In">
               <div class="left">

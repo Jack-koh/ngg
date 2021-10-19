@@ -18,8 +18,8 @@ class HistoryCard {
   constructor() {
     this.wrapperElement = document.createElement('div');
     this.wrapperElement.id = 'history-card-wrapper';
-    const cardHeader = new CardHeader({ data: cardData, setCardWindow: this.setCardWindow })
-      .instance;
+    const cardHeader = new CardHeader({ data: cardData, setCardWindow: this.setCardWindow }).instance;
+
     this.wrapperElement.appendChild(cardHeader);
     this.setCardWindow(cardData);
   }
