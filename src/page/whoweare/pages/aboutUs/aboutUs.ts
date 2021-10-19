@@ -1,4 +1,3 @@
-import { link } from 'utils/commonFunc';
 import { Header, Footer, SubHeader } from 'page/common';
 import EnterButton from 'components/common/button/button';
 import View from 'page/View';
@@ -13,12 +12,10 @@ export class AboutUs extends View {
     const header = new Header().getHtml();
     const subHeader = new SubHeader().getHtml();
     const footer = new Footer().getHtml();
-    const Button = new EnterButton({
-      url: '/whoweare/history',
-      text: 'EXPLORE',
-    }).getHtml();
+    const Button = new EnterButton({ url: '/whoweare/history', text: 'EXPLORE' }).getHtml();
     return `
       ${header}
+      ${subHeader}
         <div id="about-us-page">
           <div id="section1">
             <div id="section1In">

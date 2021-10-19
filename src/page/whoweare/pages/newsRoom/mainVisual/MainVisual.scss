@@ -1,0 +1,267 @@
+#nsroom-mainVisual {
+  width: 100%;
+  position: relative;
+  #visual {
+    width: 100%;
+
+    li {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: opacity 1s ease-in-out;
+
+      img {
+        width: 100%;
+      }
+    }
+    li:nth-child(1) {
+      z-index: 4;
+    }
+    li:nth-child(2) {
+      z-index: 3;
+    }
+    li:nth-child(3) {
+      z-index: 2;
+    }
+    li:nth-child(4) {
+      z-index: 1;
+    }
+
+    .visualHeight {
+      width: 100%;
+      opacity: 0;
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 5px;
+      transition: background-color 0.2s linear;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      img {
+        opacity: 0.3;
+      }
+
+      &#prev {
+        position: absolute;
+        left: 8%;
+        top: 40%;
+        z-index: 10;
+      }
+
+      &#next {
+        position: absolute;
+        right: 8%;
+        top: 40%;
+        z-index: 10;
+      }
+    }
+  }
+
+  #newsTitle {
+    width: 80%;
+    height: 230px;
+    text-align: left;
+    color: #eee;
+    position: absolute;
+    left: 15%;
+    bottom: 80px;
+    z-index: 6;
+
+    #titleFade {
+      position: relative;
+      li {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: opacity 1s ease-in-out;
+
+        .title {
+          font-size: 50px;
+          font-family: 'Aldrich';
+          margin-top: 12px;
+        }
+
+        .desc {
+          font-size: 13px;
+          margin-top: 25px;
+
+          .bar {
+            width: 150px;
+            height: 1px;
+            background-color: #eee;
+          }
+          .text {
+            width: 70%;
+            margin-top: 14px;
+          }
+        }
+
+        .enterBtn {
+          width: 200px;
+          margin-top: 40px;
+          color: #eee;
+          cursor: pointer;
+
+          .slidingBar {
+            display: block;
+            width: 150px;
+            height: 2px;
+            background-color: gold;
+            position: absolute;
+            left: -120px;
+            top: 11px;
+            transition: left 0.5s ease-in-out;
+          }
+
+          &:hover {
+            .slidingBar {
+              left: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1025px) {
+  #nsroom-mainVisual {
+    #visual {
+      #prev {
+        position: absolute;
+        left: 5%;
+        top: 40%;
+      }
+
+      #next {
+        position: absolute;
+        right: 5%;
+        top: 40%;
+      }
+    }
+    #newsTitle {
+      left: 15%;
+      bottom: 80px;
+
+      .title {
+        font-size: 44px;
+      }
+      .desc {
+        width: 80%;
+      }
+      .bar {
+        width: 100px;
+        height: 1px;
+        background-color: #eee;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 481px) and (max-width: 767px) {
+  #nsroom-mainVisual {
+    #visual {
+      li {
+        height: 333px;
+        img {
+          width: 751px;
+        }
+      }
+
+      .visualHeight {
+        width: 751px;
+      }
+
+      #prev {
+        display: none;
+      }
+
+      #next {
+        display: none;
+      }
+    }
+
+    #newsTitle {
+      left: 15%;
+      bottom: 60px;
+      .title {
+        font-size: 24px !important;
+        font-family: 'Aldrich';
+        margin-top: 12px;
+      }
+      .bar {
+        width: 100px;
+        height: 1px;
+        background-color: #eee;
+      }
+      .desc {
+        width: 80%;
+        font-size: 13px !important;
+        margin-top: 25px;
+      }
+
+      .text {
+        margin-top: 14px;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 320px) and (max-width: 480px) {
+  #content {
+    padding-top: 60px;
+  }
+
+  #nsroom-mainVisual {
+    #visual {
+      .visualHeight {
+        width: 751px;
+      }
+
+      #prev {
+        display: none;
+      }
+      #next {
+        display: none;
+      }
+    }
+
+    #newsTitle {
+      width: 90%;
+      left: 10%;
+      top: 5%;
+
+      .title {
+        font-size: 24px !important;
+      }
+
+      .desc {
+        width: 90%;
+      }
+
+      .bar {
+        width: 50px;
+        height: 1px;
+        background-color: #eee;
+      }
+
+      .text {
+        width: 100%;
+      }
+
+      .enterBtn {
+        margin-top: 20px;
+      }
+    }
+  }
+}

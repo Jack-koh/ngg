@@ -1,4 +1,5 @@
 import { mainUrls, subUrls } from 'utils/urlData';
+import { map, link } from 'utils/commonFunc';
 import View from 'page/View';
 import './SubHeader.scss';
 
@@ -55,46 +56,33 @@ export class SubHeader extends View {
               <span class="text">${this.path.main}</span>
               <span class="img"></span>
             </dt>
-            <dd id="main-locate" class="sublocate"></dd>
+            <dd id="main-locate" class="sublocate">
+              ${map(mainUrls, (nav) => {
+                return link({ url: nav.url, className: 'nav-item', child: nav.title });
+              })}
+            </dd>
           </dl>
           <dl id="way2-container">
             <dt id="way2">
               <span class="text">${this.path.sub}</span>
               <span class="img"></span>
             </dt>
-            <dd id="sub-locate" class="sublocate"></dd>
+            <dd id="sub-locate" class="sublocate">
+              ${map(subUrls[this.path.main], (nav) => {
+                return link({ url: nav.url, className: 'nav-item', child: nav.title });
+              })}
+            </dd>
           </dl>
         </div>
       </div>
     `;
   }
 
-  addEvents() {
+  addEvents = () => {
     const mainTarget = document.getElementById('main-locate');
     const subTarget = document.getElementById('sub-locate');
-    if (mainTarget && subTarget) {
-      this.addLocations(mainTarget, subTarget);
-      this.toggle();
-    }
-  }
-
-  addLocations(mainTarget: HTMLElement, subTarget: HTMLElement) {
-    mainUrls.forEach((nav) => {
-      const item = document.createElement('div');
-      item.classList.add('nav-item');
-      item.textContent = nav.title;
-      // link(item, nav.url);
-      mainTarget.appendChild(item);
-    });
-
-    subUrls[this.path.main].forEach((nav) => {
-      const item = document.createElement('div');
-      item.classList.add('nav-item');
-      item.textContent = nav.title;
-      // link(item, nav.url);
-      subTarget.appendChild(item);
-    });
-  }
+    if (mainTarget && subTarget) this.toggle();
+  };
 
   toggle() {
     const mainButton = <HTMLElement>document.getElementById('way1');
