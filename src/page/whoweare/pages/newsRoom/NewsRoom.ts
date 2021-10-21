@@ -12,7 +12,6 @@ export class NewsRoom extends View {
     const header = new Header().getHtml();
     const subHeader = new SubHeader().getHtml();
     const footer = new Footer().getHtml();
-    // const Button = new EnterButton({ url: '/whoweare/history', text: 'READ MORE' }).getHtml();
     const mainVisual = new MainVisual().getHtml();
     const content = new Content().getHtml();
 
