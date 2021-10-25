@@ -1,0 +1,41 @@
+#aside {
+  width: 25%;
+  float: left;
+
+  #asideIn {
+    width: 230px;
+    margin: 140px auto 0;
+
+    #ad {
+      width: 240px;
+      height: 150px;
+
+      strong {
+        display: block;
+        color: #222;
+        font-weight: normal;
+        margin-bottom: 10px;
+        font-size: 1.6rem;
+      }
+
+      p {
+        width: 108px;
+        height: 108px;
+        border: 1px solid #ebebeb;
+        float: left;
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media all and (min-width: 0) and (max-width: 1025px) {
+  #aside {
+    display: none;
+  }
+}

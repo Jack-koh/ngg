@@ -3,13 +3,13 @@ import { map } from 'utils/commonFunc';
 import './News.scss';
 
 class News extends View {
-  constructor(public data: { img: string; title: string; desc: string }[][]) {
+  constructor(public id: string, public data: { img: string; title: string; desc: string }[][]) {
     super();
   }
 
   generateMarkup() {
     return `
-      <div class="ns-news-screen">
+      <div class="ns-news-screen" id="${this.id}-ul">
         ${map(this.data, (el) => {
           return `
             <ul>

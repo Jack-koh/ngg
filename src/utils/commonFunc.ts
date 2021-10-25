@@ -1,6 +1,7 @@
 import Router from 'router/Router';
 import View from 'page/View';
 import { v4 as uuid } from 'uuid';
+import './commonFunc.scss';
 
 export class Link extends View {
   private uuid: string;

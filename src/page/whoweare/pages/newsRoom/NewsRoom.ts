@@ -1,6 +1,7 @@
 import { Header, Footer, SubHeader } from 'page/common';
 import MainVisual from './mainVisual/MainVisual';
 import Content from './content/Content';
+import Aside from './aside/Aside';
 import View from 'page/View';
 
 export class NewsRoom extends View {
@@ -14,12 +15,14 @@ export class NewsRoom extends View {
     const footer = new Footer().getHtml();
     const mainVisual = new MainVisual().getHtml();
     const content = new Content().getHtml();
+    const aside = new Aside().getHtml();
 
     return `
       ${header}
       ${subHeader}
       ${mainVisual}
       ${content}
+      ${aside}
       ${footer}
     `;
   }
