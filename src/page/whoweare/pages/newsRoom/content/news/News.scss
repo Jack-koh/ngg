@@ -43,13 +43,13 @@
         }
       }
 
-      .desc {
+      .nav__link {
         width: 100%;
         font-size: 13px;
         margin-top: 15px;
         letter-spacing: -0.1px;
         line-height: 22px;
-        cursor: pointer;
+
         &:hover {
           text-decoration: underline;
         }

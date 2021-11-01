@@ -60,5 +60,3 @@ export class History extends View {
     };
   }
 }
-
-export default History;

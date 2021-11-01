@@ -13,14 +13,14 @@ class Content extends View {
   }
 
   generateMarkup() {
-    const rel = {
-      headLine: new HeadLine('ns-hl-press', 'PRESS RELEASES').getHtml(),
-      contents: new News('ns-hl-press', [...release, ...release]).getHtml(),
-    };
-
     const bl = {
       headLine: new HeadLine('ns-hl-inside', 'INSIDE NAT GEO BLOG').getHtml(),
       contents: new News('ns-hl-inside', [...blog, ...blog]).getHtml(),
+    };
+
+    const rel = {
+      headLine: new HeadLine('ns-hl-press', 'PRESS RELEASES').getHtml(),
+      contents: new News('ns-hl-press', [...release, ...release]).getHtml(),
     };
 
     const events1 = new Event(eventData[0]).getHtml();

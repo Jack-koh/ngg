@@ -125,7 +125,6 @@ class MainVisual extends View {
       };
 
       timer = setInterval(function () {
-        console.log('render');
         next.click();
       }, 8000);
     }

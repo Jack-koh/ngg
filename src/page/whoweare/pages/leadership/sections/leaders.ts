@@ -72,7 +72,7 @@ export class Leaders extends View {
                       url: `/whoweare/leadership/leaders/${i}`,
                       child: `
                         <div class="imgArea">
-                          <div class="image-content" title="MichaelUlica">
+                          <div class="image-content" title="${item.name}">
                             <img src="${item.url}" alt="${item.name}" />
                             <span class="colorOver"> </span>
                           </div>

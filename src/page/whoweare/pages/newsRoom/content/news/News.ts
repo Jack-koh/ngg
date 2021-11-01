@@ -1,5 +1,5 @@
 import View from 'page/View';
-import { map } from 'utils/commonFunc';
+import { link, map } from 'utils/commonFunc';
 import './News.scss';
 
 class News extends View {
@@ -10,22 +10,28 @@ class News extends View {
   generateMarkup() {
     return `
       <div class="ns-news-screen" id="${this.id}-ul">
-        ${map(this.data, (el) => {
+        ${map(this.data, (el, i) => {
+          const addIndex = i === 0 || i === 2 ? 3 : 0;
           return `
             <ul>
-              ${map(el, (item) => {
+              ${map(el, (item, i) => {
                 return `
                   <li>
                     <div class="photoBox">
-                      <img src=${item.img} alt="news1">
+                      ${link({
+                        url: `/whoweare/newsroom/article/${this.id}-${i + addIndex}`,
+                        child: `<img src=${item.img} alt="news1">`,
+                      })}
                     </div>
                     <h4>${item.title}</h4>
                     <p class="state">
                       0 comments <span class="slash">/</span> &nbsp;<img src="../../img/like.png" alt="like">&nbsp;13 <span class="slash">/</span> April 28,2018
                     </p>
-                    <p class="desc">
-                      ${item.desc}
-                    </p>
+                    ${link({
+                      url: `/whoweare/newsroom/article/${this.id}-${i + addIndex}`,
+                      className: 'desc',
+                      child: item.desc,
+                    })}
                   </li>
                 `;
               })}

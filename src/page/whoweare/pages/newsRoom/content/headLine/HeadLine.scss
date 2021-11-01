@@ -16,7 +16,6 @@
     float: left;
 
     .btnWrap {
-      width: 120px;
       float: right;
       p {
         width: 39px;
@@ -40,9 +39,6 @@
   .ns-headline {
     .btn {
       border-right: 1px solid #eee;
-      .btnWrap {
-        width: 121px;
-      }
     }
   }
 }
@@ -52,9 +48,9 @@
     width: 90%;
     margin: 0 5%;
     .btn {
-      border-right: 1px solid #eee;
+      border: none;
       .btnWrap {
-        width: 40px !important;
+        display: none;
         p:first-child {
           display: none;
         }

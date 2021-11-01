@@ -1,0 +1,47 @@
+#ns-article-content {
+  width: 75%;
+  margin: 0 auto;
+  min-height: 762px;
+  padding: 100px 2% 40px;
+
+  .title {
+    font-weight: normal;
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+  .sub-title {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .ns-article-content-markup {
+    img {
+      width: 100%;
+      margin-top: 20px;
+    }
+    .desc {
+      margin-top: 40px;
+
+      p {
+        &.italic {
+          font-style: italic;
+          font-family: 'hind400' !important;
+          span {
+            color: #ffbf00;
+          }
+        }
+      }
+      p:not(.person) {
+        font-size: 1.4rem;
+        font-weight: 100;
+        font-family: 'hind100';
+        margin-top: 20px;
+      }
+      .person {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

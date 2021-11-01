@@ -1,0 +1,80 @@
+#explorers-list {
+  max-width: 1244px;
+  padding: 12px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, max(0.25fr));
+  grid-gap: 1.6rem;
+  li {
+    .explorersBox {
+      width: 100%;
+      overflow: hidden;
+      .imgArea {
+        cursor: pointer;
+        width: 100%;
+        height: calc(100% - 50px);
+        .image-content {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .image-content:hover {
+          .colorOver {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            opacity: 0.3;
+            transition: all 0.3s;
+          }
+        }
+      }
+
+      .textArea {
+        width: 100%;
+        height: 50px;
+        padding-top: 6px;
+        padding-left: 4%;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+
+        .exName {
+          height: 18px;
+          color: #111;
+          font-size: 14px;
+        }
+
+        .research {
+          height: 10px;
+          color: #aaa;
+          font-size: 12px;
+          font-family: 'hind100';
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #explorers-list {
+    grid-template-columns: repeat(3, max(0.33fr)) !important;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 768px) {
+  #explorers-list {
+    grid-template-columns: repeat(2, max(0.5fr)) !important;
+  }
+}

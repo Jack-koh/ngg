@@ -19,15 +19,16 @@ class HeadLine extends View {
             <p id="${this.id}-next">
               <img src="/img/next01.jpg" alt="next">
             </p>
-            <p>
-              <a href="News.html" title="allbtn">
-                <img src="/img/all.jpg" alt="all">
-              </a>
-            </p>
           </div>
         </div>
       </div>
     `;
+
+    //  <p>
+    //     <a href="News.html" title="allbtn">
+    //       <img src="/img/all.jpg" alt="all">
+    //     </a>
+    //   </p>
   }
 
   addEvents = () => {

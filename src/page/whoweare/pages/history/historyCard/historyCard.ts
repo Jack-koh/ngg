@@ -76,7 +76,9 @@ class HistoryCard extends View {
           cardWindow.innerHTML = map(data, (item) => {
             return `
               <li class="history-card-item">
-                <div class="imgFrame"><div class="img ${item.img}"/></div>
+                <div class="imgFrame">
+                  <div class="img ${item.img}"/>
+                </div>
                 <p class="blackC" />
                 <p class="title">${item.title}</p>
               </li>
