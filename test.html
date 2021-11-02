@@ -1,0 +1,490 @@
+<?php
+	include "../../reset.html";
+	session_cache_expire(3600);
+	session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/subhead.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/footer.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../js/gnbSlide.js"></script>
+    <script src="../../js/query.js"></script>
+    <style>
+      #wrap {
+        max-width: 1920px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+      }
+      #content {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /*################################# section1 ##########################################*/
+
+      #section1 {
+        width: 100%;
+        background-color: #252525;
+        position: relative;
+      }
+
+      #section1 .title {
+        position: absolute;
+        left: 10%;
+        top: 570px;
+      }
+      #section1 h3 {
+        width: 610px;
+        color: #fff;
+        font-family: 'Aldrich';
+        padding-bottom: 20px;
+        font-size: 30px;
+        font-weight: 100;
+      }
+
+      #section1 .bar {
+        width: 60px;
+        height: 1px;
+        background-color: #ffbf00;
+        margin-bottom: 10px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #section1 .title .subtitle {
+        max-width: 300px;
+        font-size: 14px;
+        margin-bottom: 60px;
+        color: #eee;
+        font-family: 'hind100';
+      }
+
+      #section1 #mapBg {
+        width: 1903px;
+        position: relative;
+      }
+      #section1 #mapBg img {
+        width: 100%;
+      }
+
+      #circles div {
+        width: 26px;
+        height: 26px;
+        background-color: gold;
+        border-radius: 13px;
+        cursor: pointer;
+      }
+      #circles div p {
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        margin: 3px auto;
+      }
+      #circles div span {
+        display: block;
+        width: 26px;
+        height: 26px;
+        border: 1px solid gold;
+        border-radius: 13px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+        animation: circle 2s infinite;
+      }
+
+      @keyframes circle {
+        0% {
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+
+      #circles .southA {
+        position: absolute;
+        left: 300px;
+        top: 233px;
+      }
+      #circles .northA {
+        position: absolute;
+        left: 600px;
+        top: 533px;
+      }
+      #circles .pacific {
+        position: absolute;
+        left: 750px;
+        top: 333px;
+      }
+      #circles .afreeca {
+        position: absolute;
+        left: 950px;
+        top: 533px;
+      }
+      #circles .westAsia {
+        position: absolute;
+        left: 1020px;
+        top: 333px;
+      }
+      #circles .asia {
+        position: absolute;
+        left: 1300px;
+        top: 353px;
+      }
+      #circles .aust {
+        position: absolute;
+        left: 1500px;
+        top: 553px;
+      }
+
+      #toolTip {
+        position: absolute;
+        width: 160px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+      #toolTip #searchImg {
+        width: 35px;
+        height: 35px;
+        margin-top: 7px;
+        margin-left: 7px;
+        border-radius: 3px;
+        overflow: hidden;
+        float: left;
+      }
+      #toolTip #text {
+        width: 108px;
+        font-size: 14px;
+        font-family: 'hind100';
+        float: left;
+        line-height: 18px;
+        margin-left: 10px;
+        margin-top: 7px;
+        color: #333;
+      }
+
+      #slide {
+        width: 80%;
+        padding: 0 10%;
+        height: 300px;
+        background-color: #fff;
+        border-top: 1px solid gold;
+        position: absolute;
+        left: 0;
+        bottom: -300px;
+        z-index: 5;
+      }
+      #textArea {
+        width: 400px;
+        margin-top: 40px;
+        float: left;
+        color: #333;
+      }
+      #textArea h4 {
+        font-size: 20px;
+      }
+      #textArea #desc {
+        font-size: 14px;
+        font-family: 'hind100';
+        margin-top: 15px;
+      }
+      #textArea .logoF {
+        width: 150px;
+      }
+
+      #explorers {
+        width: 450px;
+        float: left;
+        margin-top: 40px;
+        padding-left: 100px;
+        color: #333;
+      }
+      .explorer {
+        margin-top: 20px;
+      }
+      .explorer li {
+        width: 100px;
+        float: left;
+        margin-right: 5px;
+      }
+      .explorer li .photo {
+        line-height: 0;
+      }
+      .explorer li .name {
+        width: 100%;
+        font-size: 14px;
+        color: #555;
+        line-height: 26px;
+        text-indent: 5px;
+        height: 26px;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+        boder-top: none;
+      }
+
+      #news {
+        float: left;
+        width: 450px;
+        margin-top: 40px;
+        color: #333;
+        padding-left: 100px;
+      }
+      #news h4 {
+        margin-bottom: 5px;
+      }
+      #news p {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        margin-top: 5px;
+      }
+      #news a {
+        display: block;
+        text-indent: 10px;
+        color: #555;
+        font-size: 14px;
+        font-family: 'hind100';
+        line-height: 30px;
+      }
+
+      .cancle {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+      }
+
+      /*################ login output ######################*/
+      #showId {
+        width: 100%;
+        height: 40px;
+        margin: 20px 0;
+        color: #333;
+        font-size: 14px;
+        font-family: 'hind400';
+        overflow: hidden;
+      }
+      #showId p {
+        float: left;
+        height: 53px;
+        padding-top: 7px;
+      }
+      #showId span {
+        display: block;
+        width: 110px;
+        transition: transform 0.3s;
+        display: block;
+        float: left;
+        margin-left: 6px;
+        margin-top: 7px;
+      }
+      #showId img {
+        vertical-align: middle;
+      }
+      #showId a {
+        display: block;
+        height: 40px;
+        float: left;
+        font-size: 14px;
+        color: #333;
+        margin-left: 6px;
+        margin-top: 6px;
+        transition: transform 0.3s;
+      }
+      #showId:hover a,
+      #showId:hover span {
+        transform: translatey(-29px);
+      }
+
+      #mobShowId {
+        font-size: 14px;
+        font-family: 'hind400';
+      }
+      #mobShowId img {
+        vertical-align: middle;
+        padding-right: 10px;
+      }
+      #mobShowId a {
+        padding-left: 30px;
+        font-size: 14px;
+      }
+    </style>
+    <script>
+      $(function () {
+        $('#toolTip').hide();
+
+        $('#circles div').mouseover(function () {
+          $('#toolTip')
+            .stop()
+            .fadeIn()
+            .css({
+              left: $(this).offset().left + $(this).width() + 20 + 'px',
+              top: $(this).offset().top - 135 + 'px',
+            });
+        });
+
+        $('#circles div').mouseout(function () {
+          $('#toolTip').fadeOut();
+        });
+
+        var i = 0;
+
+        $('#circles div').click(function () {
+          if (i === 0) {
+            $('#slide').animate({ bottom: 0 });
+            i = 1;
+          } else {
+            $('#slide').animate({ bottom: '-300px' });
+            i = 0;
+          }
+        });
+
+        $('.cancle').click(function () {
+          $('#slide').animate({ bottom: '-300px' });
+          i = 0;
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="mapBg">
+      <div id="toolTip">
+        <p id="searchImg"><img src="../../img/search.jpg" alt="search" /></p>
+        <p id="text">
+          Check out<br />
+          this area
+        </p>
+      </div>
+      <div id="circles">
+        <div class="southA">
+          <p></p>
+          <span> </span>
+        </div>
+        <div class="northA">
+          <p></p>
+          <span> </span>
+        </div>
+        <div class="pacific">
+          <p></p>
+          <span> </span>
+        </div>
+        <div class="afreeca">
+          <p></p>
+          <span> </span>
+        </div>
+        <div class="westAsia">
+          <p></p>
+          <span> </span>
+        </div>
+        <div class="asia">
+          <p></p>
+          <span> </span>
+        </div>
+        <div class="aust">
+          <p></p>
+          <span> </span>
+        </div>
+      </div>
+      <p id="imgFrame"><img src="../../img/images/fieldBg.jpg" alt="fieldBg" /></p>
+      <div id="slide">
+        <div id="textArea">
+          <p class="logoF"><img src="../../img/logo.png" alt="logo" /></p>
+          <h4>Will Wildlife Activity Exacerbate The Arctic Meltdown?</h4>
+          <p id="desc">
+            Northern ecosystems have become increasingly important in regards to global carbon (C) circulation
+            with respect to feedbacks from arctic ecosystems and global climate change.
+          </p>
+        </div>
+        <div id="explorers">
+          <h4>Project explorers</h4>
+          <div class="explorer">
+            <ul>
+              <li>
+                <p class="photo">
+                  <a href="brian.html" title="ex"
+                    ><img src="../../img/images/explorers/BrianSkerry.png" alt="ex2"
+                  /></a>
+                </p>
+                <p class="name">BrianSkerry</p>
+              </li>
+              <li>
+                <p class="photo">
+                  <a href="albert.html" title="ex"
+                    ><img src="../../img/images/explorers/AlbertLin.png" alt="ex1"
+                  /></a>
+                </p>
+                <p class="name">AlbertLin</p>
+              </li>
+              <li>
+                <p class="photo">
+                  <a href="caltonward.html" title="ex"
+                    ><img src="../../img/images/explorers/CarltonWardJr.png" alt="ex3"
+                  /></a>
+                </p>
+                <p class="name">CarltonWardJr</p>
+              </li>
+              <li>
+                <p class="photo">
+                  <a href="enric.html" title="ex"
+                    ><img src="../../img/images/explorers/EnricSala.png" alt="ex4"
+                  /></a>
+                </p>
+                <p class="name">Enric</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="news">
+          <h4>Headlines</h4>
+          <p>
+            <a href="../whoweare/news01.html" title="new01"
+              >National Geographic Society Announces Winners of Competition to...</a
+            >
+          </p>
+          <p>
+            <a href="../whoweare/news02.html" title="new02"
+              >Most fishing on the high seas would be unprofitable...</a
+            >
+          </p>
+          <p>
+            <a href="../whoweare/news03.html" title="new03"
+              >National Geographic Celebrates World Environment Day and World...</a
+            >
+          </p>
+          <p>
+            <a href="../whoweare/news04.html" title="new04"
+              >Venkat Ranjan of California Wins 2018 National Geographic Bee...</a
+            >
+          </p>
+          <p>
+            <a href="../whoweare/news05.html" title="new05"
+              >National Geographic Society Launches Global Endangered Species...</a
+            >
+          </p>
+        </div>
+        <p class="cancle">
+          <img src="../../img/cancle.jpg" alt="cancle" />
+        </p>
+      </div>
+    </div>
+    <div class="title">
+      <h3>FIELD MAP</h3>
+      <div class="bar"></div>
+      <p class="subtitle">
+        Get to know the people and projects we’ve funded around the world. Grants across the globe.
+      </p>
+    </div>
+    </div>
+  </body>
+</html>

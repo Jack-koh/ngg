@@ -11,6 +11,8 @@ export { NewsArticle } from 'page/whoweare/pages/newsRoom/articles/NewsArticle';
 export { Explorer } from 'page/explorer/Explorer';
 export { Explorers } from 'page/explorer/pages/explorers/Explorers';
 export { ExDetails } from 'page/explorer/pages/details/ExDetails';
+export { FieldMap } from 'page/explorer/pages/fieldMap/FieldMap';
+export { ExBlog } from 'page/explorer/pages/exBlog/ExBlog';
 
 export { Exhibition } from 'page/exhibition/Exhibition';
 export { Project } from 'page/project/Project';

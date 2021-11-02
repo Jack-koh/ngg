@@ -1,0 +1,258 @@
+#explorer-field-map-wrapper {
+  overflow-x: auto;
+
+  #mapBg {
+    width: 1903px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+
+    #ex-field-map-toolTip {
+      position: absolute;
+      width: 160px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 5px;
+      display: none;
+
+      #searchImg {
+        width: 35px;
+        height: 35px;
+        margin-top: 7px;
+        margin-left: 7px;
+        border-radius: 3px;
+        overflow: hidden;
+        float: left;
+      }
+
+      #text {
+        width: 108px;
+        font-size: 14px;
+        font-family: 'hind100';
+        float: left;
+        margin-left: 10px;
+        margin-top: 7px;
+        color: #333;
+      }
+    }
+
+    #imgFrame {
+      line-height: 0;
+    }
+
+    #ex-field-map-circles {
+      position: relative;
+      z-index: 10;
+      div {
+        width: 26px;
+        height: 26px;
+        background-color: gold;
+        border-radius: 13px;
+        cursor: pointer;
+
+        span {
+          display: block;
+          width: 26px;
+          height: 26px;
+          border: 1px solid gold;
+          border-radius: 13px;
+          position: absolute;
+          left: 0;
+          top: 0;
+          box-sizing: border-box;
+          animation: circle 2s infinite;
+        }
+
+        p {
+          width: 20px;
+          height: 20px;
+          background-color: #fff;
+          border-radius: 10px;
+          margin: 3px auto;
+        }
+      }
+
+      .southA {
+        position: absolute;
+        left: 300px;
+        top: 233px;
+      }
+      .northA {
+        position: absolute;
+        left: 600px;
+        top: 533px;
+      }
+      .pacific {
+        position: absolute;
+        left: 750px;
+        top: 333px;
+      }
+      .afreeca {
+        position: absolute;
+        left: 950px;
+        top: 533px;
+      }
+      .westAsia {
+        position: absolute;
+        left: 1020px;
+        top: 333px;
+      }
+      .asia {
+        position: absolute;
+        left: 1300px;
+        top: 353px;
+      }
+      .aust {
+        position: absolute;
+        left: 1500px;
+        top: 553px;
+      }
+    }
+
+    #ex-field-map-slide {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      width: 100%;
+      padding: 0 5%;
+      height: 300px;
+      background-color: #fff;
+      border-top: 1px solid gold;
+      position: absolute;
+      z-index: 11;
+      left: 0;
+      bottom: -300px;
+      transition: bottom 0.3s;
+
+      #textArea {
+        max-width: 400px;
+        margin-top: 40px;
+        color: #333;
+
+        .logoF {
+          width: 150px;
+        }
+
+        h4 {
+          font-size: 20px;
+        }
+
+        #desc {
+          font-size: 14px;
+          font-family: 'hind100';
+          margin-top: 15px;
+        }
+      }
+
+      #explorers {
+        margin-top: 40px;
+        color: #333;
+        h4 {
+          font-size: 16px;
+        }
+
+        .explorer {
+          margin-top: 20px;
+
+          li {
+            width: 100px;
+            float: left;
+            margin-right: 5px;
+
+            .photo {
+              line-height: 0;
+              a {
+                text-decoration: none;
+                color: #333;
+                img {
+                  width: 100%;
+                }
+              }
+            }
+
+            .name {
+              width: 100%;
+              font-size: 14px;
+              color: #555;
+              text-indent: 5px;
+              height: 26px;
+              border: 1px solid #ddd;
+              box-sizing: border-box;
+              border-top: none;
+            }
+          }
+        }
+      }
+
+      #news {
+        margin-top: 40px;
+        color: #333;
+
+        h4 {
+          margin-bottom: 5px;
+          font-size: 16px;
+        }
+
+        .nav__link {
+          width: 100%;
+          border-bottom: 1px solid #eee;
+          margin-top: 5px;
+          color: #555;
+          font-size: 14px;
+          font-family: 'hind100';
+          line-height: 30px;
+        }
+      }
+
+      .ex-field-map-cancle {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .title {
+    position: absolute;
+    left: 10%;
+    top: 570px;
+
+    h3 {
+      width: 610px;
+      color: #fff;
+      font-family: 'Aldrich';
+      padding-bottom: 20px;
+      font-size: 30px;
+      font-weight: 100;
+    }
+
+    .bar {
+      width: 60px;
+      height: 1px;
+      background-color: #ffbf00;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subtitle {
+      max-width: 300px;
+      font-size: 14px;
+      margin-bottom: 60px;
+      color: #eee;
+      font-family: 'hind100';
+    }
+  }
+}
+@keyframes circle {
+  0% {
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
