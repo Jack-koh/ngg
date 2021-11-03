@@ -15,7 +15,7 @@ const routes = [
   { path: '/explorer/fieldmap', view: Pages.FieldMap },
   { path: '/explorer/explorerblog', view: Pages.ExBlog },
   { path: '/exhibition', view: Pages.Exhibition },
-  // { path: "/exhibition/visitorplan", view: AboutUsPage },
+  { path: '/exhibition/visitorplan', view: Pages.Plan },
   // { path: "/exhibition/exhibition", view: AboutUsPage },
   // { path: "/exhibition/event", view: AboutUsPage },
   { path: '/project', view: Pages.Project },
