@@ -31,7 +31,7 @@ class Modal {
     this.contentElement.innerHTML = `
       <div id="modal-content">
         <div id="image-field">
-          <img src=/${img}.jpg alt="timline" />
+          <img src=/img/images/timeline/${img}.jpg alt="timline" />
         </div>
         <div id="modal-conetent-context">
           <div class="year">${year}</div>

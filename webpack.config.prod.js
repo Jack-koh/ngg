@@ -6,8 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: { index: './src/index.ts' },
   output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, './dist'),
+    filename: 'static/js/[name].[contenthash:8].js',
+    path: path.resolve(__dirname, './build'),
     publicPath: '/',
   },
   mode: 'production',
@@ -19,7 +19,7 @@ module.exports = {
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         include: [path.resolve(__dirname, './public/font')],
-        use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
+        use: [{ loader: 'file-loader', options: { name: 'font/[name].[ext]' } }],
       },
       {
         test: /\.(png|jpg)$/,
@@ -27,7 +27,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: { name: '[name].[ext]', outputPath: 'img' },
+            options: { name: 'static/media/[name].[ext]' },
           },
         ],
         // use: [
@@ -47,7 +47,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: { name: '[name].[ext]', outputPath: 'img' },
+            options: { name: 'static/media/[name].[ext]' },
           },
         ],
       },
@@ -101,7 +101,10 @@ module.exports = {
     extensions: ['.js', '.ts'],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }), // css 파일 생성(link rel 방식) 밑의 HtmlWebpackPlugin 이 자동으로 임포트
+    new MiniCssExtractPlugin({
+      filename: 'static/css/[name].[contenthash:8].css',
+      chunkFilename: 'static/css/[name].[contenthash:8].chunk.css',
+    }), // css 파일 생성(link rel 방식) 밑의 HtmlWebpackPlugin 이 자동으로 임포트
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],
