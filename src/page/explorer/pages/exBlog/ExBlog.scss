@@ -184,6 +184,7 @@
   #ex-blog-container {
     width: 96%;
     padding: 0 2%;
+    margin: 0 auto;
 
     #ex-blog-container-in {
       max-width: 1220px;
@@ -239,9 +240,9 @@
         #row {
           width: 100%;
 
-          &.row {
-            @include row;
-          }
+          // &.row {
+          //   @include row;
+          // }
 
           &.grid {
             @include grid;
@@ -256,6 +257,25 @@
   #ex-blog-wrapper {
     .grid {
       grid-template-columns: repeat(auto-fit, minmax(24.9rem, $max)) !important;
+    }
+    .row {
+      grid-template-columns: repeat(auto-fit, minmax(24.9rem, $max)) !important;
+    }
+  }
+}
+
+@media screen and (min-width: 981px) {
+  #ex-blog-wrapper {
+    .row {
+      @include row;
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #ex-blog-wrapper {
+    .row {
+      @include grid;
     }
   }
 }

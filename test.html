@@ -1,490 +1,589 @@
-<?php
-	include "../../reset.html";
-	session_cache_expire(3600);
-	session_start();
-?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>History</title>
-    <link rel="stylesheet" type="text/css" href="../../css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/subhead.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/footer.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../../js/gnbSlide.js"></script>
-    <script src="../../js/query.js"></script>
-    <style>
-      #wrap {
-        max-width: 1920px;
-        margin: 0 auto;
-        position: relative;
-        overflow: hidden;
-      }
-      #content {
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-
-      /*################################# section1 ##########################################*/
-
-      #section1 {
-        width: 100%;
-        background-color: #252525;
-        position: relative;
-      }
-
-      #section1 .title {
-        position: absolute;
-        left: 10%;
-        top: 570px;
-      }
-      #section1 h3 {
-        width: 610px;
-        color: #fff;
-        font-family: 'Aldrich';
-        padding-bottom: 20px;
-        font-size: 30px;
-        font-weight: 100;
-      }
-
-      #section1 .bar {
-        width: 60px;
-        height: 1px;
-        background-color: #ffbf00;
-        margin-bottom: 10px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      #section1 .title .subtitle {
-        max-width: 300px;
-        font-size: 14px;
-        margin-bottom: 60px;
-        color: #eee;
-        font-family: 'hind100';
-      }
-
-      #section1 #mapBg {
-        width: 1903px;
-        position: relative;
-      }
-      #section1 #mapBg img {
-        width: 100%;
-      }
-
-      #circles div {
-        width: 26px;
-        height: 26px;
-        background-color: gold;
-        border-radius: 13px;
-        cursor: pointer;
-      }
-      #circles div p {
-        width: 20px;
-        height: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        margin: 3px auto;
-      }
-      #circles div span {
-        display: block;
-        width: 26px;
-        height: 26px;
-        border: 1px solid gold;
-        border-radius: 13px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        box-sizing: border-box;
-        animation: circle 2s infinite;
-      }
-
-      @keyframes circle {
-        0% {
-        }
-        100% {
-          transform: scale(2);
-          opacity: 0;
-        }
-      }
-
-      #circles .southA {
-        position: absolute;
-        left: 300px;
-        top: 233px;
-      }
-      #circles .northA {
-        position: absolute;
-        left: 600px;
-        top: 533px;
-      }
-      #circles .pacific {
-        position: absolute;
-        left: 750px;
-        top: 333px;
-      }
-      #circles .afreeca {
-        position: absolute;
-        left: 950px;
-        top: 533px;
-      }
-      #circles .westAsia {
-        position: absolute;
-        left: 1020px;
-        top: 333px;
-      }
-      #circles .asia {
-        position: absolute;
-        left: 1300px;
-        top: 353px;
-      }
-      #circles .aust {
-        position: absolute;
-        left: 1500px;
-        top: 553px;
-      }
-
-      #toolTip {
-        position: absolute;
-        width: 160px;
-        height: 50px;
-        background-color: #fff;
-        border-radius: 5px;
-      }
-      #toolTip #searchImg {
-        width: 35px;
-        height: 35px;
-        margin-top: 7px;
-        margin-left: 7px;
-        border-radius: 3px;
-        overflow: hidden;
-        float: left;
-      }
-      #toolTip #text {
-        width: 108px;
-        font-size: 14px;
-        font-family: 'hind100';
-        float: left;
-        line-height: 18px;
-        margin-left: 10px;
-        margin-top: 7px;
-        color: #333;
-      }
-
-      #slide {
-        width: 80%;
-        padding: 0 10%;
-        height: 300px;
-        background-color: #fff;
-        border-top: 1px solid gold;
-        position: absolute;
-        left: 0;
-        bottom: -300px;
-        z-index: 5;
-      }
-      #textArea {
-        width: 400px;
-        margin-top: 40px;
-        float: left;
-        color: #333;
-      }
-      #textArea h4 {
-        font-size: 20px;
-      }
-      #textArea #desc {
-        font-size: 14px;
-        font-family: 'hind100';
-        margin-top: 15px;
-      }
-      #textArea .logoF {
-        width: 150px;
-      }
-
-      #explorers {
-        width: 450px;
-        float: left;
-        margin-top: 40px;
-        padding-left: 100px;
-        color: #333;
-      }
-      .explorer {
-        margin-top: 20px;
-      }
-      .explorer li {
-        width: 100px;
-        float: left;
-        margin-right: 5px;
-      }
-      .explorer li .photo {
-        line-height: 0;
-      }
-      .explorer li .name {
-        width: 100%;
-        font-size: 14px;
-        color: #555;
-        line-height: 26px;
-        text-indent: 5px;
-        height: 26px;
-        border: 1px solid #ddd;
-        box-sizing: border-box;
-        boder-top: none;
-      }
-
-      #news {
-        float: left;
-        width: 450px;
-        margin-top: 40px;
-        color: #333;
-        padding-left: 100px;
-      }
-      #news h4 {
-        margin-bottom: 5px;
-      }
-      #news p {
-        width: 100%;
-        border-bottom: 1px solid #eee;
-        margin-top: 5px;
-      }
-      #news a {
-        display: block;
-        text-indent: 10px;
-        color: #555;
-        font-size: 14px;
-        font-family: 'hind100';
-        line-height: 30px;
-      }
-
-      .cancle {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        cursor: pointer;
-      }
-
-      /*################ login output ######################*/
-      #showId {
-        width: 100%;
-        height: 40px;
-        margin: 20px 0;
-        color: #333;
-        font-size: 14px;
-        font-family: 'hind400';
-        overflow: hidden;
-      }
-      #showId p {
-        float: left;
-        height: 53px;
-        padding-top: 7px;
-      }
-      #showId span {
-        display: block;
-        width: 110px;
-        transition: transform 0.3s;
-        display: block;
-        float: left;
-        margin-left: 6px;
-        margin-top: 7px;
-      }
-      #showId img {
-        vertical-align: middle;
-      }
-      #showId a {
-        display: block;
-        height: 40px;
-        float: left;
-        font-size: 14px;
-        color: #333;
-        margin-left: 6px;
-        margin-top: 6px;
-        transition: transform 0.3s;
-      }
-      #showId:hover a,
-      #showId:hover span {
-        transform: translatey(-29px);
-      }
-
-      #mobShowId {
-        font-size: 14px;
-        font-family: 'hind400';
-      }
-      #mobShowId img {
-        vertical-align: middle;
-        padding-right: 10px;
-      }
-      #mobShowId a {
-        padding-left: 30px;
-        font-size: 14px;
-      }
-    </style>
-    <script>
-      $(function () {
-        $('#toolTip').hide();
-
-        $('#circles div').mouseover(function () {
-          $('#toolTip')
-            .stop()
-            .fadeIn()
-            .css({
-              left: $(this).offset().left + $(this).width() + 20 + 'px',
-              top: $(this).offset().top - 135 + 'px',
-            });
-        });
-
-        $('#circles div').mouseout(function () {
-          $('#toolTip').fadeOut();
-        });
-
-        var i = 0;
-
-        $('#circles div').click(function () {
-          if (i === 0) {
-            $('#slide').animate({ bottom: 0 });
-            i = 1;
-          } else {
-            $('#slide').animate({ bottom: '-300px' });
-            i = 0;
-          }
-        });
-
-        $('.cancle').click(function () {
-          $('#slide').animate({ bottom: '-300px' });
-          i = 0;
-        });
-      });
-    </script>
-  </head>
-
-  <body>
-    <div id="mapBg">
-      <div id="toolTip">
-        <p id="searchImg"><img src="../../img/search.jpg" alt="search" /></p>
-        <p id="text">
-          Check out<br />
-          this area
-        </p>
-      </div>
-      <div id="circles">
-        <div class="southA">
-          <p></p>
-          <span> </span>
-        </div>
-        <div class="northA">
-          <p></p>
-          <span> </span>
-        </div>
-        <div class="pacific">
-          <p></p>
-          <span> </span>
-        </div>
-        <div class="afreeca">
-          <p></p>
-          <span> </span>
-        </div>
-        <div class="westAsia">
-          <p></p>
-          <span> </span>
-        </div>
-        <div class="asia">
-          <p></p>
-          <span> </span>
-        </div>
-        <div class="aust">
-          <p></p>
-          <span> </span>
-        </div>
-      </div>
-      <p id="imgFrame"><img src="../../img/images/fieldBg.jpg" alt="fieldBg" /></p>
-      <div id="slide">
-        <div id="textArea">
-          <p class="logoF"><img src="../../img/logo.png" alt="logo" /></p>
-          <h4>Will Wildlife Activity Exacerbate The Arctic Meltdown?</h4>
-          <p id="desc">
-            Northern ecosystems have become increasingly important in regards to global carbon (C) circulation
-            with respect to feedbacks from arctic ecosystems and global climate change.
+<div id="section3">
+  <ul class="panel">
+    <li id="panel2" style="display: list-item">
+      <div class="tabHeader">
+        <div class="title">
+          <strong class="title">GROUP SALES</strong>
+          <p class="bar"></p>
+          <p class="desc">
+            At National Geographic, we offer you and your group a wonderful opportunity to see, hear, and explore
+            world-class exhibitions that range from interactive experiences to stunning photography.
           </p>
         </div>
-        <div id="explorers">
-          <h4>Project explorers</h4>
-          <div class="explorer">
-            <ul>
-              <li>
-                <p class="photo">
-                  <a href="brian.html" title="ex"
-                    ><img src="../../img/images/explorers/BrianSkerry.png" alt="ex2"
-                  /></a>
-                </p>
-                <p class="name">BrianSkerry</p>
+      </div>
+      <div class="tabCon">
+        <div class="tabConIn">
+          <div class="info">
+            <h3>GROUP PRICING</h3>
+            <dl>
+              <dt class="accordion">
+                <a href="#none" title="General Pricing">
+                  <span>General Pricing</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" class="" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                <span class="regular">GENERAL GROUP RATES FOR THE MUSEUM</span><br /><br />
+
+                Adult (ages 13-61):<br />
+                <span class="regular"> $12.50 each </span><br /><br />
+
+                Senior (ages 62+):<br />
+                <span class="regular"> $10.00 each </span><br /><br />
+
+                Youth (ages 5-12):<br />
+                <span class="regular"> $9.00 each </span><br /><br />
+
+                Children 4 and under receive complimentary admission to the National Geographic Museum.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="Travel Professionals">
+                  <span>Travel Professionals</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" class="" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                The National Geographic Museum offers interactive and exciting exploration for groups of all ages. In
+                addition to exclusive industry rates, travel professionals receive a number of other benefits:<br /><br />
+
+                <ul>
+                  <li>Early and late access when available and with advance notice</li>
+                  <li>Expedited entry, bypassing ticket purchasing lines</li>
+                  <li>Complimentary admission for tour leaders and motorcoach drivers</li>
+                  <li>Advance notice of upcoming exhibitions and special offers</li>
+                  <li>No group processing fees</li>
+                </ul>
+                <br /><br />
+
+                The National Geographic Museum is a member of the American Bus Association (ABA), the National Tour
+                Association (NTA), the Student and Youth Travel Association (SYTA), United States Travel Association
+                (USTA), Brand USA, and Destination DC.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="School and Youth Groups">
+                  <span>School and Youth Groups</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" class="" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                Since 1888, our mission has been to inspire people to care about our planet. Take your students on a
+                journey to engage the senses and inspire new questions.<br /><br />
+
+                Reservations must be made 14 days before date of visit. One paid chaperone for every 10 students is
+                required.<br /><br />
+
+                Chaperone - $12.50 each (one chaperone for every 10 students is required) Students - $9.00 each (K-12
+                students outside D.C. Metro Area)<br /><br />
+
+                <div class="twoColumn">
+                  <span class="regular">Maryland</span>
+                  <ul>
+                    <li>Anne Arundel County</li>
+                    <li>Calvert County</li>
+                    <li>Charles County</li>
+                    <li>Frederick County</li>
+                    <li>Howard County</li>
+                    <li>Montgomery County</li>
+                    <li>Prince George’s County</li>
+                    <li>St. Mary’s County</li>
+                  </ul>
+                </div>
+
+                <div class="twoColumn">
+                  <span class="regular">Virginia</span>
+                  <ul>
+                    <li>Arlington County</li>
+                    <li>Fairfax County</li>
+                    <li>Fauquier County</li>
+                    <li>Loudoun County</li>
+                    <li>Prince William County</li>
+                    <li>Stafford County</li>
+                    <li>City of Alexandria</li>
+                    <li>City of Fairfax</li>
+                    <li>City of Falls Church</li>
+                    <li>City of Manassas</li>
+                    <li>City of Manassas Park</li>
+                  </ul>
+                </div>
+                Students on school-sponsored trips from Washington, D.C., and the above counties and cities in Virginia
+                and Maryland qualify for free admission.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="How to Book">
+                  <span>How to Book</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                Contact the Group Sales Office at 202-807-3232 or groupsales@ngs.org Hours: Monday to Friday 10 a.m. to
+                5 p.m. EST<br /><br />
+
+                OR fill out an
+                <a href="#none" title="events"><span class="orange">online reservation form</span></a>
+                and email it to groupsales@ngs.org. Please allow up to 48 business hours for a reply.<br /><br />
+
+                All reservation requests are subject to availability. Receipt of payment and completed letter of
+                agreement guarantees your reservation. Processing fees will apply to group rates.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="Accessibility">
+                  <span>Accessibility</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                Please call two weeks prior to your visit for sign language interpretation, captioning, or hearing
+                assistance devices.<br /><br />
+
+                The ramp to access the museum is located on M Street just east of 17th Street.<br /><br />
+
+                A limited number of complimentary wheelchairs are available on a first-come, first-served basis.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="Visiting Information">
+                  <span>Visiting Information</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                Detailed visit information, including arrival process and bus drop-off/pick-up information will be sent
+                to you as part of your group reservation confirmation.<br /><br />
+
+                All exhibitions at the National Geographic Museum are designed to be self-guided. See FAQ for
+                information about reserving a guided tour. Visitor service staff and volunteer docents are often
+                available to answer questions.<br /><br />
+
+                <span class="regular">Cancellation and Refund Policy</span><br />
+                No refunds will be made for cancellations made fewer than 30 days prior to your visit date. Reservations
+                canceled more than 30 days in advance of your visit date are refundable in full. Please notify the Group
+                Sales Office at 202-857-7700 of any changes to your reservation as soon as possible. Should you need to
+                reschedule your visit or make changes to the number of tickets in your reservation, we will do our best
+                to accommodate your needs.<br /><br />
+
+                <span class="regular">Inclement Weather</span><br />
+                National Geographic does not generally close due to weather conditions. Call 202-857-7700 to inquire
+                whether the facility is open or closed. If the recording does not mention a closing, National Geographic
+                is open. When the facility is open, tickets are nonrefundable. If the facility closes due to inclement
+                weather, group reservations may be rescheduled by contacting the Group Sales Office. Individual ticket
+                holders will be offered alternate viewing hours, which will be posted to National Geographic’s website
+                and phone line as soon as possible.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="FAQs">
+                  <span>FAQs</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                <span class="regular">Do you have bus parking?</span><br />
+                We do not have dedicated bus parking. However, you are welcome to pull in front of our main entrance
+                located at 1145 17th Street NW just south of M Street to unload and load your bus.<br /><br />
+
+                <span class="regular">Where can I park a bus?</span><br />
+                The District Department of Transportation has a wonderful website that can help guide you through your
+                trip to the museum, including parking. Learn more on their website at
+                http://ddot.dc.gov/service/tour-bus-parking; they can also be reached by phone at 202.671.0682. There is
+                paid parking directly across the street for personal vehicles and the closest dedicated bus parking is
+                on the southbound side of 15th Street between E Street NW and Constitution Avenue NW.<br /><br />
+
+                <span class="regular">Can I schedule a 3-D film screening for my group?</span><br />
+                Yes, we can schedule screenings of 3-D films for groups of 25 people or more. The fee is $5 per person
+                plus a $50 reservation fee and based on availability. We typically require two weeks advance notice to
+                schedule a screening.<br /><br />
+
+                <span class="regular">How far in advance do I need to make a reservation?</span><br />
+                Ideally, we would like to have two weeks notice before your group’s arrival. We understand that
+                attendance may change and we encourage you to make reservations with a conservative guest count. We can
+                make adjustments closer to your visit, if necessary.<br /><br />
+
+                <span class="regular">Is there space for my students to have lunch?</span><br />
+                The National Geographic Museum does not have space for groups to have lunch.<br /><br />
+
+                <span class="regular">What’s the largest group I can bring?</span><br />
+                The museum can accommodate groups as large as 150 and can typically keep your visit under two hours. We
+                often have the group split into smaller, more manageable numbers to make your time here more enjoyable.
+                If you have an exceptionally large group it may take longer to get everyone through the exhibitions.<br /><br />
+
+                <span class="regular">Can my group reserve a guided tour?</span><br />
+                Yes, guided tours are $50 per tour and take approximately 45 minutes. We can accommodate up to 25 people
+                per tour. If you have a larger group we can do multiple tours, each tour costing $50. This can increase
+                the amount of time it takes to visit the museum.
+              </dd>
+            </dl>
+          </div>
+          <div class="addInfo">*Please allow at least two business days for a reply.</div>
+          <div class="yellowButton">
+            <a href="#none" title="gallertBtn">EXPLORER</a>
+            <span class="arrow">→</span>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li id="panel3" style="display: none">
+      <div class="tabHeader">
+        <div class="title">
+          <strong class="title">TICKET INFORMATION</strong>
+          <p class="bar"></p>
+          <p class="desc">Photography exhibitions in the Museum's M Street gallery and outdoors are free.</p>
+        </div>
+      </div>
+      <div class="tabCon">
+        <div class="tabConIn">
+          <div class="info">
+            <ul class="stopDt">
+              <li class="dt">
+                <p>General Pricing</p>
+                <div class="enterBtn">
+                  <a href="#none">
+                    <span class="enter">get tickets</span>
+                    <span class="slidingBar"></span>
+                    <span class="arrow"></span>
+                  </a>
+                </div>
               </li>
-              <li>
-                <p class="photo">
-                  <a href="albert.html" title="ex"
-                    ><img src="../../img/images/explorers/AlbertLin.png" alt="ex1"
-                  /></a>
-                </p>
-                <p class="name">AlbertLin</p>
+              <li class="dd">
+                <ul>
+                  <li>
+                    <p class="left">Adults</p>
+                    <p class="right"><span class="regular">$ 15.00</span></p>
+                  </li>
+                  <li>
+                    <p class="left">Students/Military/Seniors (over 62)</p>
+                    <p class="right"><span class="regular">$ 12.00</span></p>
+                  </li>
+                  <li>
+                    <p class="left">Children (ages 5-12)</p>
+                    <p class="right"><span class="regular">$ 10.00</span></p>
+                  </li>
+                  <li>
+                    <p class="left">Children (ages 4 and under)</p>
+                    <p class="right"><span class="regular">FREE</span></p>
+                  </li>
+                  <li>
+                    <p class="left">Annual Pass Member</p>
+                    <p class="right"><span class="regular">FREE</span></p>
+                  </li>
+                  <li>
+                    <p class="left">3D Movie</p>
+                    <p class="right"><span class="regular">$ 7.00</span></p>
+                  </li>
+                  <li>
+                    <p class="left">Group Admission for Parties of 20 or More</p>
+                    <p class="right"><span class="regular">$ 10.00</span></p>
+                  </li>
+                </ul>
               </li>
-              <li>
-                <p class="photo">
-                  <a href="caltonward.html" title="ex"
-                    ><img src="../../img/images/explorers/CarltonWardJr.png" alt="ex3"
-                  /></a>
-                </p>
-                <p class="name">CarltonWardJr</p>
-              </li>
-              <li>
-                <p class="photo">
-                  <a href="enric.html" title="ex"
-                    ><img src="../../img/images/explorers/EnricSala.png" alt="ex4"
-                  /></a>
-                </p>
-                <p class="name">Enric</p>
+              <li class="dt">
+                <p>Travel Professionals</p>
+                <div class="enterBtn">
+                  <a href="#none">
+                    <span class="enter">get tickets</span>
+                    <span class="slidingBar"></span>
+                    <span class="arrow"></span>
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
         </div>
-        <div id="news">
-          <h4>Headlines</h4>
-          <p>
-            <a href="../whoweare/news01.html" title="new01"
-              >National Geographic Society Announces Winners of Competition to...</a
-            >
-          </p>
-          <p>
-            <a href="../whoweare/news02.html" title="new02"
-              >Most fishing on the high seas would be unprofitable...</a
-            >
-          </p>
-          <p>
-            <a href="../whoweare/news03.html" title="new03"
-              >National Geographic Celebrates World Environment Day and World...</a
-            >
-          </p>
-          <p>
-            <a href="../whoweare/news04.html" title="new04"
-              >Venkat Ranjan of California Wins 2018 National Geographic Bee...</a
-            >
-          </p>
-          <p>
-            <a href="../whoweare/news05.html" title="new05"
-              >National Geographic Society Launches Global Endangered Species...</a
-            >
+      </div>
+    </li>
+    <li id="panel4" style="display: none">
+      <div class="tabHeader">
+        <div class="title">
+          <strong class="title">ANNUAL PASS</strong>
+          <p class="bar"></p>
+          <p class="desc">
+            As a National Geographic Museum Annual Pass holder, you enjoy free year-round admission to the museum. You
+            also receive access to exhibition previews and events, special offers for National Geographic Live talks, as
+            well as a subscription to a National Geographic magazine of your choice.
           </p>
         </div>
-        <p class="cancle">
-          <img src="../../img/cancle.jpg" alt="cancle" />
-        </p>
       </div>
-    </div>
-    <div class="title">
-      <h3>FIELD MAP</h3>
-      <div class="bar"></div>
-      <p class="subtitle">
-        Get to know the people and projects we’ve funded around the world. Grants across the globe.
-      </p>
-    </div>
-    </div>
-  </body>
-</html>
+      <div class="tabCon">
+        <div class="tabConIn">
+          <div id="ticketAsk">
+            <div id="ticketImg">
+              <p>
+                <img src="../../img/images/annual.jpg" alt="ticketImg" />
+              </p>
+            </div>
+            <div id="ticketText">
+              <p>
+                When you become a National Geographic Museum Annual Pass Member, you support our nonprofit work in
+                conservation, exploration, education, and cultural preservation. For more information about the National
+                Geographic Museum Annual Pass call 202-857-7700 or email ngtickets@ngs.org, or read our FAQ below.
+              </p>
+            </div>
+          </div>
+          <div class="info">
+            <ul class="stopDt">
+              <li class="dt">
+                <p>General Pricing</p>
+              </li>
+              <li id="annualCost">
+                <ul>
+                  <li>
+                    <h4>INDIVIDUAL | $60</h4>
+                    <ul class="container">
+                      <li>
+                        Unlimited free museum admission for one named adult for one year and two single-use museum guest
+                        passes
+                      </li>
+                      <li>
+                        All-access print and digital subscription to National Geographic Magazine, National Geographic
+                        Traveler or National Geographic Kids for one year
+                      </li>
+                      <li>Free entrance to 3D films and single-use 3D film guest passes</li>
+                      <li>10% discount at the Museum Store</li>
+                      <li>Invitations to select exhibition previews and member-only events</li>
+                      <li>Advance notice and special offers for select National Geographic Live programs</li>
+                      <li>Free admission to National Geographic's Saturday family matinee series</li>
+                    </ul>
+                    <div class="yellowButton costBtn">
+                      <a href="#none" title="gallertBtn">JOIN OR RENEW</a>
+                      <span class="arrow">→</span>
+                    </div>
+                  </li>
+                  <li>
+                    <h4>DUAL | $90</h4>
+                    <ul class="container">
+                      <li>
+                        Unlimited free museum admission for two named adults for one year and two single-use museum
+                        guest passes
+                      </li>
+                      <li>
+                        All-access print and digital subscription to National Geographic Magazine, National Geographic
+                        Traveler or National Geographic Kids for one year
+                      </li>
+                      <li>Free entrance to 3D films and single-use 3D film guest passes</li>
+                      <li>10% discount at the Museum Store</li>
+                      <li>Invitations to select exhibition previews and member-only events</li>
+                      <li>Advance notice and special offers for select National Geographic Live programs</li>
+                      <li>Free admission to National Geographic's Saturday family matinee series</li>
+                    </ul>
+                    <div class="yellowButton costBtn">
+                      <a href="#none" title="gallertBtn">JOIN OR RENEW</a>
+                      <span class="arrow">→</span>
+                    </div>
+                  </li>
+                  <li>
+                    <h4>FAMILY | $125</h4>
+                    <ul class="container">
+                      <li>
+                        Unlimited free museum admission for two named adults and up to three kids in the household for
+                        one year and two single-use museum guest passes
+                      </li>
+                      <li>
+                        All-access print and digital subscription to National Geographic Magazine, National Geographic
+                        Traveler or National Geographic Kids for one year
+                      </li>
+                      <li>Free entrance to 3D films and single-use 3D film guest passes</li>
+                      <li>10% discount at the Museum Store</li>
+                      <li>Invitations to select exhibition previews and member-only events</li>
+                      <li>Advance notice and special offers for select National Geographic Live programs</li>
+                      <li>Free admission to National Geographic's Saturday family matinee series</li>
+                    </ul>
+                    <div class="yellowButton costBtn">
+                      <a href="#none" title="gallertBtn">JOIN OR RENEW</a>
+                      <span class="arrow">→</span>
+                    </div>
+                  </li>
+                  <li>
+                    <h4>INDIVIDUAL | $60</h4>
+                    <ul class="container">
+                      <li>
+                        Unlimited free museum admission for one named adult for one year and two single-use museum guest
+                        passes
+                      </li>
+                      <li>
+                        All-access print and digital subscription to National Geographic Magazine, National Geographic
+                        Traveler or National Geographic Kids for one year
+                      </li>
+                      <li>Free entrance to 3D films and single-use 3D film guest passes</li>
+                      <li>10% discount at the Museum Store</li>
+                      <li>Invitations to select exhibition previews and member-only events</li>
+                      <li>Advance notice and special offers for select National Geographic Live programs</li>
+                      <li>Free admission to National Geographic's Saturday family matinee series</li>
+                    </ul>
+                    <div class="yellowButton costBtn">
+                      <a href="#none" title="gallertBtn">JOIN OR RENEW</a>
+                      <span class="arrow">→</span>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <h3>FREQUENTLY ASKED QUESTIONS (FAQ)</h3>
+            <dl>
+              <dt class="accordion">
+                <a href="#none" title="How can I purchase an Annual Pass?">
+                  <span>How can I purchase an Annual Pass?</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                You can purchase an Annual Pass online, over the phone with our ticket office, or in person at the
+                museum ticket desk. We recommend purchasing your Annual Pass in person so that a museum staff member can
+                provide you with your welcome packet and all information about your membership.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="How can I give an Annual Pass as a gift?">
+                  <span>How can I give an Annual Pass as a gift?</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                To give an Annual Pass as a gift, please purchase a gift certificate for the price of the Annual Pass
+                you would like to gift. We ask that you do not purchase an Annual Pass for someone else.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="How do I reserve tickets with my Annual Pass?">
+                  <span>How do I reserve tickets with my Annual Pass?</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                To reserve tickets for the National Geographic Museum, you can either call the ticket office at
+                <span class="regular">202-857-7700</span> or visit the museum ticket desk. Unfortunately, we do not have
+                a way for Annual Pass holders to reserve tickets online at this time.<br /><br />
+
+                To reserve tickets for Nat Geo Live and Nat Geo Nights events, you can purchase online, over the phone,
+                or in person. Please select the Annual Pass holder price type when purchasing online.
+              </dd>
+              <dt class="accordion">
+                <a
+                  href="#none"
+                  title="Will I be able to get into the museum with my Annual Pass if I don't reserve ahead of time?"
+                >
+                  <span
+                    >Will I be able to get into the museum with my Annual Pass if I don't reserve ahead of time?</span
+                  >
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                Annual Pass holders can always get tickets to the museum, even on weekends and holidays. On days we
+                expect to be busy, we hold a number of tickets per hour for our Annual Pass holders.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="I bought an Annual Pass. When can I expect to receive my magazine?">
+                  <span>I bought an Annual Pass. When can I expect to receive my magazine?</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                Annual Pass holders can expect to receive their first magazine 4-6 weeks after the date of purchase. If
+                you do not receive a magazine after 8 weeks, please e-mail our ticket office at
+                <span class="orange">ngtickets@ngs.org</span> or inform a museum staff member upon your next visit.
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="When does my Annual Pass expire?">
+                  <span>When does my Annual Pass expire?</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                Annual Passes expire 12 months from the date of purchase at the end of the month. For example, an Annual
+                Pass purchased on June 14, 2017 would expire on June 30, 2018. To check if your Annual Pass is still
+                active, please call our ticket office at <span class="regular">202-857-7700</span> or e-mail us at
+                <span class="orange">ngtickets@ngs.org.</span>
+              </dd>
+              <dt class="accordion">
+                <a href="#none" title="How can I renew my Annual Pass?">
+                  <span>How can I renew my Annual Pass?</span>
+                  <span class="mark">
+                    <img src="../../img/mark.png" alt="mark" />
+                  </span>
+                </a>
+              </dt>
+              <dd style="display: none">
+                To renew your Annual Pass, please call our ticket office at
+                <span class="regular">202-857-7700</span> or visit our museum ticket desk.
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li id="panel5" style="display: none">
+      <div class="tabHeader">
+        <div class="title">
+          <strong class="title">NATIONAL GEOGRAPHIC MUSEUM STORE</strong>
+          <p class="bar"></p>
+          <p class="desc">
+            Explore your world further. Take National Geographic home with you by visiting our museum store.
+          </p>
+        </div>
+      </div>
+      <div class="tabCon">
+        <div class="tabConIn">
+          <div id="storeInfo">
+            <ul>
+              <li>
+                <div class="icon">
+                  <img src="../../img/calendar.png" alt="calendar" />
+                </div>
+                <p class="text">Open daily Closed Thanksgiving,CHristmas</p>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="../../img/clock.png" alt="clock" />
+                </div>
+                <p class="text">5:00am</p>
+              </li>
+              <li>
+                <div class="icon">
+                  <img src="../../img/call.png" alt="call" />
+                </div>
+                <p class="text">(202) 807-3428</p>
+              </li>
+            </ul>
+          </div>
+          <div id="Map">
+            <p>
+              <img src="../../img/images/annual.jpg" alt="ticketImg" />
+            </p>
+          </div>
+          <div id="desc">
+            <h3>ABOUT THE MUSEUM STORE</h3>
+            <p>
+              Explore your world further. Take National Geographic home with you by visiting our museum store. Find
+              captivating books and unique handmade products from around the globe and leave with travel accessories
+              that will help guide you on your way.<br /><br />
+
+              Your dollars make our work possible: Funds from your purchases directly support our efforts in research,
+              education, conservation, and exploration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

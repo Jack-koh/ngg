@@ -15,5 +15,6 @@ export { FieldMap } from 'page/explorer/pages/fieldMap/FieldMap';
 export { ExBlog } from 'page/explorer/pages/exBlog/ExBlog';
 
 export { Exhibition } from 'page/exhibition/Exhibition';
+export { Plan } from 'page/exhibition/plan/Plan';
 export { Project } from 'page/project/Project';
 export { Header, Footer, SubHeader } from './common';

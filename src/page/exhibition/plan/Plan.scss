@@ -1,0 +1,139 @@
+#exhibition-plan-page {
+  #section1 {
+    width: 100%;
+    height: 400px;
+    background-image: url('/img/images/visitorInformation.jpg');
+    background-position: center 10px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+
+    #tabMenu {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 50px;
+      background-color: #333;
+      border-bottom: 1px solid #555;
+
+      #exhibition-plan-tab {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        height: 100%;
+
+        li {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.4rem;
+          width: 20%;
+          height: calc(100% - 1px);
+          color: rgb(204, 204, 204);
+          font-family: 'hind100';
+          cursor: pointer;
+          box-sizing: content-box;
+
+          &.plan-selected {
+            border-bottom: 1px solid orange;
+            color: rgb(255, 191, 0);
+          }
+        }
+      }
+    }
+  }
+
+  #section3 {
+    #plan-panel {
+      li {
+        .tabHeader {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 330px;
+          background-color: #333;
+          .title {
+            text-align: center;
+            color: #eee;
+            strong.title {
+              display: block;
+              font-weight: normal;
+              font-size: 30px;
+              font-family: 'Aldrich';
+              text-transform: uppercase;
+            }
+
+            .bar {
+              width: 30px;
+              height: 1px;
+              background-color: #ffbf00;
+              margin: 20px auto 0;
+            }
+
+            .desc {
+              max-width: 700px;
+              font-size: 14px;
+              color: #ccc;
+              line-height: 22px;
+              margin: 22px auto 0;
+            }
+          }
+        }
+
+        .tabCon {
+          width: 100%;
+
+          .tabConIn {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-top: 50px;
+
+            h3 {
+              font-size: 20px;
+              font-family: 'Aldrich';
+              color: #333;
+            }
+
+            .desc {
+              max-width: 800px;
+              font-size: 14px;
+              line-height: 18px;
+              margin-top: 18px;
+              margin-bottom: 20px;
+              color: #000;
+              font-family: 'hind100';
+            }
+
+            .info {
+              padding-top: 100px;
+
+              dl {
+                padding-top: 15px;
+                dt {
+                  font-size: 1.6rem;
+                  display: flex;
+                  justify-content: space-between;
+                  max-width: 1000px;
+                  padding: 0 30px;
+                  height: 50px;
+                  background-color: #333;
+                  margin-top: 1px;
+                  line-height: 50px;
+                  color: #eee;
+                  cursor: pointer;
+                }
+
+                dd {
+                  height: 0;
+                  overflow: hidden;
+                  transition: all 0.3s;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
