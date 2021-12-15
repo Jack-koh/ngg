@@ -61,7 +61,7 @@ class Content extends View {
                   <div class="image">
                     ${link({
                       url: 'exhibition/visitorplan',
-                      child: '<img src="/img/images/annualpass.jpg" alt="passTicket" />',
+                      child: '<img src="/public/img/images/annualpass.jpg" alt="passTicket" />',
                     })}
                   </div>
                   
@@ -75,7 +75,7 @@ class Content extends View {
                   <div class="image">
                     ${link({
                       url: 'exhibition/visitorplan',
-                      child: '<img src="/img/images/package.jpg" alt="package" />',
+                      child: '<img src="/public/img/images/package.jpg" alt="package" />',
                     })}
                   </div>
                   
@@ -89,7 +89,7 @@ class Content extends View {
                   <div class="image">
                     ${link({
                       url: 'exhibition/visitorplan',
-                      child: '<img src="/img/images/photopackage.jpg" alt="photopackage" />',
+                      child: '<img src="/public/img/images/photopackage.jpg" alt="photopackage" />',
                     })}
                   </div>
                   
@@ -103,7 +103,7 @@ class Content extends View {
                   <div class="image">
                     ${link({
                       url: 'exhibition/visitorplan',
-                      child: '<img src="/img/images/photopackage.jpg" alt="photopackage" />',
+                      child: '<img src="/public/img/images/photopackage.jpg" alt="photopackage" />',
                     })}
                   </div>
                   

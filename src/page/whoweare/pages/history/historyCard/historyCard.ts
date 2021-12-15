@@ -24,7 +24,7 @@ class HistoryCard extends View {
       <div id="history-card-wrapper">
         <div id="history-card-inner">
           <div id="prev">
-            <img src="/img/prev01.jpg" alt="previous"/>
+            <img src="/public/img/prev01.jpg" alt="previous"/>
           </div>
           <ul id="history-category">
             ${map(
@@ -91,7 +91,6 @@ class HistoryCard extends View {
     const cards = document.getElementsByClassName('history-card-item');
     [...cards].forEach((el, i) => {
       (el as HTMLElement).onclick = () => {
-        console.log(data);
         const { year, contentTitle, desc, img } = data[i];
         const modal = new Modal({ year, title: contentTitle, desc, img });
         modal.render();

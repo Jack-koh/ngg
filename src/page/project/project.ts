@@ -48,7 +48,7 @@ export class Project extends View {
         <div id="project-page">
           ${map(this.data, (el, i) => {
             const { url } = subUrls['PROJECT'][i];
-            const button = new EnterButton({ url, text: 'ENTER', color: '#fff' });
+            const button = new EnterButton({ text: 'ENTER', color: '#fff' });
             return `
                 <div id="${el.id}" class="visaul-items">
                   <div class="visual-title-field">

@@ -15,12 +15,12 @@ class Modal {
     this.modalHeader = document.createElement('div');
     this.modalHeader.id = 'modal-header';
     this.modalHeader.innerHTML = `
-      <img src="/img/logob.png" alt="logo" />
+      <img src="/public/img/logob.png" alt="logo" />
     `;
 
     this.cancleButton = document.createElement('img');
     this.cancleButton.id = 'cancle-modal-button';
-    this.cancleButton.src = '/img/cancle.jpg';
+    this.cancleButton.src = '/public/img/cancle.jpg';
     this.cancleButton.alt = 'cancle';
     this.cancleButton.onclick = () => {
       const body = document.querySelector('body') as HTMLElement;
@@ -31,7 +31,7 @@ class Modal {
     this.contentElement.innerHTML = `
       <div id="modal-content">
         <div id="image-field">
-          <img src=/${img}.jpg alt="timline" />
+          <img src=/public/img/images/timeline/${img}.jpg alt="timline" />
         </div>
         <div id="modal-conetent-context">
           <div class="year">${year}</div>

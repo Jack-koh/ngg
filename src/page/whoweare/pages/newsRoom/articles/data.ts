@@ -3,7 +3,7 @@ export const data = [
     title: 'Making the Unseen Seen: The True Cost of Oil Spills',
     subTitle: `Dawn on October 13th revealed the NES run aground on the reefs of Athlone Island, its crew being rescued off the sinking ship`,
     markup: `
-      <img src="/img/images/exBlog/ex04.jpg" alt="ex04" />
+      <img src="/public/img/images/exBlog/ex04.jpg" alt="ex04" />
       <div class="desc">
         <p class="person">By Lauren Eckert</p>
         <p>
@@ -22,7 +22,7 @@ export const data = [
     title: 'Top 25: Wild Birds with Spectacular Catches',
     subTitle: `This week we are allowed a unique insight into the lives of birds that hunt. When we think of birds hunting, we typically picture a raptor with ferocious talons and a sharp beak to tear apart prey.`,
     markup: `
-      <img src="/img/images/exBlog/ex05.jpg" alt="ex05" />
+      <img src="/public/img/images/exBlog/ex05.jpg" alt="ex05" />
       <div class="desc">
         <p class="person">By Steve Boyes</p>
         <p>
@@ -42,7 +42,7 @@ export const data = [
     title: 'Can We Protect the Last Intact Forests of the World in the 21st Century?',
     subTitle: `The conference, Intact Forests in the 21st Century, included presentations on the issues of how best to map and identify intact forest landscapes`,
     markup: `
-      <img src="/img/images/exBlog/ex06.jpg" alt="ex06" />
+      <img src="/public/img/images/exBlog/ex06.jpg" alt="ex06" />
       <div class="desc">
         <p class="person">By luke Warwick</p>
         <p>
@@ -76,7 +76,7 @@ export const data = [
     title: 'Getting Tough on Illegal and Unregulated Shark and Ray Trade at CITES',
     subTitle: `Using satellite tracking, a team of researchers exposes the economic unprofitability of fishing the high seas and the industry’s dependence on government subsidies`,
     markup: `
-      <img src="/img/images/exBlog/ex01.jpg" alt="ex01" />
+      <img src="/public/img/images/exBlog/ex01.jpg" alt="ex01" />
       <div class="desc">
         <p class="person">By luke Warwick</p>
         <p>
@@ -104,7 +104,7 @@ export const data = [
     title: 'CHANGING PLANET',
     subTitle: `Invasion of the Death Stars: Surveying COTS & Coral Health With the Trident ROV`,
     markup: `
-      <img src="/img/images/exBlog/ex02.jpg" alt="ex02" />
+      <img src="/public/img/images/exBlog/ex02.jpg" alt="ex02" />
       <div class="desc">
         <p class="person">By David McGuire</p>
         <p>
@@ -123,7 +123,7 @@ export const data = [
     title: 'Mantener intactos los carnívoros, la conectividad y la cultura en la Moskitia de Mesoamérica',
     subTitle: `Tales avistamientos en Mesoamérica son bastante poco frecuentes.`,
     markup: `
-      <img src="/img/images/exBlog/ex03.jpg" alt="ex03" />
+      <img src="/public/img/images/exBlog/ex03.jpg" alt="ex03" />
       <div class="desc">
         <p class="person">By Por John Polisar</p>
         <p>
@@ -145,7 +145,7 @@ export const data = [
     title: 'Venkat Ranjan of California Wins 2018 National Geographic Bee and $50,000 College Scholarship',
     subTitle: `Students from New Jersey and Georgia Take Second and Third Place`,
     markup: `
-      <img src="/img/new.jpg" alt="new_ex03" />
+      <img src="/public/img/new.jpg" alt="new_ex03" />
       <div class="desc">
         <p>
           Venkat Ranjan of San Ramon, California, a 13-year-old 8th-grader at Windemere Ranch Middle School, took top honors at the 30th annual National Geographic Bee held today at National Geographic headquarters in Washington, D.C. In addition to earning the title of National Geographic Bee champion, Ranjan received a $50,000 college scholarship and a lifetime membership in the National Geographic Society. He will also travel (along with one parent or guardian), all expenses paid, on a Lindblad expedition to the Galápagos Islands aboard the National Geographic Endeavour ll. Travel is provided by Lindblad Expeditions and National Geographic. Second- and third-place finishers will receive $25,000 and $10,000 college scholarships, respectively.
@@ -175,7 +175,7 @@ export const data = [
     title: 'National Geographic Society Launches Global Endangered Species Day Out-of-Home Campaign',
     subTitle: `Featuring Photography from the National Geographic Photo Ark, the Week-Long Campaign Will Run in 22 Countries Around the World to Raise Awareness of Species at Risk`,
     markup: `
-      <img src="/img/images/new05.jpg" alt="new_ex05" />
+      <img src="/public/img/images/new05.jpg" alt="new_ex05" />
       <div class="desc">
         <p>
           For a week beginning today, Endangered Species Day, powerful images of animals at risk from the National Geographic Photo Ark will be featured on billboards in 22 countries and on every continent except Antarctica. This campaign, supported by 31 out-of-home operators is a global effort to raise awareness about populations of species in decline and to inspire audiences around the world to learn how they can help protect them.
@@ -205,7 +205,7 @@ export const data = [
     title: 'National Geographic Launches Planet or Plastic?',
     subTitle: `a Multiyear Initiative to Reduce Single-Use Plastics and Their Impact on the World’s Oceans`,
     markup: `
-      <img src="/img/images/new06.jpg" alt="new_ex06" />
+      <img src="/public/img/images/new06.jpg" alt="new_ex06" />
       <div class="desc">
         <p>
           As the amount of single-use plastic in the world’s oceans continues to grow, National Geographic is announcing a new, global commitment to tackle this pressing problem. Today, National Geographic is launching Planet or Plastic?, a multiyear initiative aimed at raising awareness of this challenge and reducing the amount of single-use plastic that enters in the world’s oceans. Doing so will not only benefit the thousands to potentially millions of marine animals that become entangled in, suffocated by, or ingest plastic each year, but will also contribute to the overall health of the planet’s marine ecosystems and all who rely upon them.
@@ -237,13 +237,13 @@ export const data = [
     markup: `
       <div style="width: 100%; display: flex; justify-content: space-between;">
         <div style="width: 30%;">
-          <img src="/img/images/news011.jpg" alt="new_ex11" />
+          <img src="/public/img/images/news011.jpg" alt="new_ex11" />
         </div>
         <div style="width: 30%;">
-          <img src="/img/images/news012.jpg" alt="new_ex12" />
+          <img src="/public/img/images/news012.jpg" alt="new_ex12" />
         </div>
         <div style="width: 30%;">
-          <img src="/img/images/news013.jpg" alt="new_ex13" />
+          <img src="/public/img/images/news013.jpg" alt="new_ex13" />
         </div>
       </div>
       <div class="desc">
@@ -272,7 +272,7 @@ export const data = [
     title: `Most fishing on the high seas would be unprofitable at current rates without government subsidies, a new study reveals`,
     subTitle: `Using satellite tracking, a team of researchers exposes the economic unprofitability of fishing the high seas and the industry’s dependence on government subsidies`,
     markup: `
-      <img src="/img/images/new02.jpg" alt="new_ex02" />
+      <img src="/public/img/images/new02.jpg" alt="new_ex02" />
       <div class="desc">
         <p>
           As much as 54 percent of the high seas fishing industry would be unprofitable at its current scale without large government subsidies, according to a new study by researchers from the National Geographic Society; the University of California, Santa Barbara; Global Fishing Watch; the Sea Around Us project at the University of British Columbia; and the University of Western Australia. The research, published today in the open-access journal Science Advances, found that the global cost of fishing in the high seas ranged between $6.2 billion and $8 billion USD in 2014. Profits from this activity range between a loss of $364 million and a profit of $1.4 billion USD.
@@ -293,7 +293,7 @@ export const data = [
     title: `National Geographic Celebrates World Environment Day and World Oceans Day with Full Week of Activities`,
     subTitle: `Highlighting the Need to Reduce Plastic Pollution and Improve Ocean Health`,
     markup: `
-      <img src="/img/images/news03.jpg" alt="new_ex03" />
+      <img src="/public/img/images/news03.jpg" alt="new_ex03" />
       <div class="desc">
         <p class="italic">
           National Geographic will release new Planet or Plastic? content, including exclusive cut of singer-songwriter Jack Johnson’s documentary on ocean plastic; Q&A with actor Adrian Grenier; and tips for families on how to reduce reliance on <span>single-use plastic</span>

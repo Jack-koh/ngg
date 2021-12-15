@@ -85,21 +85,21 @@ export default class MobileHeader extends View {
               </div>
             </div>
 
-            <div class="nav-item">
-              <div class="main-nav-row">
-                ${link({
-                  url: '/impact',
-                  child: 'IMPACT',
-                  className: 'main-nav-item',
-                })}
-              </div>
-            </div>
-
           </div>
         </div>
       </div>
     `;
   }
+
+  //   <div class="nav-item">
+  //   <div class="main-nav-row">
+  //     ${link({
+  //       url: '/impact',
+  //       child: 'IMPACT',
+  //       className: 'main-nav-item',
+  //     })}
+  //   </div>
+  // </div>
 
   addEvents = () => {
     const button = document.getElementById('mobile-navigator-button');

@@ -44,7 +44,7 @@ export default class Section extends View {
           value: data.id === 'section-03',
           markup: `
             <video class="video-background" autoplay preload="auto" muted loop>
-              <source src="/img/earth.mp4">
+              <source src="/public/img/earth.mp4">
             </video>
           `,
         })}

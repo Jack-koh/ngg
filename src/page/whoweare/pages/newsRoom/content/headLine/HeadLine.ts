@@ -14,10 +14,10 @@ class HeadLine extends View {
         <div class="btn">
           <div class="btnWrap">
             <p id="${this.id}-prev">
-              <img src="/img/prev01.jpg" alt="prev">
+              <img src="/public/img/prev01.jpg" alt="prev">
             </p>
             <p id="${this.id}-next">
-              <img src="/img/next01.jpg" alt="next">
+              <img src="/public/img/next01.jpg" alt="next">
             </p>
           </div>
         </div>
@@ -26,7 +26,7 @@ class HeadLine extends View {
 
     //  <p>
     //     <a href="News.html" title="allbtn">
-    //       <img src="/img/all.jpg" alt="all">
+    //       <img src="/public/img/all.jpg" alt="all">
     //     </a>
     //   </p>
   }

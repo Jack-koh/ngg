@@ -29,7 +29,7 @@ export class History extends View {
           <div id="history-visual-container">
             <div id="videoWrap">
               <video id="myVideo" muted autoplay playsinline loop>
-                <source src="/video/historyBg.mp4" type="video/mp4"/>
+                <source src="/public/video/historyBg.mp4" type="video/mp4"/>
               </video>
               <div id="history-title">
                 <span class="subtitle">Introduce</span>

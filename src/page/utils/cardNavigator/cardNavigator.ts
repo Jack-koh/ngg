@@ -1,7 +1,7 @@
-import { con, map, link } from "utils/commonFunc";
-import { subUrls } from "utils/urlData";
-import View from "page/View";
-import "./CardNavigator.scss";
+import { con, map, link } from 'utils/commonFunc';
+import { subUrls } from 'utils/urlData';
+import View from 'page/View';
+import './CardNavigator.scss';
 
 class CardNavigator extends View {
   constructor(
@@ -21,14 +21,14 @@ class CardNavigator extends View {
         ${map(subUrls[key], (el, i) => {
           return link({
             url: el.url,
-            className: "sub-nav-card-item",
+            className: 'sub-nav-card-item',
             child: `
               <div class="card-item ${data[i].img}">
                 <div class="hover-color">
                   <div class="top-move">
                     <div class="number-icon">
                       <p>
-                        <img src="/img/cateIcon.png" alt="number-icon"/>
+                        <img src="/public/img/cateIcon.png" alt="number-icon"/>
                       </p>
                       <p class="number">${i + 1}</p>
                     </div>

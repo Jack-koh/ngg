@@ -41,9 +41,9 @@ export class Explorer extends View {
         description: 'We fund and support groundbreaking scientists, conservationists, educators, and storytellers.',
       },
       data: [
-        { img: '/img/find.png', text: 'Explorer' },
-        { img: '/img/fieldmap.png', text: 'Field map' },
-        { img: '/img/blog.png', text: 'Blog' },
+        { img: '/public/img/find.png', text: 'Explorer' },
+        { img: '/public/img/fieldmap.png', text: 'Field map' },
+        { img: '/public/img/blog.png', text: 'Blog' },
       ],
       circleDesc: 'MAKING AN IMPACT FOR THE PLANET',
     };

@@ -3,7 +3,7 @@ export const mainUrls: { title: string; url: string }[] = [
   { title: 'EXPLORER', url: '/explorer' },
   { title: 'EXHIBITION', url: '/exhibition' },
   { title: 'PROJECT', url: '/project' },
-  { title: 'IMPACT', url: '/impact' },
+  // { title: 'IMPACT', url: '/impact' },
 ];
 
 export const subUrls: {
@@ -21,15 +21,15 @@ export const subUrls: {
     { title: 'EXPLORER BLOG', url: '/explorer/explorerblog' },
   ],
   EXHIBITION: [
-    { title: 'VISITOR PLAN', url: '/exhibition/visitorplan' },
-    { title: 'EXHIBITION', url: '/exhibition/exhibition' },
-    { title: 'EVENT', url: '/exhibition/event' },
+    { title: 'VISITOR PLAN', url: '' },
+    { title: 'EXHIBITION', url: '' },
+    { title: 'EVENT', url: '' },
   ],
   PROJECT: [
-    { title: 'BEYOND STONE', url: '/project/beyondstone' },
-    { title: 'BIG CAT', url: '/project/bigcat' },
-    { title: 'LAST WILD', url: '/project/lastwild' },
-    { title: 'YEAR OF BIRD', url: '/project/yearofbird' },
-    { title: 'PRISTINE SEAS ', url: '/project/pristineseas' },
+    { title: 'BEYOND STONE', url: '' },
+    { title: 'BIG CAT', url: '' },
+    { title: 'LAST WILD', url: '' },
+    { title: 'YEAR OF BIRD', url: '' },
+    { title: 'PRISTINE SEAS ', url: '' },
   ],
 };

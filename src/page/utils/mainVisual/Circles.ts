@@ -1,7 +1,7 @@
-import View from "page/View";
-import { subUrls } from "utils/urlData";
-import LineMotion from "./lineMotion/lineMotion";
-import { map, link } from "utils/commonFunc";
+import View from 'page/View';
+import { subUrls } from 'utils/urlData';
+import LineMotion from './lineMotion/lineMotion';
+import { map, link } from 'utils/commonFunc';
 
 export default class Circles extends View {
   constructor(
@@ -19,16 +19,16 @@ export default class Circles extends View {
   generateMarkup() {
     const { key, data, id } = this.props;
     const lineData =
-      key === "WHO WE ARE"
-        ? ["left-top", "right-top", "left-bottom", "right-bottom"]
-        : ["top", "left-bottom", "right-bottom"];
+      key === 'WHO WE ARE'
+        ? ['left-top', 'right-top', 'left-bottom', 'right-bottom']
+        : ['top', 'left-bottom', 'right-bottom'];
     const lines = new LineMotion(id, lineData).getHtml();
 
     return `
         ${map(subUrls[key], (el, i) => {
           return link({
             url: el.url,
-            className: "sub-nav-circle-item",
+            className: 'sub-nav-circle-item',
             child: `
               <div class="circle-wrapper">
                 <div class="sub-nav">

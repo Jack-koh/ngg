@@ -35,7 +35,7 @@ export class FieldMap extends View {
         <div id="explorer-field-map-wrapper">
           <div id="mapBg">
             <div id="ex-field-map-toolTip">
-              <p id="searchImg"><img src="/img/search.jpg" alt="search" /></p>
+              <p id="searchImg"><img src="/public/img/search.jpg" alt="search" /></p>
               <p id="text">
                 Check out<br />
                 this area
@@ -52,12 +52,12 @@ export class FieldMap extends View {
               })}
             </div>
             <p id="imgFrame">
-              <img src="/img/images/fieldBg.jpg" alt="fieldBg" />
+              <img src="/public/img/images/fieldBg.jpg" alt="fieldBg" />
             </p>
 
             <div id="ex-field-map-slide">
               <div id="textArea">
-                <p class="logoF"><img src="/img/logo.png" alt="logo" /></p>
+                <p class="logoF"><img src="/public/img/logo.png" alt="logo" /></p>
                 <h4>Will Wildlife Activity Exacerbate The Arctic Meltdown?</h4>
                 <p id="desc">
                   Northern ecosystems have become increasingly important in regards to global carbon (C) circulation
@@ -74,7 +74,7 @@ export class FieldMap extends View {
                           <p class="photo">
                             ${link({
                               url: el.url,
-                              child: `<img src="/img/images/explorers/${el.name}.png" alt="ex1"/>`,
+                              child: `<img src="/public/img/images/explorers/${el.name}.png" alt="ex1"/>`,
                             })}
                           </p>
                           <p class="name">${el.name}</p>
@@ -93,7 +93,7 @@ export class FieldMap extends View {
                 })}
               </div>
               <p class="ex-field-map-cancle">
-                <img src="/img/cancle.jpg" alt="cancle" />
+                <img src="/public/img/cancle.jpg" alt="cancle" />
               </p>
             </div>
           </div>

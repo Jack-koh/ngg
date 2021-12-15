@@ -1,7 +1,7 @@
 export const data = [
   {
     head: '2017 EMERGING EXPLORER',
-    img: '/img/images/explorers/ShivaniBhalla.png',
+    img: '/public/img/images/explorers/ShivaniBhalla.png',
     name: 'SHIVANI BHALLA',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -33,7 +33,7 @@ export const data = [
   },
   {
     head: '2017 GRANTEE',
-    img: '/img/images/explorers/CarltonWardJr.png',
+    img: '/public/img/images/explorers/CarltonWardJr.png',
     name: 'JONINA HERDIS OLAFSDOTTIR',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -66,7 +66,7 @@ export const data = [
   },
   {
     head: '2015 EMERGING EXPLORER',
-    img: '/img/images/explorers/TopherWhite.png',
+    img: '/public/img/images/explorers/TopherWhite.png',
     name: 'TOPHER WHITE',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -98,7 +98,7 @@ export const data = [
   },
   {
     head: '2013 FELLOW',
-    img: '/img/images/explorers/SarahParcak.png',
+    img: '/public/img/images/explorers/SarahParcak.png',
     name: 'SARAH H. PARCAK',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -130,7 +130,7 @@ export const data = [
   },
   {
     head: '2013 GRANTEE',
-    img: '/img/images/explorers/JónínaHerdisÓlafsdóttir.png',
+    img: '/public/img/images/explorers/JónínaHerdisÓlafsdóttir.png',
     name: 'JONINA OLAFSDOTTIR',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -169,7 +169,7 @@ export const data = [
   },
   {
     head: '2016 GRANTEE',
-    img: '/img/images/explorers/JenniferAdlerOwen.png',
+    img: '/public/img/images/explorers/JenniferAdlerOwen.png',
     name: 'JENNIFER ADLER OWEN',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -209,7 +209,7 @@ export const data = [
   },
   {
     head: '2017 EMERGING EXPLORER',
-    img: '/img/images/explorers/EnricSala.png',
+    img: '/public/img/images/explorers/EnricSala.png',
     name: 'ENRIC SALA',
     title: {
       area: '2011 EXPLORER IN RESIDENCE',
@@ -248,7 +248,7 @@ export const data = [
   },
   {
     head: '2005 EMERGING EXPLORER',
-    img: '/img/images/explorers/ConstanceAdams.png',
+    img: '/public/img/images/explorers/ConstanceAdams.png',
     name: 'CONSTANCE M ADAMS',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -269,7 +269,7 @@ export const data = [
   },
   {
     head: '2016 FELLOW',
-    img: '/img/images/explorers/SteveBoyes.png',
+    img: '/public/img/images/explorers/SteveBoyes.png',
     name: 'R. STEVE BOYES',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -309,7 +309,7 @@ export const data = [
   },
   {
     head: '2016 GRANTEE',
-    img: '/img/images/explorers/BrianSkerry.png',
+    img: '/public/img/images/explorers/BrianSkerry.png',
     name: 'BRIAN J. SKERRY',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -352,7 +352,7 @@ export const data = [
   },
   {
     head: '2010 EMERGING EXPLORER',
-    img: '/img/images/explorers/AlbertLin.png',
+    img: '/public/img/images/explorers/AlbertLin.png',
     name: 'ALBERT YU MIN LIN',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -391,7 +391,7 @@ export const data = [
   },
   {
     head: '2017 EMERGING EXPLORER',
-    img: '/img/images/explorers/DanielleLee.png',
+    img: '/public/img/images/explorers/DanielleLee.png',
     name: 'DANIELLE N. LEE',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -431,7 +431,7 @@ export const data = [
   },
   {
     head: '2011 EMERGING EXPLORER',
-    img: '/img/images/explorers/HayatSindi.png',
+    img: '/public/img/images/explorers/HayatSindi.png',
     name: 'HAYAT SINDI',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -477,7 +477,7 @@ export const data = [
   },
   {
     head: '2011 EMERGING EXPLORER',
-    img: '/img/images/explorers/PaulaKahumbu.png',
+    img: '/public/img/images/explorers/PaulaKahumbu.png',
     name: 'PAULA KAHUMBU',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -516,7 +516,7 @@ export const data = [
   },
   {
     head: '2017 EMERGING EXPLORER',
-    img: '/img/images/explorers/MateusMutemba.png',
+    img: '/public/img/images/explorers/MateusMutemba.png',
     name: 'MATEUS MUTEMBA',
     title: {
       area: 'AREAS OF EXPERTISE',
@@ -555,7 +555,7 @@ export const data = [
   },
   {
     head: '2016 EMERGING EXPLORER',
-    img: '/img/images/explorers/AshadeVos.png',
+    img: '/public/img/images/explorers/AshadeVos.png',
     name: 'ASHA DE VOS',
     title: {
       area: 'AREAS OF EXPERTISE',

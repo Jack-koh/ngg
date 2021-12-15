@@ -28,7 +28,7 @@ class Summary extends View {
                 <p class="sign sign1">
                   <input id="cate1" type="text" value="All projects" readonly />
                   <span class="img">
-                    <img src="/img/subHeader/burgerBar.png" alt="menu" />
+                    <img src="/public/img/subHeader/burgerBar.png" alt="menu" />
                   </span>
                 </p>
                 <div id="choose1" class="choose">
@@ -44,7 +44,7 @@ class Summary extends View {
               </div>
 
               <div id="allex" class="lac">
-                <img src="/img/all.jpg" alt="homeBtn" />
+                <img src="/public/img/all.jpg" alt="homeBtn" />
               </div>
             </div>
           </div>

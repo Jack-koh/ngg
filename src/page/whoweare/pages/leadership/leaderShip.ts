@@ -40,7 +40,7 @@ export class LeaderShip extends View {
                 </p>
               </div>
               <div class="upDownImg">
-                <img src="/img/3dcompass.png" alt="3dcompass" />
+                <img src="/public/img/3dcompass.png" alt="3dcompass" />
               </div>
               <div class="right">
                 <div class="numbering">

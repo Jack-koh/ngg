@@ -14,25 +14,25 @@ class MainVisual extends View {
     if (timer) clearInterval(timer);
     this.data = [
       {
-        img: '/img/images/newsMain_01.jpg',
+        img: '/public/img/images/newsMain_01.jpg',
         title: 'NATIONAL GEOGRAPHIC',
         desc: `National Geographic Celebrates World Environment Day and World Oceans Day with Full Week of Activities
         Highlighting the Need to Reduce Plastic Pollution and Improve Ocean Health`,
       },
       {
-        img: '/img/images/newsMain_02.jpg',
+        img: '/public/img/images/newsMain_02.jpg',
         title: 'COMBAT ILLEGAL FISHING',
         desc: `To help celebrate World Oceans Day on June 8th, the National Geographic Society announced the winners of the
         Marine Protection Prize.`,
       },
       {
-        img: '/img/images/newsMain_03.jpg',
+        img: '/public/img/images/newsMain_03.jpg',
         title: 'NEW STUDY REVEALS',
         desc: `As much as 54 percent of the high seas fishing industry would be unprofitable at its current scale without
         large government subsidies, according to a new study by researchers from the National Geographic Society`,
       },
       {
-        img: '/img/images/newsMain_04.jpg',
+        img: '/public/img/images/newsMain_04.jpg',
         title: 'COLLEGE SCHOLARSHIP',
         desc: `Venkat Ranjan of San Ramon, California, a 13-year-old 8th-grader at Windemere Ranch Middle School, took top
         honors at the 30th annual National Geographic Bee held today at National Geographic headquarters in
@@ -58,10 +58,10 @@ class MainVisual extends View {
 
           <img class="visualHeight" src="../../img/images/newsMain_01.jpg" alt="newsMain_01" />
           <p id="prev">
-            <img src="/img/prev.png" alt="prevBtn" />
+            <img src="/public/img/prev.png" alt="prevBtn" />
           </p>
           <p id="next">
-            <img src="/img/next.png" alt="nextBtn" />
+            <img src="/public/img/next.png" alt="nextBtn" />
           </p>
         </div>
 

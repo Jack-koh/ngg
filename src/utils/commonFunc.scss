@@ -1,3 +1,7 @@
 .nav__link {
   cursor: pointer;
+
+  &.disabled {
+    cursor: not-allowed !important;
+  }
 }

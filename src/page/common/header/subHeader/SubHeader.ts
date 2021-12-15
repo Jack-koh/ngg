@@ -17,7 +17,7 @@ export class SubHeader extends View {
       if (locations[0] === 'explorer') main = 'EXPLORER';
       if (locations[0] === 'exhibition') main = 'EXHIBITION';
       if (locations[0] === 'project') main = 'PROJECT';
-      if (locations[0] === 'impact') main = 'IMPACT';
+      // if (locations[0] === 'impact') main = 'IMPACT';
 
       if (locations[1] === 'aboutus') sub = 'ABOUT US';
       if (locations[1] === 'history') sub = 'HISTORY';
@@ -48,7 +48,7 @@ export class SubHeader extends View {
         <div id="siteLocationIn">
           <div id="home" class="lac">
             <a href="/" title="home">
-              <img src="/img/home.png" alt="homeBtn" />
+              <img src="/public/img/home.png" alt="homeBtn" />
             </a>
           </div>
           <dl id="way1-container">

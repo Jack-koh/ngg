@@ -39,10 +39,10 @@ export class ExBlog extends View {
                 <div class="btn">
                   <div class="btnWrap">
                     <p id="rowbtn">
-                      <img src="/img/row.jpg" alt="row" />
+                      <img src="/public/img/row.jpg" alt="row" />
                     </p>
                     <p id="gridbtn">
-                      <img src="/img/grid.jpg" alt="grid" />
+                      <img src="/public/img/grid.jpg" alt="grid" />
                     </p>
                   </div>
                 </div>
@@ -77,9 +77,9 @@ export class ExBlog extends View {
                               }).getHtml()}
                             </div>
                             <div class="share">
-                              <img src="/img/share.jpg" alt="share" />
-                              <img src="/img/facebook.jpg" alt="facebook" />
-                              <img src="/img/twitter.jpg" alt="twitter" />
+                              <img src="/public/img/share.jpg" alt="share" />
+                              <img src="/public/img/facebook.jpg" alt="facebook" />
+                              <img src="/public/img/twitter.jpg" alt="twitter" />
                             </div>
                           </div>
                         </div>

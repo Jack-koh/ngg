@@ -1,6 +1,6 @@
 export const data = [
   {
-    img: '/img/images/exBlog/ex4.jpg',
+    img: '/public/img/images/exBlog/ex4.jpg',
     title: 'Making the Unseen Seen: The True Cost of Oil Spills',
     detail: 'In Changing Planet / June 26, 2018 / 0 Comments / by Laura McHugh',
     desc: `
@@ -8,7 +8,7 @@ export const data = [
       `,
   },
   {
-    img: '/img/images/exBlog/ex5.jpg',
+    img: '/public/img/images/exBlog/ex5.jpg',
     title: 'Top 25: Wild Birds with Spectacular Catches',
     detail: 'In Wildlife / June 23, 2018 / 0 Comments / by Steve Boyes',
     desc: `
@@ -16,7 +16,7 @@ export const data = [
       `,
   },
   {
-    img: '/img/images/exBlog/ex6.jpg',
+    img: '/public/img/images/exBlog/ex6.jpg',
     title: 'Can We Protect the Last Intact Forests of the World in the 21st Century?',
     detail: 'In Changing Planet, Human Journey, Wildlife / June 19, 2018 / 0 Comments / Camilo Garzón',
     desc: `
@@ -24,7 +24,7 @@ export const data = [
       `,
   },
   {
-    img: '/img/images/exBlog/ex1.jpg',
+    img: '/public/img/images/exBlog/ex1.jpg',
     title: 'Getting Tough on Illegal and Unregulated Shark and Ray Trade at CITES',
     detail: 'in Wildlife / June 29, 2018 / 0 Comments / by Carl Safina',
     desc: `
@@ -32,7 +32,7 @@ export const data = [
       `,
   },
   {
-    img: '/img/images/exBlog/ex2.jpg',
+    img: '/public/img/images/exBlog/ex2.jpg',
     title: 'Invasion of the Death Stars: Surveying COTS &amp; Coral Health With the Trident ROV',
     detail: 'In Wildlife / June 29, 2018 / 0 Comments / by Steve Boyes',
     desc: `
@@ -40,7 +40,7 @@ export const data = [
       `,
   },
   {
-    img: '/img/images/exBlog/ex3.jpg',
+    img: '/public/img/images/exBlog/ex3.jpg',
     title: 'Mantener intactos los carnívoros, la conectividad y la cultura en la Moskitia de Mesoamérica',
     detail: 'In Changing Planet, Human Journey / June 28, 2018 / 0 Comments / by Survival International',
     desc: `

@@ -1,6 +1,6 @@
-import View from "page/View";
-import Circles from "./Circles";
-import "./MainVisual.scss";
+import View from 'page/View';
+import Circles from './Circles';
+import './MainVisual.scss';
 
 type Props = {
   key: string;
@@ -29,11 +29,7 @@ class MainVisual extends View {
         </div>
         <div class="sub-circle-nav">
           ${circles}
-          ${
-            circleDesc
-              ? `<div class="circle-nav-description">${circleDesc}</div>`
-              : ""
-          }
+          ${circleDesc ? `<div class="circle-nav-description">${circleDesc}</div>` : ''}
         </div>
       </div>
     `;

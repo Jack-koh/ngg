@@ -15,11 +15,11 @@ class Aside extends View {
             <strong>Advertisement</strong>
               ${link({
                 url: '/exhibition/visitorplan',
-                child: '<p id="leftAd"><img src="/img/images/leftAd.jpg" alt="advertise"></p>',
+                child: '<p id="leftAd"><img src="/public/img/images/leftAd.jpg" alt="advertise"></p>',
               })}
               ${link({
                 url: '/exhibition/event',
-                child: '<p id="rightAd"><img src="/img/images/evebtAd.jpg" alt="advertise"></p>',
+                child: '<p id="rightAd"><img src="/public/img/images/evebtAd.jpg" alt="advertise"></p>',
               })}
           </div>
         </div>

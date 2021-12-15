@@ -6,20 +6,25 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: { index: './src/index.ts' },
   output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, './dist'),
+    filename: 'static/js/[name].[contenthash].js',
+    path: path.resolve(__dirname, './build'),
     publicPath: '/',
   },
   mode: 'production',
   optimization: {
     splitChunks: { chunks: 'all', minSize: 3000 },
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   module: {
     rules: [
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         include: [path.resolve(__dirname, './public/font')],
-        use: [{ loader: 'file-loader', options: { name: '[name].[ext]' } }],
+        use: [{ loader: 'file-loader', options: { name: '[path][name].[ext]' } }],
       },
       {
         test: /\.(png|jpg)$/,
@@ -27,19 +32,9 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: { name: '[name].[ext]', outputPath: 'img' },
+            options: { name: '[path][name].[ext]' },
           },
         ],
-        // use: [
-        //   {
-        //     loader: 'file-loader',
-        //     // path: 파일 경로 폴더 생성, name: 파일이름, ext: 확장자 이름
-        //     options: {
-        //       name: '[name].[ext]',
-        //       outputPath: 'images',
-        //     },
-        //   },
-        // ],
       },
       {
         test: /\.(mp4)$/,
@@ -47,7 +42,7 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: { name: '[name].[ext]', outputPath: 'img' },
+            options: { name: '[path][name].[ext]' },
           },
         ],
       },
@@ -101,7 +96,7 @@ module.exports = {
     extensions: ['.js', '.ts'],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }), // css 파일 생성(link rel 방식) 밑의 HtmlWebpackPlugin 이 자동으로 임포트
+    new MiniCssExtractPlugin({ filename: 'static/css/[name].[contenthash].css' }), // css 파일 생성(link rel 방식) 밑의 HtmlWebpackPlugin 이 자동으로 임포트
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index'],

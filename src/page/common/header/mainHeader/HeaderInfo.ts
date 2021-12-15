@@ -15,7 +15,7 @@ export default class HeaderInfo extends View {
         <div id="finance">financial summery</div>
         <div id="cost">73,696</div>
       </div>
-      <div id="info-button"><img src="/img/ico_plus.png" alt="info-icon" /></div>
+      <div id="info-button"><img src="/public/img/ico_plus.png" alt="info-icon" /></div>
       <div id="info-slider">
         <div id="headline">
           <h3>2017 financial summary</h3>
@@ -62,7 +62,7 @@ export default class HeaderInfo extends View {
           <div>
             <p class="subject">2016 cash sources</p>
             <p class="img">
-              <img src="/img/diagram01.jpg" alt="diagram01" />
+              <img src="/public/img/diagram01.jpg" alt="diagram01" />
             </p>
             <ul>
               <li>
@@ -90,7 +90,7 @@ export default class HeaderInfo extends View {
           <div>
             <p class="subject">2016 operationg</p>
             <p class="img">
-              <img src="/img/diagram01.jpg" alt="diagram01" />
+              <img src="/public/img/diagram01.jpg" alt="diagram01" />
             </p>
             <ul>
               <li>

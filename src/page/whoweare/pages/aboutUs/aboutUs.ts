@@ -42,7 +42,7 @@ export class AboutUs extends View {
                 </p>
               </div>
               <div class="upDownImg">
-                <img src="/img/groundtree.png" alt="groundTree" />
+                <img src="/public/img/groundtree.png" alt="groundTree" />
               </div>
               <div class="right">
                 <div class="numbering">
@@ -83,8 +83,8 @@ export class AboutUs extends View {
               <div id="historyVideo">
                 <div id="videoFrame">
                   <div id="video">
-                    <video controls poster="/img/posterVideoIntro.jpg">
-                      <source src="/video/videoplayback.mp4" type="video/mp4" />
+                    <video controls poster="/public/img/posterVideoIntro.jpg">
+                      <source src="/public/video/videoplayback.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>

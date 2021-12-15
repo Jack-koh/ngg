@@ -114,7 +114,7 @@ export class LeadersDetail extends View {
                 </span>
               </div>
               <span class="togArrow">
-                <img src="/img/togarrow.png" alt="togArrow"/>
+                <img src="/public/img/togarrow.png" alt="togArrow"/>
               </span>
             </div>
 
@@ -129,7 +129,7 @@ export class LeadersDetail extends View {
                 </span>
               </div>
               <span class="togArrow">
-                <img src="/img/togarrow.png" alt="togArrow"/>
+                <img src="/public/img/togarrow.png" alt="togArrow"/>
               </span>
             </div>
           </div>
